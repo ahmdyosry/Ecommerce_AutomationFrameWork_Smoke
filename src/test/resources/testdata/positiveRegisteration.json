@@ -1,0 +1,18 @@
+[
+  {
+    "name": "ahmadzz",
+    "email": "random_email",
+    "password": "ahmadzz123!",
+    "firstName": "ahmadzz",
+    "lastName": "ahmadzz",
+    "company": "ahmadzz",
+    "address1": "cairo,egypt",
+    "address2": "see st.",
+    "state": "cairo",
+    "city": "cairo",
+    "zipcode": "11522",
+    "mobileNumber": "9252550305",
+
+    "successMessage": "ACCOUNT CREATED!"
+  }
+]

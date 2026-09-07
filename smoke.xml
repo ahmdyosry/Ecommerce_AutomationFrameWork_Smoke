@@ -1,0 +1,59 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+
+<suite name="smokesuite" parallel="tests" thread-count="4">
+    <listeners>
+        <listener class-name="listeners.TestListener"/>
+    </listeners>
+    <!--    name of the test suite that have multiple test folders (test names)-->
+    <!-- <parameter name="URL" value="https://www.rahulshettyacademy.com"/> -->
+    <!-- <listeners>
+         <listener class-name="test.Listeners"/>
+     </listeners> -->
+
+
+
+
+    <!-- <test name="submit Tests">
+        <classes>
+            <class name="tests.SubmitOrder"/>
+        </classes>
+    </test> -->
+
+    <test name="smoke tests firefox" parallel="methods" thread-count="2">
+        <parameter name="browser" value="firefox"/>
+        <groups>
+            <run>
+                <include name="smoke"/>
+            </run>
+        </groups>
+        <!-- <classes>
+            <class name="tests.auth.RegisterationTests"/>
+            <class name="tests.auth.LoginTests"/>
+            <class name="tests.auth.LogoutTests"/>
+            <class name="tests.home.HomepageTests"/>
+        </classes> -->
+        <packages>
+            <package name="tests.*"/>
+        </packages>
+    </test>
+
+    <!-- <test name="single test firefox" parallel="methods" thread-count="4">
+        <parameter name="browser" value="firefox"/>
+        <classes>
+            <class name="tests.auth.LoginTests">
+                <methods>
+                    <include name="loginTest"/>
+                </methods>
+            </class>
+        </classes>
+    </test> -->
+
+
+    <!-- <test name="Demo Tests"> -->
+    <!-- <parameter name="APIKEY/USERNAME" value="123456"/> -->
+    <!-- <classes>
+        <class name="tests.SubmitOrder"/>
+    </classes>
+</test> -->
+
+</suite>

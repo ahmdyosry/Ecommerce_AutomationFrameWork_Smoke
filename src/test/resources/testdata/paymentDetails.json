@@ -1,0 +1,13 @@
+[
+  {
+    "product": "Blue Top",
+
+    "nameOnCard": "ahmed",
+    "cardNumber": "42589621487779666",
+    "cvc": "698",
+    "expiryMonth": "08",
+    "expiryYear": "2028",
+
+    "successMessage": "ORDER PLACED!"
+  }
+]
