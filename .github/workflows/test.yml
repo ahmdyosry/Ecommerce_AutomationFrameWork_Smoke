@@ -9,6 +9,11 @@ jobs:
   test:
     runs-on: windows-latest
 
+    env:
+      TEST_EMAIL: ${{ secrets.TEST_EMAIL }}
+      TEST_PASSWORD: ${{ secrets.TEST_PASSWORD }}
+
+
     steps:
       - name: Checkout repository
         uses: actions/checkout@v6
