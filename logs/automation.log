@@ -1878,3 +1878,49 @@ Session ID: ab8aba27-7cb0-4eb9-bf4d-90b44df5dc71
 2026-09-07 04:55:55 INFO  [TestNG-test-smoke tests firefox-2] io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.gecko.driver as C:\Users\ahmed\.cache\selenium\geckodriver\win64\0.37.1\geckodriver.exe
 2026-09-07 04:56:15 INFO  [TestNG-PoolService-1] io.github.bonigarcia.wdm.WebDriverManager - Using geckodriver 0.37.1 (resolved driver for Firefox 155)
 2026-09-07 04:56:15 INFO  [TestNG-PoolService-1] io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.gecko.driver as C:\Users\ahmed\.cache\selenium\geckodriver\win64\0.37.1\geckodriver.exe
+2026-09-07 06:13:28 INFO  [main] org.testng.internal.Utils - [TestNG] Running:
+  C:\Users\ahmed\AppData\Local\JetBrains\IntelliJIdea2025.3\temp-testng-customsuite.xml
+
+2026-09-07 06:13:30 INFO  [TestNG-PoolService-1] io.github.bonigarcia.wdm.WebDriverManager - Using chromedriver 152.0.7977.82 (resolved driver for Chrome 152)
+2026-09-07 06:13:30 INFO  [TestNG-PoolService-1] io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\ahmed\.cache\selenium\chromedriver\win64\152.0.7977.82\chromedriver.exe
+2026-09-07 06:13:45 INFO  [main] org.testng.internal.Utils - [TestNG] Running:
+  C:\Users\ahmed\IdeaProjects\Automation_Project_eCommerce\testng.xml
+
+2026-09-07 06:13:47 INFO  [TestNG-PoolService-1] io.github.bonigarcia.wdm.WebDriverManager - Using geckodriver 0.37.1 (resolved driver for Firefox 155)
+2026-09-07 06:13:47 INFO  [TestNG-PoolService-1] io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.gecko.driver as C:\Users\ahmed\.cache\selenium\geckodriver\win64\0.37.1\geckodriver.exe
+2026-09-07 06:13:51 INFO  [main] org.testng.internal.Utils - [TestNG] Running:
+  C:\Users\ahmed\IdeaProjects\Automation_Project_eCommerce\testng.xml
+
+2026-09-07 06:13:51 INFO  [TestNG-PoolService-1] io.github.bonigarcia.wdm.WebDriverManager - Using geckodriver 0.37.1 (resolved driver for Firefox 155)
+2026-09-07 06:13:51 INFO  [TestNG-PoolService-1] io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.gecko.driver as C:\Users\ahmed\.cache\selenium\geckodriver\win64\0.37.1\geckodriver.exe
+2026-09-07 06:14:11 WARN  [TestNG-PoolService-1] listeners.TestListener - Browser console logs could not be captured: Error communicating with the remote browser. It may have died.
+Build info: version: '4.46.0', revision: 'df5a634 df5a6341cbb5f8f06b836bd595752775627c80dc'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '25.0.1'
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Command: [ae6aa399-5ac9-4c6e-986c-1561ee88b461, getLog [type]]
+Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 155.0.1, moz:accessibilityChecks: false, moz:buildID: 20260903215306, moz:geckodriverVersion: 0.37.1, moz:headless: false, moz:platformVersion: 10.0, moz:processID: 28744, moz:profile: C:\Users\ahmed\AppData\Loca..., moz:shutdownTimeout: 60000, moz:webdriverClick: true, moz:windowless: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, userAgent: Mozilla/5.0 (Windows NT 10....}
+Session ID: ae6aa399-5ac9-4c6e-986c-1561ee88b461
+2026-09-07 06:17:36 INFO  [main] org.testng.internal.Utils - [TestNG] Running:
+  C:\Users\ahmed\IdeaProjects\Automation_Project_eCommerce\testng.xml
+
+2026-09-07 06:17:37 INFO  [TestNG-PoolService-1] io.github.bonigarcia.wdm.WebDriverManager - Using geckodriver 0.37.1 (resolved driver for Firefox 155)
+2026-09-07 06:17:37 INFO  [TestNG-PoolService-1] io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.gecko.driver as C:\Users\ahmed\.cache\selenium\geckodriver\win64\0.37.1\geckodriver.exe
+2026-09-07 06:17:59 WARN  [TestNG-PoolService-1] listeners.TestListener - Browser console logs could not be captured: Error communicating with the remote browser. It may have died.
+Build info: version: '4.46.0', revision: 'df5a634 df5a6341cbb5f8f06b836bd595752775627c80dc'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '25.0.1'
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Command: [53fb5834-dc32-43c3-998c-aa280ac5a213, getLog [type]]
+Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 155.0.1, moz:accessibilityChecks: false, moz:buildID: 20260903215306, moz:geckodriverVersion: 0.37.1, moz:headless: false, moz:platformVersion: 10.0, moz:processID: 12812, moz:profile: C:\Users\ahmed\AppData\Loca..., moz:shutdownTimeout: 60000, moz:webdriverClick: true, moz:windowless: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, userAgent: Mozilla/5.0 (Windows NT 10....}
+Session ID: 53fb5834-dc32-43c3-998c-aa280ac5a213
+2026-09-07 06:20:15 INFO  [main] org.testng.internal.Utils - [TestNG] Running:
+  C:\Users\ahmed\IdeaProjects\Automation_Project_eCommerce\testng.xml
+
+2026-09-07 06:20:16 INFO  [TestNG-PoolService-1] io.github.bonigarcia.wdm.WebDriverManager - Using geckodriver 0.37.1 (resolved driver for Firefox 155)
+2026-09-07 06:20:16 INFO  [TestNG-PoolService-1] io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.gecko.driver as C:\Users\ahmed\.cache\selenium\geckodriver\win64\0.37.1\geckodriver.exe
+2026-09-07 06:20:39 WARN  [TestNG-PoolService-1] listeners.TestListener - Browser console logs could not be captured: Error communicating with the remote browser. It may have died.
+Build info: version: '4.46.0', revision: 'df5a634 df5a6341cbb5f8f06b836bd595752775627c80dc'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '25.0.1'
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Command: [9ee2b2d4-77c0-469b-9f8a-e6669b9125b8, getLog [type]]
+Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 155.0.1, moz:accessibilityChecks: false, moz:buildID: 20260903215306, moz:geckodriverVersion: 0.37.1, moz:headless: false, moz:platformVersion: 10.0, moz:processID: 5676, moz:profile: C:\Users\ahmed\AppData\Loca..., moz:shutdownTimeout: 60000, moz:webdriverClick: true, moz:windowless: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, userAgent: Mozilla/5.0 (Windows NT 10....}
+Session ID: 9ee2b2d4-77c0-469b-9f8a-e6669b9125b8
