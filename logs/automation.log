@@ -1924,3 +1924,185 @@ Driver info: org.openqa.selenium.firefox.FirefoxDriver
 Command: [9ee2b2d4-77c0-469b-9f8a-e6669b9125b8, getLog [type]]
 Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 155.0.1, moz:accessibilityChecks: false, moz:buildID: 20260903215306, moz:geckodriverVersion: 0.37.1, moz:headless: false, moz:platformVersion: 10.0, moz:processID: 5676, moz:profile: C:\Users\ahmed\AppData\Loca..., moz:shutdownTimeout: 60000, moz:webdriverClick: true, moz:windowless: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, userAgent: Mozilla/5.0 (Windows NT 10....}
 Session ID: 9ee2b2d4-77c0-469b-9f8a-e6669b9125b8
+2026-09-07 06:33:59 INFO  [main] org.testng.internal.Utils - [TestNG] Running:
+  C:\Users\ahmed\AppData\Local\JetBrains\IntelliJIdea2025.3\temp-testng-customsuite.xml
+
+2026-09-07 06:34:00 INFO  [TestNG-PoolService-1] io.github.bonigarcia.wdm.WebDriverManager - Using chromedriver 152.0.7977.82 (resolved driver for Chrome 152)
+2026-09-07 06:34:00 INFO  [TestNG-PoolService-1] io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\ahmed\.cache\selenium\chromedriver\win64\152.0.7977.82\chromedriver.exe
+2026-09-07 06:34:47 INFO  [main] org.testng.internal.Utils - [TestNG] Running:
+  C:\Users\ahmed\AppData\Local\JetBrains\IntelliJIdea2025.3\temp-testng-customsuite.xml
+
+2026-09-07 06:34:47 INFO  [TestNG-PoolService-1] io.github.bonigarcia.wdm.WebDriverManager - Using chromedriver 152.0.7977.82 (resolved driver for Chrome 152)
+2026-09-07 06:34:47 INFO  [TestNG-PoolService-1] io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\ahmed\.cache\selenium\chromedriver\win64\152.0.7977.82\chromedriver.exe
+2026-09-07 06:36:02 INFO  [main] org.testng.internal.Utils - [TestNG] Running:
+  C:\Users\ahmed\AppData\Local\JetBrains\IntelliJIdea2025.3\temp-testng-customsuite.xml
+
+2026-09-07 06:36:03 INFO  [TestNG-PoolService-1] io.github.bonigarcia.wdm.WebDriverManager - Using chromedriver 152.0.7977.82 (resolved driver for Chrome 152)
+2026-09-07 06:36:03 INFO  [TestNG-PoolService-1] io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\ahmed\.cache\selenium\chromedriver\win64\152.0.7977.82\chromedriver.exe
+2026-09-07 06:46:58 INFO  [main] org.testng.internal.Utils - [TestNG] Running:
+  C:\Users\ahmed\AppData\Local\JetBrains\IntelliJIdea2025.3\temp-testng-customsuite.xml
+
+2026-09-07 06:46:59 INFO  [TestNG-PoolService-1] io.github.bonigarcia.wdm.WebDriverManager - Using chromedriver 152.0.7977.82 (resolved driver for Chrome 152)
+2026-09-07 06:46:59 INFO  [TestNG-PoolService-1] io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\ahmed\.cache\selenium\chromedriver\win64\152.0.7977.82\chromedriver.exe
+2026-09-07 06:49:13 INFO  [main] org.testng.internal.Utils - [TestNG] Running:
+  C:\Users\ahmed\AppData\Local\JetBrains\IntelliJIdea2025.3\temp-testng-customsuite.xml
+
+2026-09-07 06:49:14 INFO  [TestNG-PoolService-1] io.github.bonigarcia.wdm.WebDriverManager - Using chromedriver 152.0.7977.82 (resolved driver for Chrome 152)
+2026-09-07 06:49:14 INFO  [TestNG-PoolService-1] io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\ahmed\.cache\selenium\chromedriver\win64\152.0.7977.82\chromedriver.exe
+2026-09-07 06:50:22 INFO  [main] org.testng.internal.Utils - [TestNG] Running:
+  C:\Users\ahmed\AppData\Local\JetBrains\IntelliJIdea2025.3\temp-testng-customsuite.xml
+
+2026-09-07 06:50:23 INFO  [TestNG-PoolService-1] io.github.bonigarcia.wdm.WebDriverManager - Using chromedriver 152.0.7977.82 (resolved driver for Chrome 152)
+2026-09-07 06:50:23 INFO  [TestNG-PoolService-1] io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\ahmed\.cache\selenium\chromedriver\win64\152.0.7977.82\chromedriver.exe
+2026-09-07 07:05:25 INFO  [main] org.testng.internal.Utils - [TestNG] Running:
+  C:\Users\ahmed\AppData\Local\JetBrains\IntelliJIdea2025.3\temp-testng-customsuite.xml
+
+2026-09-07 07:05:25 INFO  [main] io.github.bonigarcia.wdm.WebDriverManager - Using chromedriver 152.0.7977.82 (resolved driver for Chrome 152)
+2026-09-07 07:05:25 INFO  [main] io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\ahmed\.cache\selenium\chromedriver\win64\152.0.7977.82\chromedriver.exe
+2026-09-07 07:07:04 INFO  [main] org.testng.internal.Utils - [TestNG] Running:
+  C:\Users\ahmed\AppData\Local\JetBrains\IntelliJIdea2025.3\temp-testng-customsuite.xml
+
+2026-09-07 07:07:05 INFO  [main] io.github.bonigarcia.wdm.WebDriverManager - Using chromedriver 152.0.7977.82 (resolved driver for Chrome 152)
+2026-09-07 07:07:05 INFO  [main] io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\ahmed\.cache\selenium\chromedriver\win64\152.0.7977.82\chromedriver.exe
+2026-09-07 07:08:58 INFO  [main] org.testng.internal.Utils - [TestNG] Running:
+  C:\Users\ahmed\AppData\Local\JetBrains\IntelliJIdea2025.3\temp-testng-customsuite.xml
+
+2026-09-07 07:08:59 INFO  [main] io.github.bonigarcia.wdm.WebDriverManager - Using chromedriver 152.0.7977.82 (resolved driver for Chrome 152)
+2026-09-07 07:08:59 INFO  [main] io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\ahmed\.cache\selenium\chromedriver\win64\152.0.7977.82\chromedriver.exe
+2026-09-07 07:16:35 INFO  [main] org.testng.internal.Utils - [TestNG] Running:
+  C:\Users\ahmed\AppData\Local\JetBrains\IntelliJIdea2025.3\temp-testng-customsuite.xml
+
+2026-09-07 07:16:37 INFO  [main] io.github.bonigarcia.wdm.WebDriverManager - Using chromedriver 152.0.7977.82 (resolved driver for Chrome 152)
+2026-09-07 07:16:37 INFO  [main] io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\ahmed\.cache\selenium\chromedriver\win64\152.0.7977.82\chromedriver.exe
+2026-09-07 07:17:28 INFO  [main] org.testng.internal.Utils - [TestNG] Running:
+  C:\Users\ahmed\AppData\Local\JetBrains\IntelliJIdea2025.3\temp-testng-customsuite.xml
+
+2026-09-07 07:17:28 INFO  [main] io.github.bonigarcia.wdm.WebDriverManager - Using chromedriver 152.0.7977.82 (resolved driver for Chrome 152)
+2026-09-07 07:17:28 INFO  [main] io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\ahmed\.cache\selenium\chromedriver\win64\152.0.7977.82\chromedriver.exe
+2026-09-07 07:18:56 INFO  [main] org.testng.internal.Utils - [TestNG] Running:
+  C:\Users\ahmed\AppData\Local\JetBrains\IntelliJIdea2025.3\temp-testng-customsuite.xml
+
+2026-09-07 07:18:56 INFO  [main] io.github.bonigarcia.wdm.WebDriverManager - Using chromedriver 152.0.7977.82 (resolved driver for Chrome 152)
+2026-09-07 07:18:56 INFO  [main] io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\ahmed\.cache\selenium\chromedriver\win64\152.0.7977.82\chromedriver.exe
+2026-09-07 07:23:31 INFO  [main] org.testng.internal.Utils - [TestNG] Running:
+  C:\Users\ahmed\AppData\Local\JetBrains\IntelliJIdea2025.3\temp-testng-customsuite.xml
+
+2026-09-07 07:23:31 INFO  [main] io.github.bonigarcia.wdm.WebDriverManager - Using chromedriver 152.0.7977.82 (resolved driver for Chrome 152)
+2026-09-07 07:23:31 INFO  [main] io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\ahmed\.cache\selenium\chromedriver\win64\152.0.7977.82\chromedriver.exe
+2026-09-07 07:26:22 INFO  [main] org.testng.internal.Utils - [TestNG] Running:
+  C:\Users\ahmed\AppData\Local\JetBrains\IntelliJIdea2025.3\temp-testng-customsuite.xml
+
+2026-09-07 07:26:22 INFO  [main] io.github.bonigarcia.wdm.WebDriverManager - Using chromedriver 152.0.7977.82 (resolved driver for Chrome 152)
+2026-09-07 07:26:22 INFO  [main] io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\ahmed\.cache\selenium\chromedriver\win64\152.0.7977.82\chromedriver.exe
+2026-09-07 07:29:15 INFO  [main] org.testng.internal.Utils - [TestNG] Running:
+  C:\Users\ahmed\AppData\Local\JetBrains\IntelliJIdea2025.3\temp-testng-customsuite.xml
+
+2026-09-07 07:29:15 INFO  [main] io.github.bonigarcia.wdm.WebDriverManager - Using chromedriver 152.0.7977.82 (resolved driver for Chrome 152)
+2026-09-07 07:29:15 INFO  [main] io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\ahmed\.cache\selenium\chromedriver\win64\152.0.7977.82\chromedriver.exe
+2026-09-07 07:29:24 INFO  [main] org.testng.internal.Utils - [TestNG] Running:
+  C:\Users\ahmed\AppData\Local\JetBrains\IntelliJIdea2025.3\temp-testng-customsuite.xml
+
+2026-09-07 07:29:24 INFO  [main] io.github.bonigarcia.wdm.WebDriverManager - Using chromedriver 152.0.7977.82 (resolved driver for Chrome 152)
+2026-09-07 07:29:24 INFO  [main] io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\ahmed\.cache\selenium\chromedriver\win64\152.0.7977.82\chromedriver.exe
+2026-09-07 07:29:49 INFO  [main] org.testng.internal.Utils - [TestNG] Running:
+  C:\Users\ahmed\AppData\Local\JetBrains\IntelliJIdea2025.3\temp-testng-customsuite.xml
+
+2026-09-07 07:29:49 INFO  [main] io.github.bonigarcia.wdm.WebDriverManager - Using chromedriver 152.0.7977.82 (resolved driver for Chrome 152)
+2026-09-07 07:29:49 INFO  [main] io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\ahmed\.cache\selenium\chromedriver\win64\152.0.7977.82\chromedriver.exe
+2026-09-07 07:30:38 INFO  [main] org.testng.internal.Utils - [TestNG] Running:
+  C:\Users\ahmed\AppData\Local\JetBrains\IntelliJIdea2025.3\temp-testng-customsuite.xml
+
+2026-09-07 07:30:38 INFO  [main] io.github.bonigarcia.wdm.WebDriverManager - Using chromedriver 152.0.7977.82 (resolved driver for Chrome 152)
+2026-09-07 07:30:38 INFO  [main] io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\ahmed\.cache\selenium\chromedriver\win64\152.0.7977.82\chromedriver.exe
+2026-09-07 07:35:10 INFO  [main] org.testng.internal.Utils - [TestNG] Running:
+  C:\Users\ahmed\AppData\Local\JetBrains\IntelliJIdea2025.3\temp-testng-customsuite.xml
+
+2026-09-07 07:35:10 INFO  [main] io.github.bonigarcia.wdm.WebDriverManager - Using chromedriver 152.0.7977.82 (resolved driver for Chrome 152)
+2026-09-07 07:35:10 INFO  [main] io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\ahmed\.cache\selenium\chromedriver\win64\152.0.7977.82\chromedriver.exe
+2026-09-07 07:40:50 INFO  [main] org.testng.internal.Utils - [TestNG] Running:
+  C:\Users\ahmed\AppData\Local\JetBrains\IntelliJIdea2025.3\temp-testng-customsuite.xml
+
+2026-09-07 07:40:51 INFO  [main] io.github.bonigarcia.wdm.WebDriverManager - Using chromedriver 152.0.7977.82 (resolved driver for Chrome 152)
+2026-09-07 07:40:51 INFO  [main] io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\ahmed\.cache\selenium\chromedriver\win64\152.0.7977.82\chromedriver.exe
+2026-09-07 07:41:00 INFO  [main] org.testng.internal.Utils - [TestNG] Running:
+  C:\Users\ahmed\AppData\Local\JetBrains\IntelliJIdea2025.3\temp-testng-customsuite.xml
+
+2026-09-07 07:41:00 INFO  [main] io.github.bonigarcia.wdm.WebDriverManager - Using chromedriver 152.0.7977.82 (resolved driver for Chrome 152)
+2026-09-07 07:41:00 INFO  [main] io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\ahmed\.cache\selenium\chromedriver\win64\152.0.7977.82\chromedriver.exe
+2026-09-07 07:42:27 INFO  [main] org.testng.internal.Utils - [TestNG] Running:
+  C:\Users\ahmed\AppData\Local\JetBrains\IntelliJIdea2025.3\temp-testng-customsuite.xml
+
+2026-09-07 07:42:27 INFO  [main] io.github.bonigarcia.wdm.WebDriverManager - Using chromedriver 152.0.7977.82 (resolved driver for Chrome 152)
+2026-09-07 07:42:27 INFO  [main] io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\ahmed\.cache\selenium\chromedriver\win64\152.0.7977.82\chromedriver.exe
+2026-09-07 07:46:39 INFO  [main] org.testng.internal.Utils - [TestNG] Running:
+  C:\Users\ahmed\AppData\Local\JetBrains\IntelliJIdea2025.3\temp-testng-customsuite.xml
+
+2026-09-07 07:46:39 INFO  [main] io.github.bonigarcia.wdm.WebDriverManager - Using chromedriver 152.0.7977.82 (resolved driver for Chrome 152)
+2026-09-07 07:46:39 INFO  [main] io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\ahmed\.cache\selenium\chromedriver\win64\152.0.7977.82\chromedriver.exe
+2026-09-07 07:52:55 INFO  [main] org.testng.internal.Utils - [TestNG] Running:
+  C:\Users\ahmed\AppData\Local\JetBrains\IntelliJIdea2025.3\temp-testng-customsuite.xml
+
+2026-09-07 07:52:55 INFO  [main] io.github.bonigarcia.wdm.WebDriverManager - Using chromedriver 152.0.7977.82 (resolved driver for Chrome 152)
+2026-09-07 07:52:55 INFO  [main] io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\ahmed\.cache\selenium\chromedriver\win64\152.0.7977.82\chromedriver.exe
+2026-09-07 08:04:51 INFO  [main] org.testng.internal.Utils - [TestNG] Running:
+  C:\Users\ahmed\AppData\Local\JetBrains\IntelliJIdea2025.3\temp-testng-customsuite.xml
+
+2026-09-07 08:04:52 INFO  [main] io.github.bonigarcia.wdm.WebDriverManager - Using chromedriver 152.0.7977.82 (resolved driver for Chrome 152)
+2026-09-07 08:04:52 INFO  [main] io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\ahmed\.cache\selenium\chromedriver\win64\152.0.7977.82\chromedriver.exe
+2026-09-07 08:09:56 INFO  [main] org.testng.internal.Utils - [TestNG] Running:
+  C:\Users\ahmed\AppData\Local\JetBrains\IntelliJIdea2025.3\temp-testng-customsuite.xml
+
+2026-09-07 08:09:57 INFO  [main] io.github.bonigarcia.wdm.WebDriverManager - Using chromedriver 152.0.7977.82 (resolved driver for Chrome 152)
+2026-09-07 08:09:57 INFO  [main] io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\ahmed\.cache\selenium\chromedriver\win64\152.0.7977.82\chromedriver.exe
+2026-09-07 08:19:50 INFO  [main] org.testng.internal.Utils - [TestNG] Running:
+  C:\Users\ahmed\AppData\Local\JetBrains\IntelliJIdea2025.3\temp-testng-customsuite.xml
+
+2026-09-07 08:19:53 INFO  [main] io.github.bonigarcia.wdm.WebDriverManager - Using chromedriver 152.0.7977.82 (resolved driver for Chrome 152)
+2026-09-07 08:19:53 INFO  [main] io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\ahmed\.cache\selenium\chromedriver\win64\152.0.7977.82\chromedriver.exe
+2026-09-07 08:28:11 INFO  [main] org.testng.internal.Utils - [TestNG] Running:
+  C:\Users\ahmed\AppData\Local\JetBrains\IntelliJIdea2025.3\temp-testng-customsuite.xml
+
+2026-09-07 08:28:12 INFO  [main] io.github.bonigarcia.wdm.WebDriverManager - Using chromedriver 152.0.7977.82 (resolved driver for Chrome 152)
+2026-09-07 08:28:12 INFO  [main] io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\ahmed\.cache\selenium\chromedriver\win64\152.0.7977.82\chromedriver.exe
+2026-09-07 08:28:52 INFO  [main] org.testng.internal.Utils - [TestNG] Running:
+  C:\Users\ahmed\AppData\Local\JetBrains\IntelliJIdea2025.3\temp-testng-customsuite.xml
+
+2026-09-07 08:28:53 INFO  [main] io.github.bonigarcia.wdm.WebDriverManager - Using chromedriver 152.0.7977.82 (resolved driver for Chrome 152)
+2026-09-07 08:28:53 INFO  [main] io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\ahmed\.cache\selenium\chromedriver\win64\152.0.7977.82\chromedriver.exe
+2026-09-07 08:29:12 INFO  [main] io.github.bonigarcia.wdm.WebDriverManager - Using chromedriver 152.0.7977.82 (resolved driver for Chrome 152)
+2026-09-07 08:29:12 INFO  [main] io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\ahmed\.cache\selenium\chromedriver\win64\152.0.7977.82\chromedriver.exe
+2026-09-07 08:29:54 INFO  [main] org.testng.internal.Utils - [TestNG] Running:
+  C:\Users\ahmed\IdeaProjects\Automation_Project_eCommerce\smoke.xml
+
+2026-09-07 08:29:55 INFO  [TestNG-PoolService-1] io.github.bonigarcia.wdm.WebDriverManager - Using geckodriver 0.37.1 (resolved driver for Firefox 155)
+2026-09-07 08:29:55 INFO  [TestNG-test-smoke tests firefox-2] io.github.bonigarcia.wdm.WebDriverManager - Using geckodriver 0.37.1 (resolved driver for Firefox 155)
+2026-09-07 08:29:56 INFO  [TestNG-PoolService-1] io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.gecko.driver as C:\Users\ahmed\.cache\selenium\geckodriver\win64\0.37.1\geckodriver.exe
+2026-09-07 08:29:56 INFO  [TestNG-test-smoke tests firefox-2] io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.gecko.driver as C:\Users\ahmed\.cache\selenium\geckodriver\win64\0.37.1\geckodriver.exe
+2026-09-07 08:30:22 INFO  [TestNG-test-smoke tests firefox-2] io.github.bonigarcia.wdm.WebDriverManager - Using geckodriver 0.37.1 (resolved driver for Firefox 155)
+2026-09-07 08:30:22 INFO  [TestNG-test-smoke tests firefox-2] io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.gecko.driver as C:\Users\ahmed\.cache\selenium\geckodriver\win64\0.37.1\geckodriver.exe
+2026-09-07 08:30:27 INFO  [TestNG-PoolService-1] io.github.bonigarcia.wdm.WebDriverManager - Using geckodriver 0.37.1 (resolved driver for Firefox 155)
+2026-09-07 08:30:27 INFO  [TestNG-PoolService-1] io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.gecko.driver as C:\Users\ahmed\.cache\selenium\geckodriver\win64\0.37.1\geckodriver.exe
+2026-09-07 08:30:50 INFO  [TestNG-test-smoke tests firefox-2] io.github.bonigarcia.wdm.WebDriverManager - Using geckodriver 0.37.1 (resolved driver for Firefox 155)
+2026-09-07 08:30:50 INFO  [TestNG-test-smoke tests firefox-2] io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.gecko.driver as C:\Users\ahmed\.cache\selenium\geckodriver\win64\0.37.1\geckodriver.exe
+2026-09-07 08:30:56 INFO  [TestNG-PoolService-1] io.github.bonigarcia.wdm.WebDriverManager - Using geckodriver 0.37.1 (resolved driver for Firefox 155)
+2026-09-07 08:30:56 INFO  [TestNG-PoolService-1] io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.gecko.driver as C:\Users\ahmed\.cache\selenium\geckodriver\win64\0.37.1\geckodriver.exe
+2026-09-07 08:31:14 INFO  [TestNG-PoolService-1] io.github.bonigarcia.wdm.WebDriverManager - Using geckodriver 0.37.1 (resolved driver for Firefox 155)
+2026-09-07 08:31:14 INFO  [TestNG-PoolService-1] io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.gecko.driver as C:\Users\ahmed\.cache\selenium\geckodriver\win64\0.37.1\geckodriver.exe
+2026-09-07 08:31:23 INFO  [TestNG-PoolService-1] io.github.bonigarcia.wdm.WebDriverManager - Using geckodriver 0.37.1 (resolved driver for Firefox 155)
+2026-09-07 08:31:23 INFO  [TestNG-PoolService-1] io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.gecko.driver as C:\Users\ahmed\.cache\selenium\geckodriver\win64\0.37.1\geckodriver.exe
+2026-09-07 08:31:41 INFO  [TestNG-PoolService-1] io.github.bonigarcia.wdm.WebDriverManager - Using geckodriver 0.37.1 (resolved driver for Firefox 155)
+2026-09-07 08:31:41 INFO  [TestNG-PoolService-1] io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.gecko.driver as C:\Users\ahmed\.cache\selenium\geckodriver\win64\0.37.1\geckodriver.exe
+2026-09-07 08:31:52 INFO  [TestNG-PoolService-1] io.github.bonigarcia.wdm.WebDriverManager - Using geckodriver 0.37.1 (resolved driver for Firefox 155)
+2026-09-07 08:31:52 INFO  [TestNG-PoolService-1] io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.gecko.driver as C:\Users\ahmed\.cache\selenium\geckodriver\win64\0.37.1\geckodriver.exe
+2026-09-07 08:32:02 INFO  [TestNG-PoolService-1] io.github.bonigarcia.wdm.WebDriverManager - Using geckodriver 0.37.1 (resolved driver for Firefox 155)
+2026-09-07 08:32:02 INFO  [TestNG-PoolService-1] io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.gecko.driver as C:\Users\ahmed\.cache\selenium\geckodriver\win64\0.37.1\geckodriver.exe
+2026-09-07 08:32:15 INFO  [TestNG-PoolService-1] io.github.bonigarcia.wdm.WebDriverManager - Using geckodriver 0.37.1 (resolved driver for Firefox 155)
+2026-09-07 08:32:15 INFO  [TestNG-PoolService-1] io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.gecko.driver as C:\Users\ahmed\.cache\selenium\geckodriver\win64\0.37.1\geckodriver.exe
+2026-09-07 08:32:34 INFO  [TestNG-test-smoke tests firefox-2] io.github.bonigarcia.wdm.WebDriverManager - Using geckodriver 0.37.1 (resolved driver for Firefox 155)
+2026-09-07 08:32:34 INFO  [TestNG-test-smoke tests firefox-2] io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.gecko.driver as C:\Users\ahmed\.cache\selenium\geckodriver\win64\0.37.1\geckodriver.exe
+2026-09-07 08:32:36 INFO  [TestNG-test-smoke tests firefox-1] io.github.bonigarcia.wdm.WebDriverManager - Using geckodriver 0.37.1 (resolved driver for Firefox 155)
+2026-09-07 08:32:36 INFO  [TestNG-test-smoke tests firefox-1] io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.gecko.driver as C:\Users\ahmed\.cache\selenium\geckodriver\win64\0.37.1\geckodriver.exe
+2026-09-07 08:32:49 INFO  [TestNG-test-smoke tests firefox-2] io.github.bonigarcia.wdm.WebDriverManager - Using geckodriver 0.37.1 (resolved driver for Firefox 155)
+2026-09-07 08:32:49 INFO  [TestNG-test-smoke tests firefox-2] io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.gecko.driver as C:\Users\ahmed\.cache\selenium\geckodriver\win64\0.37.1\geckodriver.exe
+2026-09-07 08:33:02 INFO  [TestNG-PoolService-1] io.github.bonigarcia.wdm.WebDriverManager - Using geckodriver 0.37.1 (resolved driver for Firefox 155)
+2026-09-07 08:33:02 INFO  [TestNG-PoolService-1] io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.gecko.driver as C:\Users\ahmed\.cache\selenium\geckodriver\win64\0.37.1\geckodriver.exe

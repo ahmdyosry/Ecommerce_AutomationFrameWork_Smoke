@@ -19,8 +19,8 @@ public class AddToCartTests extends BaseTest {
 
     @Test(groups="smoke")
     public void addToCartTest() {
-        navigateTo(Routes.PRODUCTS);
-        ProductListPage plp = new ProductListPage(getDriver());
+        HeaderComponent header = new HeaderComponent(getDriver());
+        ProductListPage plp = header.clickProducts();
         ProdutDetailsPage pdp = plp.clickViewProduct();
         Assert.assertTrue(pdp.clickAddToCart().isAddedToCartMessageDisplayed());
         Assert.assertEquals(pdp.AddedtoCartMessageText(), "Added!");
@@ -28,12 +28,12 @@ public class AddToCartTests extends BaseTest {
 
     @Test(groups = "smoke" , dataProviderClass = TestDataProvider.class, dataProvider = "productNames")
     public void verifySameProductAddedToCartTest(HashMap<String, Object> input) {
-        navigateTo(Routes.PRODUCTS);
-        ProductListPage plp = new ProductListPage(getDriver());
+        HeaderComponent header = new HeaderComponent(getDriver());
+        ProductListPage plp = header.clickProducts();
         String productNameAdded = plp.addProductToCart(input.get("singleProduct").toString());
         CartPage cart = plp.clickViewCart();
-        String productNameinCart = cart.getProductNameText();
-        Assert.assertEquals(productNameinCart,productNameAdded);
+        String productNameInCart = cart.getProductNameText();
+        Assert.assertEquals(productNameInCart,productNameAdded);
         cart.clearCartItems();
     }
 

@@ -10,7 +10,6 @@ public class HomepageTests extends BaseTest {
     @Test (groups = "smoke")
     public void homePageUpTest() {
         HomePage home = new HomePage(getDriver());
-        boolean isDisplayed = home.isHomePageDisplayed();
-        Assert.assertTrue(isDisplayed);
+        Assert.assertTrue(home.isHomePageDisplayed());
     }
 }

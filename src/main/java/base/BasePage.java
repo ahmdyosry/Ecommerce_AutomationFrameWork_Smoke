@@ -10,6 +10,7 @@ import utils.ConfigReader;
 
 import java.math.BigDecimal;
 import java.time.Duration;
+import java.util.List;
 
 public class BasePage {
 
@@ -19,7 +20,8 @@ public class BasePage {
         this.driver = driver;
     }
 
-    @FindBy(css = ".continue-prompt-text") private WebElement closeAd;
+    @FindBy(id= "dismiss-button") private WebElement closeAdButton;
+    private final By closeAd = By.id("dismiss-button");
 
     public HeaderComponent header() {
         return new HeaderComponent(driver);
@@ -74,19 +76,6 @@ public class BasePage {
                     ExpectedConditions.visibilityOf(element)
             );
 
-            return true;
-
-        } catch (TimeoutException e) {
-            return false;
-        }
-    }
-
-    protected boolean closeAdIfAppears() {
-
-        try {
-            WebElement shortWait = new WebDriverWait(driver, Duration.ofSeconds(2)).until(ExpectedConditions.elementToBeClickable(closeAd));
-
-            closeAd.click();
             return true;
 
         } catch (TimeoutException e) {
