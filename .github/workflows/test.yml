@@ -1,0 +1,45 @@
+name: Selenium Tests
+
+on:
+  push:
+    branches: [ main ]
+  workflow_dispatch:
+
+jobs:
+  test:
+    runs-on: windows-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v6
+
+      - name: Set up Java
+        uses: actions/setup-java@v5
+        with:
+          java-version: '25'
+          distribution: 'temurin'
+          cache: maven
+
+      - name: Run Selenium Tests
+        run: mvn clean test -Psmoke -Dheadless=true -DtrimStackTrace=false -e
+
+      - name: Upload Extent Report
+        if: always()
+        uses: actions/upload-artifact@v6
+        with:
+          name: extent-report
+          path: reports/
+
+      - name: Upload Surefire Reports
+        if: always()
+        uses: actions/upload-artifact@v6
+        with:
+          name: surefire-reports
+          path: target/surefire-reports/
+
+      - name: Upload Log4j Logs
+        if: always()
+        uses: actions/upload-artifact@v6
+        with:
+          name: automation-logs
+          path: logs/
