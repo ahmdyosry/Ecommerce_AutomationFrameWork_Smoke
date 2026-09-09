@@ -35,7 +35,7 @@
 <a href="#"><span class="badge badge-primary">Web Automation Results</span></a>
 </li>
 <li class="m-r-10">
-<a href="#"><span class="badge badge-primary">Sep 9, 2026 11:28:20 PM</span></a>
+<a href="#"><span class="badge badge-primary">Sep 10, 2026 02:33:34 AM</span></a>
 </li>
 </ul>
 </div>
@@ -45,6 +45,11 @@
 <li class="nav-item dropdown" onclick="toggleView('test-view')">
 <a id="nav-test" class="dropdown-toggle" href="#">
 <span class="ico"><i class="fa fa-list"></i></span>
+</a>
+</li>
+<li class="nav-item dropdown" onclick="toggleView('exception-view')">
+<a id="nav-exception" class="dropdown-toggle" href="#">
+<span class="ico"><i class="fa fa-bug"></i></span>
 </a>
 </li>
 <li class="nav-item dropdown" onclick="toggleView('dashboard-view')">
@@ -67,6 +72,8 @@
 <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-exclamation-circle"></i></a>
 <ul id="status-toggle" class="dropdown-menu dropdown-md p-v-0">
 <a class="dropdown-item" status="pass" href="#"><span>Pass</span><span class="status success"></span></a>
+<a class="dropdown-item" status="fail" href="#"><span>Fail</span><span class="status danger"></span></a>
+<a class="dropdown-item" status="skip" href="#"><span>Skip</span><span class="status warning"></span></a>
 <div class="dropdown-divider"></div>
 <a status="clear" class="dropdown-item" href="#"><span>Clear</span><span class="pull-right"><i class="fa fa-close"></i></span></a>
 </ul>
@@ -79,9 +86,9 @@
           tag=""
           device="">
           <div class="test-detail">
-            <p class="name">invalidLoginTest [firefox]</p>
+            <p class="name">validLoginTest [chrome]</p>
             <p class="text-sm">
-              <span>11:28:29 PM</span> / <span>00:00:01:075</span>
+              <span>2:33:44 AM</span> / <span>00:00:12:592</span>
               <span class="badge pass-bg log float-right">Pass</span>
             </p>
           </div>
@@ -89,10 +96,10 @@
 <div class="detail-head">
 <div class="p-v-10">
 <div class="info">
-<h5 class="test-status text-pass">invalidLoginTest [firefox]</h5>
-<span class='badge badge-success'>09.09.2026 11:28:29 PM</span>
-<span class='badge badge-danger'>09.09.2026 11:28:30 PM</span>
-<span class='badge badge-default'>00:00:01:075</span>
+<h5 class="test-status text-pass">validLoginTest [chrome]</h5>
+<span class='badge badge-success'>09.10.2026 2:33:44 AM</span>
+<span class='badge badge-danger'>09.10.2026 2:33:56 AM</span>
+<span class='badge badge-default'>00:00:12:592</span>
 &middot; <span class='uri-anchor badge badge-default'>#test-id=1</span>
 <span title='Skip to the next failed step' class='badge badge-danger pointer float-right ne ml-1'><i class="fa fa-fast-forward"></i></span>
 <span title='Collapse all nodes' class='badge badge-default pointer float-right ct ml-1'><i class="fa fa-compress"></i></span>
@@ -105,7 +112,7 @@
   <tbody>
       <tr class="event-row">
         <td><span class="badge log pass-bg">Pass</span></td>
-        <td>11:28:30 PM</td>
+        <td>2:33:56 AM</td>
         <td>
           Test Passed
         </td>
@@ -120,9 +127,9 @@
           tag=""
           device="">
           <div class="test-detail">
-            <p class="name">validLoginTest [firefox]</p>
+            <p class="name">invalidLoginTest [chrome]</p>
             <p class="text-sm">
-              <span>11:28:32 PM</span> / <span>00:00:07:126</span>
+              <span>2:33:44 AM</span> / <span>00:00:14:453</span>
               <span class="badge pass-bg log float-right">Pass</span>
             </p>
           </div>
@@ -130,10 +137,10 @@
 <div class="detail-head">
 <div class="p-v-10">
 <div class="info">
-<h5 class="test-status text-pass">validLoginTest [firefox]</h5>
-<span class='badge badge-success'>09.09.2026 11:28:32 PM</span>
-<span class='badge badge-danger'>09.09.2026 11:28:39 PM</span>
-<span class='badge badge-default'>00:00:07:126</span>
+<h5 class="test-status text-pass">invalidLoginTest [chrome]</h5>
+<span class='badge badge-success'>09.10.2026 2:33:44 AM</span>
+<span class='badge badge-danger'>09.10.2026 2:33:59 AM</span>
+<span class='badge badge-default'>00:00:14:453</span>
 &middot; <span class='uri-anchor badge badge-default'>#test-id=2</span>
 <span title='Skip to the next failed step' class='badge badge-danger pointer float-right ne ml-1'><i class="fa fa-fast-forward"></i></span>
 <span title='Collapse all nodes' class='badge badge-default pointer float-right ct ml-1'><i class="fa fa-compress"></i></span>
@@ -146,7 +153,7 @@
   <tbody>
       <tr class="event-row">
         <td><span class="badge log pass-bg">Pass</span></td>
-        <td>11:28:39 PM</td>
+        <td>2:33:59 AM</td>
         <td>
           Test Passed
         </td>
@@ -161,9 +168,9 @@
           tag=""
           device="">
           <div class="test-detail">
-            <p class="name">logoutSuccessTest [firefox]</p>
+            <p class="name">logoutSuccessTest [chrome]</p>
             <p class="text-sm">
-              <span>11:28:36 PM</span> / <span>00:00:04:769</span>
+              <span>2:34:12 AM</span> / <span>00:00:24:548</span>
               <span class="badge pass-bg log float-right">Pass</span>
             </p>
           </div>
@@ -171,10 +178,10 @@
 <div class="detail-head">
 <div class="p-v-10">
 <div class="info">
-<h5 class="test-status text-pass">logoutSuccessTest [firefox]</h5>
-<span class='badge badge-success'>09.09.2026 11:28:36 PM</span>
-<span class='badge badge-danger'>09.09.2026 11:28:41 PM</span>
-<span class='badge badge-default'>00:00:04:769</span>
+<h5 class="test-status text-pass">logoutSuccessTest [chrome]</h5>
+<span class='badge badge-success'>09.10.2026 2:34:12 AM</span>
+<span class='badge badge-danger'>09.10.2026 2:34:36 AM</span>
+<span class='badge badge-default'>00:00:24:548</span>
 &middot; <span class='uri-anchor badge badge-default'>#test-id=3</span>
 <span title='Skip to the next failed step' class='badge badge-danger pointer float-right ne ml-1'><i class="fa fa-fast-forward"></i></span>
 <span title='Collapse all nodes' class='badge badge-default pointer float-right ct ml-1'><i class="fa fa-compress"></i></span>
@@ -187,7 +194,7 @@
   <tbody>
       <tr class="event-row">
         <td><span class="badge log pass-bg">Pass</span></td>
-        <td>11:28:41 PM</td>
+        <td>2:34:36 AM</td>
         <td>
           Test Passed
         </td>
@@ -202,9 +209,9 @@
           tag=""
           device="">
           <div class="test-detail">
-            <p class="name">successfulUserRegistration [firefox]</p>
+            <p class="name">successfulUserRegistration [chrome]</p>
             <p class="text-sm">
-              <span>11:28:45 PM</span> / <span>00:00:02:837</span>
+              <span>2:34:20 AM</span> / <span>00:00:20:980</span>
               <span class="badge pass-bg log float-right">Pass</span>
             </p>
           </div>
@@ -212,10 +219,10 @@
 <div class="detail-head">
 <div class="p-v-10">
 <div class="info">
-<h5 class="test-status text-pass">successfulUserRegistration [firefox]</h5>
-<span class='badge badge-success'>09.09.2026 11:28:45 PM</span>
-<span class='badge badge-danger'>09.09.2026 11:28:48 PM</span>
-<span class='badge badge-default'>00:00:02:837</span>
+<h5 class="test-status text-pass">successfulUserRegistration [chrome]</h5>
+<span class='badge badge-success'>09.10.2026 2:34:20 AM</span>
+<span class='badge badge-danger'>09.10.2026 2:34:41 AM</span>
+<span class='badge badge-default'>00:00:20:980</span>
 &middot; <span class='uri-anchor badge badge-default'>#test-id=4</span>
 <span title='Skip to the next failed step' class='badge badge-danger pointer float-right ne ml-1'><i class="fa fa-fast-forward"></i></span>
 <span title='Collapse all nodes' class='badge badge-default pointer float-right ct ml-1'><i class="fa fa-compress"></i></span>
@@ -228,7 +235,7 @@
   <tbody>
       <tr class="event-row">
         <td><span class="badge log pass-bg">Pass</span></td>
-        <td>11:28:48 PM</td>
+        <td>2:34:41 AM</td>
         <td>
           Test Passed
         </td>
@@ -243,9 +250,9 @@
           tag=""
           device="">
           <div class="test-detail">
-            <p class="name">addToCartTest [firefox]</p>
+            <p class="name">addToCartTest [chrome]</p>
             <p class="text-sm">
-              <span>11:28:49 PM</span> / <span>00:00:09:643</span>
+              <span>2:34:52 AM</span> / <span>00:00:39:495</span>
               <span class="badge pass-bg log float-right">Pass</span>
             </p>
           </div>
@@ -253,10 +260,10 @@
 <div class="detail-head">
 <div class="p-v-10">
 <div class="info">
-<h5 class="test-status text-pass">addToCartTest [firefox]</h5>
-<span class='badge badge-success'>09.09.2026 11:28:49 PM</span>
-<span class='badge badge-danger'>09.09.2026 11:28:59 PM</span>
-<span class='badge badge-default'>00:00:09:643</span>
+<h5 class="test-status text-pass">addToCartTest [chrome]</h5>
+<span class='badge badge-success'>09.10.2026 2:34:52 AM</span>
+<span class='badge badge-danger'>09.10.2026 2:35:32 AM</span>
+<span class='badge badge-default'>00:00:39:495</span>
 &middot; <span class='uri-anchor badge badge-default'>#test-id=5</span>
 <span title='Skip to the next failed step' class='badge badge-danger pointer float-right ne ml-1'><i class="fa fa-fast-forward"></i></span>
 <span title='Collapse all nodes' class='badge badge-default pointer float-right ct ml-1'><i class="fa fa-compress"></i></span>
@@ -269,7 +276,7 @@
   <tbody>
       <tr class="event-row">
         <td><span class="badge log pass-bg">Pass</span></td>
-        <td>11:28:59 PM</td>
+        <td>2:35:32 AM</td>
         <td>
           Test Passed
         </td>
@@ -284,9 +291,9 @@
           tag=""
           device="">
           <div class="test-detail">
-            <p class="name">verifyCartQuantityTest [firefox]</p>
+            <p class="name">verifyCartQuantityTest [chrome]</p>
             <p class="text-sm">
-              <span>11:29:01 PM</span> / <span>00:00:08:668</span>
+              <span>2:34:54 AM</span> / <span>00:00:34:340</span>
               <span class="badge pass-bg log float-right">Pass</span>
             </p>
           </div>
@@ -294,10 +301,10 @@
 <div class="detail-head">
 <div class="p-v-10">
 <div class="info">
-<h5 class="test-status text-pass">verifyCartQuantityTest [firefox]</h5>
-<span class='badge badge-success'>09.09.2026 11:29:01 PM</span>
-<span class='badge badge-danger'>09.09.2026 11:29:10 PM</span>
-<span class='badge badge-default'>00:00:08:668</span>
+<h5 class="test-status text-pass">verifyCartQuantityTest [chrome]</h5>
+<span class='badge badge-success'>09.10.2026 2:34:54 AM</span>
+<span class='badge badge-danger'>09.10.2026 2:35:29 AM</span>
+<span class='badge badge-default'>00:00:34:340</span>
 &middot; <span class='uri-anchor badge badge-default'>#test-id=6</span>
 <span title='Skip to the next failed step' class='badge badge-danger pointer float-right ne ml-1'><i class="fa fa-fast-forward"></i></span>
 <span title='Collapse all nodes' class='badge badge-default pointer float-right ct ml-1'><i class="fa fa-compress"></i></span>
@@ -310,7 +317,7 @@
   <tbody>
       <tr class="event-row">
         <td><span class="badge log pass-bg">Pass</span></td>
-        <td>11:29:10 PM</td>
+        <td>2:35:29 AM</td>
         <td>
           Test Passed
         </td>
@@ -325,9 +332,9 @@
           tag=""
           device="">
           <div class="test-detail">
-            <p class="name">verifyCartTotalTest [firefox]</p>
+            <p class="name">verifyCartTotalTest [chrome]</p>
             <p class="text-sm">
-              <span>11:29:11 PM</span> / <span>00:00:28:122</span>
+              <span>2:35:54 AM</span> / <span>00:01:06:880</span>
               <span class="badge pass-bg log float-right">Pass</span>
             </p>
           </div>
@@ -335,10 +342,10 @@
 <div class="detail-head">
 <div class="p-v-10">
 <div class="info">
-<h5 class="test-status text-pass">verifyCartTotalTest [firefox]</h5>
-<span class='badge badge-success'>09.09.2026 11:29:11 PM</span>
-<span class='badge badge-danger'>09.09.2026 11:29:39 PM</span>
-<span class='badge badge-default'>00:00:28:122</span>
+<h5 class="test-status text-pass">verifyCartTotalTest [chrome]</h5>
+<span class='badge badge-success'>09.10.2026 2:35:54 AM</span>
+<span class='badge badge-danger'>09.10.2026 2:37:01 AM</span>
+<span class='badge badge-default'>00:01:06:880</span>
 &middot; <span class='uri-anchor badge badge-default'>#test-id=7</span>
 <span title='Skip to the next failed step' class='badge badge-danger pointer float-right ne ml-1'><i class="fa fa-fast-forward"></i></span>
 <span title='Collapse all nodes' class='badge badge-default pointer float-right ct ml-1'><i class="fa fa-compress"></i></span>
@@ -351,7 +358,7 @@
   <tbody>
       <tr class="event-row">
         <td><span class="badge log pass-bg">Pass</span></td>
-        <td>11:29:39 PM</td>
+        <td>2:37:01 AM</td>
         <td>
           Test Passed
         </td>
@@ -366,9 +373,9 @@
           tag=""
           device="">
           <div class="test-detail">
-            <p class="name">verifySameProductAddedToCartTest [firefox]</p>
+            <p class="name">verifySameProductAddedToCartTest [chrome]</p>
             <p class="text-sm">
-              <span>11:29:18 PM</span> / <span>00:00:10:583</span>
+              <span>2:36:05 AM</span> / <span>00:00:54:531</span>
               <span class="badge pass-bg log float-right">Pass</span>
             </p>
           </div>
@@ -376,10 +383,10 @@
 <div class="detail-head">
 <div class="p-v-10">
 <div class="info">
-<h5 class="test-status text-pass">verifySameProductAddedToCartTest [firefox]</h5>
-<span class='badge badge-success'>09.09.2026 11:29:18 PM</span>
-<span class='badge badge-danger'>09.09.2026 11:29:29 PM</span>
-<span class='badge badge-default'>00:00:10:583</span>
+<h5 class="test-status text-pass">verifySameProductAddedToCartTest [chrome]</h5>
+<span class='badge badge-success'>09.10.2026 2:36:05 AM</span>
+<span class='badge badge-danger'>09.10.2026 2:36:59 AM</span>
+<span class='badge badge-default'>00:00:54:531</span>
 &middot; <span class='uri-anchor badge badge-default'>#test-id=8</span>
 <span title='Skip to the next failed step' class='badge badge-danger pointer float-right ne ml-1'><i class="fa fa-fast-forward"></i></span>
 <span title='Collapse all nodes' class='badge badge-default pointer float-right ct ml-1'><i class="fa fa-compress"></i></span>
@@ -392,7 +399,7 @@
   <tbody>
       <tr class="event-row">
         <td><span class="badge log pass-bg">Pass</span></td>
-        <td>11:29:29 PM</td>
+        <td>2:36:59 AM</td>
         <td>
           Test Passed
         </td>
@@ -407,9 +414,9 @@
           tag=""
           device="">
           <div class="test-detail">
-            <p class="name">removeCartItemsTest [firefox]</p>
+            <p class="name">removeCartItemsTest [chrome]</p>
             <p class="text-sm">
-              <span>11:29:41 PM</span> / <span>00:00:11:890</span>
+              <span>2:37:12 AM</span> / <span>00:00:25:099</span>
               <span class="badge pass-bg log float-right">Pass</span>
             </p>
           </div>
@@ -417,10 +424,10 @@
 <div class="detail-head">
 <div class="p-v-10">
 <div class="info">
-<h5 class="test-status text-pass">removeCartItemsTest [firefox]</h5>
-<span class='badge badge-success'>09.09.2026 11:29:41 PM</span>
-<span class='badge badge-danger'>09.09.2026 11:29:53 PM</span>
-<span class='badge badge-default'>00:00:11:890</span>
+<h5 class="test-status text-pass">removeCartItemsTest [chrome]</h5>
+<span class='badge badge-success'>09.10.2026 2:37:12 AM</span>
+<span class='badge badge-danger'>09.10.2026 2:37:37 AM</span>
+<span class='badge badge-default'>00:00:25:099</span>
 &middot; <span class='uri-anchor badge badge-default'>#test-id=9</span>
 <span title='Skip to the next failed step' class='badge badge-danger pointer float-right ne ml-1'><i class="fa fa-fast-forward"></i></span>
 <span title='Collapse all nodes' class='badge badge-default pointer float-right ct ml-1'><i class="fa fa-compress"></i></span>
@@ -433,7 +440,7 @@
   <tbody>
       <tr class="event-row">
         <td><span class="badge log pass-bg">Pass</span></td>
-        <td>11:29:53 PM</td>
+        <td>2:37:37 AM</td>
         <td>
           Test Passed
         </td>
@@ -448,9 +455,9 @@
           tag=""
           device="">
           <div class="test-detail">
-            <p class="name">navigateFromCartToCheckoutTest [firefox]</p>
+            <p class="name">navigateFromCartToCheckoutTest [chrome]</p>
             <p class="text-sm">
-              <span>11:29:48 PM</span> / <span>00:00:10:552</span>
+              <span>2:37:18 AM</span> / <span>00:00:31:568</span>
               <span class="badge pass-bg log float-right">Pass</span>
             </p>
           </div>
@@ -458,10 +465,10 @@
 <div class="detail-head">
 <div class="p-v-10">
 <div class="info">
-<h5 class="test-status text-pass">navigateFromCartToCheckoutTest [firefox]</h5>
-<span class='badge badge-success'>09.09.2026 11:29:48 PM</span>
-<span class='badge badge-danger'>09.09.2026 11:29:58 PM</span>
-<span class='badge badge-default'>00:00:10:552</span>
+<h5 class="test-status text-pass">navigateFromCartToCheckoutTest [chrome]</h5>
+<span class='badge badge-success'>09.10.2026 2:37:18 AM</span>
+<span class='badge badge-danger'>09.10.2026 2:37:49 AM</span>
+<span class='badge badge-default'>00:00:31:568</span>
 &middot; <span class='uri-anchor badge badge-default'>#test-id=10</span>
 <span title='Skip to the next failed step' class='badge badge-danger pointer float-right ne ml-1'><i class="fa fa-fast-forward"></i></span>
 <span title='Collapse all nodes' class='badge badge-default pointer float-right ct ml-1'><i class="fa fa-compress"></i></span>
@@ -474,7 +481,7 @@
   <tbody>
       <tr class="event-row">
         <td><span class="badge log pass-bg">Pass</span></td>
-        <td>11:29:58 PM</td>
+        <td>2:37:49 AM</td>
         <td>
           Test Passed
         </td>
@@ -484,40 +491,237 @@
 </div>
           </div>
         </li>
-        <li class="test-item"  status="pass" test-id="11"
+        <li class="test-item"  status="fail" test-id="11"
           author=""
           tag=""
           device="">
           <div class="test-detail">
-            <p class="name">verifySuccessPaymentTest [firefox]</p>
+            <p class="name">verifySuccessPaymentTest [chrome]</p>
             <p class="text-sm">
-              <span>11:30:01 PM</span> / <span>00:00:27:449</span>
-              <span class="badge pass-bg log float-right">Pass</span>
+              <span>2:37:49 AM</span> / <span>00:00:48:881</span>
+              <span class="badge fail-bg log float-right">Fail</span>
             </p>
           </div>
           <div class="test-contents d-none">
 <div class="detail-head">
 <div class="p-v-10">
 <div class="info">
-<h5 class="test-status text-pass">verifySuccessPaymentTest [firefox]</h5>
-<span class='badge badge-success'>09.09.2026 11:30:01 PM</span>
-<span class='badge badge-danger'>09.09.2026 11:30:29 PM</span>
-<span class='badge badge-default'>00:00:27:449</span>
+<h5 class="test-status text-fail">verifySuccessPaymentTest [chrome]</h5>
+<span class='badge badge-success'>09.10.2026 2:37:49 AM</span>
+<span class='badge badge-danger'>09.10.2026 2:38:38 AM</span>
+<span class='badge badge-default'>00:00:48:881</span>
 &middot; <span class='uri-anchor badge badge-default'>#test-id=11</span>
 <span title='Skip to the next failed step' class='badge badge-danger pointer float-right ne ml-1'><i class="fa fa-fast-forward"></i></span>
 <span title='Collapse all nodes' class='badge badge-default pointer float-right ct ml-1'><i class="fa fa-compress"></i></span>
 <span title='Expand all nodes' class='badge badge-default pointer float-right et'><i class="fa fa-expand"></i></span>
 </div>
 </div>
-</div><div class="detail-body mt-4">
+</div>    <div class="row mb-3"><div class="col-md-3">
+    
+
+<img data-featherlight='screenshots\verifySuccessPaymentTest_thread_210_1788997118539.png' src="screenshots\verifySuccessPaymentTest_thread_210_1788997118539.png">
+  
+    <div class="title">Failure Screenshot</div>
+
+    </div></div>
+<div class="detail-body mt-4">
 <table class="table table-sm">
   <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
   <tbody>
       <tr class="event-row">
-        <td><span class="badge log pass-bg">Pass</span></td>
-        <td>11:30:29 PM</td>
+        <td><span class="badge log fail-bg">Fail</span></td>
+        <td>2:38:38 AM</td>
         <td>
-          Test Passed
+          <textarea readonly class="code-block">org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"css selector","selector":"#submit"}
+  (Session info: chrome=152.0.7977.83)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#nosuchelementexception
+Build info: version: '4.48.0', revision: '27f5213 27f5213055e28398a5105b7892b7a3bb2012a6ef'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '25.0.1'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [bde28d4f7c543b9ab757f5bd95e3ecd3, findElement {value=submit, using=id}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 152.0.7977.83, chrome: {chromedriverVersion: 152.0.7977.82 (d04cdb24d67b..., userDataDir: C:\Users\ahmed\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:64113}, goog:processID: 30860, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:64113/devtoo..., se:cdpVersion: 152.0.7977.83, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: bde28d4f7c543b9ab757f5bd95e3ecd3
+	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:169)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:143)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:196)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:217)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:175)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:653)
+	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:173)
+	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:67)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:417)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:411)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:565)
+	at org.openqa.selenium.support.ThreadGuard$WebDriverInvocationHandler.invokeUnderlying(ThreadGuard.java:99)
+	at org.openqa.selenium.support.ThreadGuard$WebDriverInvocationHandler.invoke(ThreadGuard.java:91)
+	at jdk.proxy2/jdk.proxy2.$Proxy28.findElement(Unknown Source)
+	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
+	at jdk.proxy2/jdk.proxy2.$Proxy31.getWrappedElement(Unknown Source)
+	at org.openqa.selenium.remote.WebElementToJsonConverter.apply(WebElementToJsonConverter.java:50)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:214)
+	at java.base/java.util.Spliterators$ArraySpliterator.forEachRemaining(Spliterators.java:1024)
+	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:570)
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:560)
+	at java.base/java.util.stream.ReduceOps$ReduceOp.evaluateSequential(ReduceOps.java:921)
+	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:265)
+	at java.base/java.util.stream.ReferencePipeline.collect(ReferencePipeline.java:723)
+	at org.openqa.selenium.remote.RemoteWebDriver.executeScript(RemoteWebDriver.java:580)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:565)
+	at org.openqa.selenium.support.ThreadGuard$WebDriverInvocationHandler.invokeUnderlying(ThreadGuard.java:99)
+	at org.openqa.selenium.support.ThreadGuard$WebDriverInvocationHandler.invoke(ThreadGuard.java:91)
+	at jdk.proxy2/jdk.proxy2.$Proxy28.executeScript(Unknown Source)
+	at base.BasePage.scrollToElement(BasePage.java:143)
+	at pages.PaymentPage.pay(PaymentPage.java:33)
+	at tests.checkout.PaymentTests.verifySuccessPaymentTest(PaymentTests.java:23)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:565)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:697)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+	at org.testng.internal.invokers.TestMethodWithDataProviderMethodWorker.call(TestMethodWithDataProviderMethodWorker.java:81)
+	at org.testng.internal.thread.Async$AsyncTask.run(Async.java:34)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1090)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:614)
+	at java.base/java.lang.Thread.run(Thread.java:1474)
+</textarea>
+          
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log fail-bg">Fail</span></td>
+        <td>2:38:38 AM</td>
+        <td>
+          Browser JS Error: https://automationexercise.com/ - Mixed Content: The page at 'https://automationexercise.com/' was loaded over HTTPS, but requested an insecure stylesheet 'http://fonts.googleapis.com/css?family=Roboto:400,300,400italic,500,700,100'. This request has been blocked; the content must be served over HTTPS.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log fail-bg">Fail</span></td>
+        <td>2:38:38 AM</td>
+        <td>
+          Browser JS Error: https://automationexercise.com/ - Mixed Content: The page at 'https://automationexercise.com/' was loaded over HTTPS, but requested an insecure stylesheet 'http://fonts.googleapis.com/css?family=Open+Sans:400,800,300,600,700'. This request has been blocked; the content must be served over HTTPS.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log fail-bg">Fail</span></td>
+        <td>2:38:38 AM</td>
+        <td>
+          Browser JS Error: https://automationexercise.com/ - Mixed Content: The page at 'https://automationexercise.com/' was loaded over HTTPS, but requested an insecure stylesheet 'http://fonts.googleapis.com/css?family=Abel'. This request has been blocked; the content must be served over HTTPS.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log fail-bg">Fail</span></td>
+        <td>2:38:38 AM</td>
+        <td>
+          Browser JS Error: https://automationexercise.com/login 18 Mixed Content: The page at 'https://automationexercise.com/login' was loaded over HTTPS, but requested an insecure stylesheet 'http://fonts.googleapis.com/css?family=Roboto:400,300,400italic,500,700,100'. This request has been blocked; the content must be served over HTTPS.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log fail-bg">Fail</span></td>
+        <td>2:38:38 AM</td>
+        <td>
+          Browser JS Error: https://automationexercise.com/login 18 Mixed Content: The page at 'https://automationexercise.com/login' was loaded over HTTPS, but requested an insecure stylesheet 'http://fonts.googleapis.com/css?family=Open+Sans:400,800,300,600,700'. This request has been blocked; the content must be served over HTTPS.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log fail-bg">Fail</span></td>
+        <td>2:38:38 AM</td>
+        <td>
+          Browser JS Error: https://automationexercise.com/login 18 Mixed Content: The page at 'https://automationexercise.com/login' was loaded over HTTPS, but requested an insecure stylesheet 'http://fonts.googleapis.com/css?family=Abel'. This request has been blocked; the content must be served over HTTPS.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log fail-bg">Fail</span></td>
+        <td>2:38:38 AM</td>
+        <td>
+          Browser JS Error: https://automationexercise.com/ 18 Mixed Content: The page at 'https://automationexercise.com/' was loaded over HTTPS, but requested an insecure stylesheet 'http://fonts.googleapis.com/css?family=Roboto:400,300,400italic,500,700,100'. This request has been blocked; the content must be served over HTTPS.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log fail-bg">Fail</span></td>
+        <td>2:38:38 AM</td>
+        <td>
+          Browser JS Error: https://automationexercise.com/ 18 Mixed Content: The page at 'https://automationexercise.com/' was loaded over HTTPS, but requested an insecure stylesheet 'http://fonts.googleapis.com/css?family=Open+Sans:400,800,300,600,700'. This request has been blocked; the content must be served over HTTPS.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log fail-bg">Fail</span></td>
+        <td>2:38:38 AM</td>
+        <td>
+          Browser JS Error: https://automationexercise.com/ 18 Mixed Content: The page at 'https://automationexercise.com/' was loaded over HTTPS, but requested an insecure stylesheet 'http://fonts.googleapis.com/css?family=Abel'. This request has been blocked; the content must be served over HTTPS.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log fail-bg">Fail</span></td>
+        <td>2:38:38 AM</td>
+        <td>
+          Browser JS Error: https://automationexercise.com/products 18 Mixed Content: The page at 'https://automationexercise.com/products' was loaded over HTTPS, but requested an insecure stylesheet 'http://fonts.googleapis.com/css?family=Roboto:400,300,400italic,500,700,100'. This request has been blocked; the content must be served over HTTPS.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log fail-bg">Fail</span></td>
+        <td>2:38:38 AM</td>
+        <td>
+          Browser JS Error: https://automationexercise.com/products 18 Mixed Content: The page at 'https://automationexercise.com/products' was loaded over HTTPS, but requested an insecure stylesheet 'http://fonts.googleapis.com/css?family=Open+Sans:400,800,300,600,700'. This request has been blocked; the content must be served over HTTPS.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log fail-bg">Fail</span></td>
+        <td>2:38:38 AM</td>
+        <td>
+          Browser JS Error: https://automationexercise.com/products 18 Mixed Content: The page at 'https://automationexercise.com/products' was loaded over HTTPS, but requested an insecure stylesheet 'http://fonts.googleapis.com/css?family=Abel'. This request has been blocked; the content must be served over HTTPS.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log fail-bg">Fail</span></td>
+        <td>2:38:38 AM</td>
+        <td>
+          Browser JS Error: https://automationexercise.com/view_cart 18 Mixed Content: The page at 'https://automationexercise.com/view_cart' was loaded over HTTPS, but requested an insecure stylesheet 'http://fonts.googleapis.com/css?family=Roboto:400,300,400italic,500,700,100'. This request has been blocked; the content must be served over HTTPS.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log fail-bg">Fail</span></td>
+        <td>2:38:38 AM</td>
+        <td>
+          Browser JS Error: https://automationexercise.com/view_cart 18 Mixed Content: The page at 'https://automationexercise.com/view_cart' was loaded over HTTPS, but requested an insecure stylesheet 'http://fonts.googleapis.com/css?family=Open+Sans:400,800,300,600,700'. This request has been blocked; the content must be served over HTTPS.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log fail-bg">Fail</span></td>
+        <td>2:38:38 AM</td>
+        <td>
+          Browser JS Error: https://automationexercise.com/view_cart 18 Mixed Content: The page at 'https://automationexercise.com/view_cart' was loaded over HTTPS, but requested an insecure stylesheet 'http://fonts.googleapis.com/css?family=Abel'. This request has been blocked; the content must be served over HTTPS.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log fail-bg">Fail</span></td>
+        <td>2:38:38 AM</td>
+        <td>
+          Browser JS Error: https://automationexercise.com/checkout 18 Mixed Content: The page at 'https://automationexercise.com/checkout' was loaded over HTTPS, but requested an insecure stylesheet 'http://fonts.googleapis.com/css?family=Roboto:400,300,400italic,500,700,100'. This request has been blocked; the content must be served over HTTPS.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log fail-bg">Fail</span></td>
+        <td>2:38:38 AM</td>
+        <td>
+          Browser JS Error: https://automationexercise.com/checkout 18 Mixed Content: The page at 'https://automationexercise.com/checkout' was loaded over HTTPS, but requested an insecure stylesheet 'http://fonts.googleapis.com/css?family=Open+Sans:400,800,300,600,700'. This request has been blocked; the content must be served over HTTPS.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log fail-bg">Fail</span></td>
+        <td>2:38:38 AM</td>
+        <td>
+          Browser JS Error: https://automationexercise.com/checkout 18 Mixed Content: The page at 'https://automationexercise.com/checkout' was loaded over HTTPS, but requested an insecure stylesheet 'http://fonts.googleapis.com/css?family=Abel'. This request has been blocked; the content must be served over HTTPS.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log fail-bg">Fail</span></td>
+        <td>2:38:38 AM</td>
+        <td>
+          Browser JS Error: https://automationexercise.com/checkout - Refused to apply style from 'https://automationexercise.com/static/css/cart_checkout.css' because its MIME type ('text/html') is not a supported stylesheet MIME type, and strict MIME checking is enabled.
         </td>
       </tr>
   </tbody>
@@ -525,25 +729,25 @@
 </div>
           </div>
         </li>
-        <li class="test-item"  status="pass" test-id="12"
+        <li class="test-item"  status="skip" test-id="12"
           author=""
           tag=""
           device="">
           <div class="test-detail">
-            <p class="name">verifyShippingAddressDisplayTest [firefox]</p>
+            <p class="name">verifyShippingAddressDisplayTest [chrome]</p>
             <p class="text-sm">
-              <span>11:30:11 PM</span> / <span>00:00:11:628</span>
-              <span class="badge pass-bg log float-right">Pass</span>
+              <span>2:37:59 AM</span> / <span>00:00:27:014</span>
+              <span class="badge skip-bg log float-right">Skip</span>
             </p>
           </div>
           <div class="test-contents d-none">
 <div class="detail-head">
 <div class="p-v-10">
 <div class="info">
-<h5 class="test-status text-pass">verifyShippingAddressDisplayTest [firefox]</h5>
-<span class='badge badge-success'>09.09.2026 11:30:11 PM</span>
-<span class='badge badge-danger'>09.09.2026 11:30:23 PM</span>
-<span class='badge badge-default'>00:00:11:628</span>
+<h5 class="test-status text-skip">verifyShippingAddressDisplayTest [chrome]</h5>
+<span class='badge badge-success'>09.10.2026 2:37:59 AM</span>
+<span class='badge badge-danger'>09.10.2026 2:38:26 AM</span>
+<span class='badge badge-default'>00:00:27:014</span>
 &middot; <span class='uri-anchor badge badge-default'>#test-id=12</span>
 <span title='Skip to the next failed step' class='badge badge-danger pointer float-right ne ml-1'><i class="fa fa-fast-forward"></i></span>
 <span title='Collapse all nodes' class='badge badge-default pointer float-right ct ml-1'><i class="fa fa-compress"></i></span>
@@ -555,10 +759,10 @@
   <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
   <tbody>
       <tr class="event-row">
-        <td><span class="badge log pass-bg">Pass</span></td>
-        <td>11:30:23 PM</td>
+        <td><span class="badge log skip-bg">Skip</span></td>
+        <td>2:38:26 AM</td>
         <td>
-          Test Passed
+          Test Skipped
         </td>
       </tr>
   </tbody>
@@ -566,40 +770,164 @@
 </div>
           </div>
         </li>
-        <li class="test-item"  status="pass" test-id="13"
+        <li class="test-item"  status="fail" test-id="13"
           author=""
           tag=""
           device="">
           <div class="test-detail">
-            <p class="name">homePageUpTest [firefox]</p>
+            <p class="name">verifyShippingAddressDisplayTest [chrome]</p>
             <p class="text-sm">
-              <span>11:30:33 PM</span> / <span>00:00:00:073</span>
-              <span class="badge pass-bg log float-right">Pass</span>
+              <span>2:38:34 AM</span> / <span>00:00:37:645</span>
+              <span class="badge fail-bg log float-right">Fail</span>
             </p>
           </div>
           <div class="test-contents d-none">
 <div class="detail-head">
 <div class="p-v-10">
 <div class="info">
-<h5 class="test-status text-pass">homePageUpTest [firefox]</h5>
-<span class='badge badge-success'>09.09.2026 11:30:33 PM</span>
-<span class='badge badge-danger'>09.09.2026 11:30:33 PM</span>
-<span class='badge badge-default'>00:00:00:073</span>
+<h5 class="test-status text-fail">verifyShippingAddressDisplayTest [chrome]</h5>
+<span class='badge badge-success'>09.10.2026 2:38:34 AM</span>
+<span class='badge badge-danger'>09.10.2026 2:39:11 AM</span>
+<span class='badge badge-default'>00:00:37:645</span>
 &middot; <span class='uri-anchor badge badge-default'>#test-id=13</span>
 <span title='Skip to the next failed step' class='badge badge-danger pointer float-right ne ml-1'><i class="fa fa-fast-forward"></i></span>
 <span title='Collapse all nodes' class='badge badge-default pointer float-right ct ml-1'><i class="fa fa-compress"></i></span>
 <span title='Expand all nodes' class='badge badge-default pointer float-right et'><i class="fa fa-expand"></i></span>
 </div>
 </div>
-</div><div class="detail-body mt-4">
+</div>    <div class="row mb-3"><div class="col-md-3">
+    
+
+<img data-featherlight='screenshots\verifyShippingAddressDisplayTest_thread_225_1788997151250.png' src="screenshots\verifyShippingAddressDisplayTest_thread_225_1788997151250.png">
+  
+    <div class="title">Failure Screenshot</div>
+
+    </div></div>
+<div class="detail-body mt-4">
 <table class="table table-sm">
   <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
   <tbody>
       <tr class="event-row">
-        <td><span class="badge log pass-bg">Pass</span></td>
-        <td>11:30:33 PM</td>
+        <td><span class="badge log fail-bg">Fail</span></td>
+        <td>2:39:11 AM</td>
         <td>
-          Test Passed
+          <textarea readonly class="code-block">org.openqa.selenium.ElementClickInterceptedException: element click intercepted: Element <a data-product-id="1" class="btn btn-default add-to-cart">...</a> is not clickable at point (500, 345). Other element would receive the click: <a data-product-id="1" class="btn btn-default add-to-cart">...</a>
+  (Session info: chrome=152.0.7977.83)
+Build info: version: '4.48.0', revision: '27f5213 27f5213055e28398a5105b7892b7a3bb2012a6ef'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '25.0.1'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [3ff1033c10a749158da7bfe93675c0f2, clickElement {id=f.C1370B26262978CBAB64D3B6E88482F0.d.E60AA067B271248E4A0FDC4E48B5DDDA.e.4577}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 152.0.7977.83, chrome: {chromedriverVersion: 152.0.7977.82 (d04cdb24d67b..., userDataDir: C:\Users\ahmed\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:59901}, goog:processID: 1012, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:59901/devtoo..., se:cdpVersion: 152.0.7977.83, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Element: [[[[ChromeDriver: chrome on windows (3ff1033c10a749158da7bfe93675c0f2)] -> xpath: //div[@class='productinfo text-center']/p]] -> xpath: ../a]
+Session ID: 3ff1033c10a749158da7bfe93675c0f2
+	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:169)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:143)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:196)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:217)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:175)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:653)
+	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:225)
+	at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:79)
+	at base.BasePage.clickOn(BasePage.java:119)
+	at pages.ProductListPage.addProductToCart(ProductListPage.java:70)
+	at tests.checkout.ShippingTests.verifyShippingAddressDisplayTest(ShippingTests.java:22)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:565)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:697)
+	at org.testng.internal.invokers.TestInvoker.retryFailed(TestInvoker.java:280)
+	at org.testng.internal.invokers.TestMethodWithDataProviderMethodWorker.call(TestMethodWithDataProviderMethodWorker.java:105)
+	at org.testng.internal.thread.Async$AsyncTask.run(Async.java:34)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1090)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:614)
+	at java.base/java.lang.Thread.run(Thread.java:1474)
+</textarea>
+          
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log fail-bg">Fail</span></td>
+        <td>2:39:11 AM</td>
+        <td>
+          Browser JS Error: https://automationexercise.com/ - Mixed Content: The page at 'https://automationexercise.com/' was loaded over HTTPS, but requested an insecure stylesheet 'http://fonts.googleapis.com/css?family=Roboto:400,300,400italic,500,700,100'. This request has been blocked; the content must be served over HTTPS.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log fail-bg">Fail</span></td>
+        <td>2:39:11 AM</td>
+        <td>
+          Browser JS Error: https://automationexercise.com/ - Mixed Content: The page at 'https://automationexercise.com/' was loaded over HTTPS, but requested an insecure stylesheet 'http://fonts.googleapis.com/css?family=Open+Sans:400,800,300,600,700'. This request has been blocked; the content must be served over HTTPS.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log fail-bg">Fail</span></td>
+        <td>2:39:11 AM</td>
+        <td>
+          Browser JS Error: https://automationexercise.com/ - Mixed Content: The page at 'https://automationexercise.com/' was loaded over HTTPS, but requested an insecure stylesheet 'http://fonts.googleapis.com/css?family=Abel'. This request has been blocked; the content must be served over HTTPS.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log fail-bg">Fail</span></td>
+        <td>2:39:11 AM</td>
+        <td>
+          Browser JS Error: https://automationexercise.com/login 18 Mixed Content: The page at 'https://automationexercise.com/login' was loaded over HTTPS, but requested an insecure stylesheet 'http://fonts.googleapis.com/css?family=Roboto:400,300,400italic,500,700,100'. This request has been blocked; the content must be served over HTTPS.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log fail-bg">Fail</span></td>
+        <td>2:39:11 AM</td>
+        <td>
+          Browser JS Error: https://automationexercise.com/login 18 Mixed Content: The page at 'https://automationexercise.com/login' was loaded over HTTPS, but requested an insecure stylesheet 'http://fonts.googleapis.com/css?family=Open+Sans:400,800,300,600,700'. This request has been blocked; the content must be served over HTTPS.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log fail-bg">Fail</span></td>
+        <td>2:39:11 AM</td>
+        <td>
+          Browser JS Error: https://automationexercise.com/login 18 Mixed Content: The page at 'https://automationexercise.com/login' was loaded over HTTPS, but requested an insecure stylesheet 'http://fonts.googleapis.com/css?family=Abel'. This request has been blocked; the content must be served over HTTPS.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log fail-bg">Fail</span></td>
+        <td>2:39:11 AM</td>
+        <td>
+          Browser JS Error: https://automationexercise.com/ 18 Mixed Content: The page at 'https://automationexercise.com/' was loaded over HTTPS, but requested an insecure stylesheet 'http://fonts.googleapis.com/css?family=Roboto:400,300,400italic,500,700,100'. This request has been blocked; the content must be served over HTTPS.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log fail-bg">Fail</span></td>
+        <td>2:39:11 AM</td>
+        <td>
+          Browser JS Error: https://automationexercise.com/ 18 Mixed Content: The page at 'https://automationexercise.com/' was loaded over HTTPS, but requested an insecure stylesheet 'http://fonts.googleapis.com/css?family=Open+Sans:400,800,300,600,700'. This request has been blocked; the content must be served over HTTPS.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log fail-bg">Fail</span></td>
+        <td>2:39:11 AM</td>
+        <td>
+          Browser JS Error: https://automationexercise.com/ 18 Mixed Content: The page at 'https://automationexercise.com/' was loaded over HTTPS, but requested an insecure stylesheet 'http://fonts.googleapis.com/css?family=Abel'. This request has been blocked; the content must be served over HTTPS.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log fail-bg">Fail</span></td>
+        <td>2:39:11 AM</td>
+        <td>
+          Browser JS Error: https://automationexercise.com/products 18 Mixed Content: The page at 'https://automationexercise.com/products' was loaded over HTTPS, but requested an insecure stylesheet 'http://fonts.googleapis.com/css?family=Roboto:400,300,400italic,500,700,100'. This request has been blocked; the content must be served over HTTPS.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log fail-bg">Fail</span></td>
+        <td>2:39:11 AM</td>
+        <td>
+          Browser JS Error: https://automationexercise.com/products 18 Mixed Content: The page at 'https://automationexercise.com/products' was loaded over HTTPS, but requested an insecure stylesheet 'http://fonts.googleapis.com/css?family=Open+Sans:400,800,300,600,700'. This request has been blocked; the content must be served over HTTPS.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log fail-bg">Fail</span></td>
+        <td>2:39:11 AM</td>
+        <td>
+          Browser JS Error: https://automationexercise.com/products 18 Mixed Content: The page at 'https://automationexercise.com/products' was loaded over HTTPS, but requested an insecure stylesheet 'http://fonts.googleapis.com/css?family=Abel'. This request has been blocked; the content must be served over HTTPS.
         </td>
       </tr>
   </tbody>
@@ -607,40 +935,164 @@
 </div>
           </div>
         </li>
-        <li class="test-item"  status="pass" test-id="14"
+        <li class="test-item"  status="fail" test-id="14"
           author=""
           tag=""
           device="">
           <div class="test-detail">
-            <p class="name">verifyProductNameAndPriceTest [firefox]</p>
+            <p class="name">purchaseFlowE2eTest [chrome]</p>
             <p class="text-sm">
-              <span>11:30:35 PM</span> / <span>00:00:03:760</span>
-              <span class="badge pass-bg log float-right">Pass</span>
+              <span>2:38:54 AM</span> / <span>00:00:32:658</span>
+              <span class="badge fail-bg log float-right">Fail</span>
             </p>
           </div>
           <div class="test-contents d-none">
 <div class="detail-head">
 <div class="p-v-10">
 <div class="info">
-<h5 class="test-status text-pass">verifyProductNameAndPriceTest [firefox]</h5>
-<span class='badge badge-success'>09.09.2026 11:30:35 PM</span>
-<span class='badge badge-danger'>09.09.2026 11:30:38 PM</span>
-<span class='badge badge-default'>00:00:03:760</span>
+<h5 class="test-status text-fail">purchaseFlowE2eTest [chrome]</h5>
+<span class='badge badge-success'>09.10.2026 2:38:54 AM</span>
+<span class='badge badge-danger'>09.10.2026 2:39:26 AM</span>
+<span class='badge badge-default'>00:00:32:658</span>
 &middot; <span class='uri-anchor badge badge-default'>#test-id=14</span>
 <span title='Skip to the next failed step' class='badge badge-danger pointer float-right ne ml-1'><i class="fa fa-fast-forward"></i></span>
 <span title='Collapse all nodes' class='badge badge-default pointer float-right ct ml-1'><i class="fa fa-compress"></i></span>
 <span title='Expand all nodes' class='badge badge-default pointer float-right et'><i class="fa fa-expand"></i></span>
 </div>
 </div>
-</div><div class="detail-body mt-4">
+</div>    <div class="row mb-3"><div class="col-md-3">
+    
+
+<img data-featherlight='screenshots\purchaseFlowE2eTest_thread_251_1788997166406.png' src="screenshots\purchaseFlowE2eTest_thread_251_1788997166406.png">
+  
+    <div class="title">Failure Screenshot</div>
+
+    </div></div>
+<div class="detail-body mt-4">
 <table class="table table-sm">
   <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
   <tbody>
       <tr class="event-row">
-        <td><span class="badge log pass-bg">Pass</span></td>
-        <td>11:30:38 PM</td>
+        <td><span class="badge log fail-bg">Fail</span></td>
+        <td>2:39:26 AM</td>
         <td>
-          Test Passed
+          <textarea readonly class="code-block">org.openqa.selenium.ElementClickInterceptedException: element click intercepted: Element <a data-product-id="1" class="btn btn-default add-to-cart">...</a> is not clickable at point (500, 345). Other element would receive the click: <a data-product-id="1" class="btn btn-default add-to-cart">...</a>
+  (Session info: chrome=152.0.7977.83)
+Build info: version: '4.48.0', revision: '27f5213 27f5213055e28398a5105b7892b7a3bb2012a6ef'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '25.0.1'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [9853d212b53ae08ba1a517845fdda1bd, clickElement {id=f.698F58BA31BC20ABD30F1CE753167247.d.107ADCDE99DFAB1379EE5BA32F44D3BE.e.3272}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 152.0.7977.83, chrome: {chromedriverVersion: 152.0.7977.82 (d04cdb24d67b..., userDataDir: C:\Users\ahmed\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:63265}, goog:processID: 30560, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:63265/devtoo..., se:cdpVersion: 152.0.7977.83, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Element: [[[[ChromeDriver: chrome on windows (9853d212b53ae08ba1a517845fdda1bd)] -> xpath: //div[@class='productinfo text-center']/p]] -> xpath: ../a]
+Session ID: 9853d212b53ae08ba1a517845fdda1bd
+	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:169)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:143)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:196)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:217)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:175)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:653)
+	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:225)
+	at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:79)
+	at base.BasePage.clickOn(BasePage.java:119)
+	at pages.ProductListPage.addProductToCart(ProductListPage.java:70)
+	at tests.e2e.PurchaseFlowE2eTest.purchaseFlowE2eTest(PurchaseFlowE2eTest.java:22)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:565)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:697)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+	at org.testng.internal.invokers.TestMethodWithDataProviderMethodWorker.call(TestMethodWithDataProviderMethodWorker.java:81)
+	at org.testng.internal.thread.Async$AsyncTask.run(Async.java:34)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1090)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:614)
+	at java.base/java.lang.Thread.run(Thread.java:1474)
+</textarea>
+          
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log fail-bg">Fail</span></td>
+        <td>2:39:26 AM</td>
+        <td>
+          Browser JS Error: https://automationexercise.com/ - Mixed Content: The page at 'https://automationexercise.com/' was loaded over HTTPS, but requested an insecure stylesheet 'http://fonts.googleapis.com/css?family=Roboto:400,300,400italic,500,700,100'. This request has been blocked; the content must be served over HTTPS.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log fail-bg">Fail</span></td>
+        <td>2:39:26 AM</td>
+        <td>
+          Browser JS Error: https://automationexercise.com/ - Mixed Content: The page at 'https://automationexercise.com/' was loaded over HTTPS, but requested an insecure stylesheet 'http://fonts.googleapis.com/css?family=Open+Sans:400,800,300,600,700'. This request has been blocked; the content must be served over HTTPS.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log fail-bg">Fail</span></td>
+        <td>2:39:26 AM</td>
+        <td>
+          Browser JS Error: https://automationexercise.com/ - Mixed Content: The page at 'https://automationexercise.com/' was loaded over HTTPS, but requested an insecure stylesheet 'http://fonts.googleapis.com/css?family=Abel'. This request has been blocked; the content must be served over HTTPS.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log fail-bg">Fail</span></td>
+        <td>2:39:26 AM</td>
+        <td>
+          Browser JS Error: https://automationexercise.com/login 18 Mixed Content: The page at 'https://automationexercise.com/login' was loaded over HTTPS, but requested an insecure stylesheet 'http://fonts.googleapis.com/css?family=Roboto:400,300,400italic,500,700,100'. This request has been blocked; the content must be served over HTTPS.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log fail-bg">Fail</span></td>
+        <td>2:39:26 AM</td>
+        <td>
+          Browser JS Error: https://automationexercise.com/login 18 Mixed Content: The page at 'https://automationexercise.com/login' was loaded over HTTPS, but requested an insecure stylesheet 'http://fonts.googleapis.com/css?family=Open+Sans:400,800,300,600,700'. This request has been blocked; the content must be served over HTTPS.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log fail-bg">Fail</span></td>
+        <td>2:39:26 AM</td>
+        <td>
+          Browser JS Error: https://automationexercise.com/login 18 Mixed Content: The page at 'https://automationexercise.com/login' was loaded over HTTPS, but requested an insecure stylesheet 'http://fonts.googleapis.com/css?family=Abel'. This request has been blocked; the content must be served over HTTPS.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log fail-bg">Fail</span></td>
+        <td>2:39:26 AM</td>
+        <td>
+          Browser JS Error: https://automationexercise.com/ 18 Mixed Content: The page at 'https://automationexercise.com/' was loaded over HTTPS, but requested an insecure stylesheet 'http://fonts.googleapis.com/css?family=Roboto:400,300,400italic,500,700,100'. This request has been blocked; the content must be served over HTTPS.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log fail-bg">Fail</span></td>
+        <td>2:39:26 AM</td>
+        <td>
+          Browser JS Error: https://automationexercise.com/ 18 Mixed Content: The page at 'https://automationexercise.com/' was loaded over HTTPS, but requested an insecure stylesheet 'http://fonts.googleapis.com/css?family=Open+Sans:400,800,300,600,700'. This request has been blocked; the content must be served over HTTPS.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log fail-bg">Fail</span></td>
+        <td>2:39:26 AM</td>
+        <td>
+          Browser JS Error: https://automationexercise.com/ 18 Mixed Content: The page at 'https://automationexercise.com/' was loaded over HTTPS, but requested an insecure stylesheet 'http://fonts.googleapis.com/css?family=Abel'. This request has been blocked; the content must be served over HTTPS.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log fail-bg">Fail</span></td>
+        <td>2:39:26 AM</td>
+        <td>
+          Browser JS Error: https://automationexercise.com/products 18 Mixed Content: The page at 'https://automationexercise.com/products' was loaded over HTTPS, but requested an insecure stylesheet 'http://fonts.googleapis.com/css?family=Roboto:400,300,400italic,500,700,100'. This request has been blocked; the content must be served over HTTPS.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log fail-bg">Fail</span></td>
+        <td>2:39:26 AM</td>
+        <td>
+          Browser JS Error: https://automationexercise.com/products 18 Mixed Content: The page at 'https://automationexercise.com/products' was loaded over HTTPS, but requested an insecure stylesheet 'http://fonts.googleapis.com/css?family=Open+Sans:400,800,300,600,700'. This request has been blocked; the content must be served over HTTPS.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log fail-bg">Fail</span></td>
+        <td>2:39:26 AM</td>
+        <td>
+          Browser JS Error: https://automationexercise.com/products 18 Mixed Content: The page at 'https://automationexercise.com/products' was loaded over HTTPS, but requested an insecure stylesheet 'http://fonts.googleapis.com/css?family=Abel'. This request has been blocked; the content must be served over HTTPS.
         </td>
       </tr>
   </tbody>
@@ -653,9 +1105,9 @@
           tag=""
           device="">
           <div class="test-detail">
-            <p class="name">categoryNavigationTest [firefox]</p>
+            <p class="name">homePageUpTest [chrome]</p>
             <p class="text-sm">
-              <span>11:30:41 PM</span> / <span>00:00:02:634</span>
+              <span>2:39:30 AM</span> / <span>00:00:00:363</span>
               <span class="badge pass-bg log float-right">Pass</span>
             </p>
           </div>
@@ -663,10 +1115,10 @@
 <div class="detail-head">
 <div class="p-v-10">
 <div class="info">
-<h5 class="test-status text-pass">categoryNavigationTest [firefox]</h5>
-<span class='badge badge-success'>09.09.2026 11:30:41 PM</span>
-<span class='badge badge-danger'>09.09.2026 11:30:43 PM</span>
-<span class='badge badge-default'>00:00:02:634</span>
+<h5 class="test-status text-pass">homePageUpTest [chrome]</h5>
+<span class='badge badge-success'>09.10.2026 2:39:30 AM</span>
+<span class='badge badge-danger'>09.10.2026 2:39:30 AM</span>
+<span class='badge badge-default'>00:00:00:363</span>
 &middot; <span class='uri-anchor badge badge-default'>#test-id=15</span>
 <span title='Skip to the next failed step' class='badge badge-danger pointer float-right ne ml-1'><i class="fa fa-fast-forward"></i></span>
 <span title='Collapse all nodes' class='badge badge-default pointer float-right ct ml-1'><i class="fa fa-compress"></i></span>
@@ -679,7 +1131,7 @@
   <tbody>
       <tr class="event-row">
         <td><span class="badge log pass-bg">Pass</span></td>
-        <td>11:30:43 PM</td>
+        <td>2:39:30 AM</td>
         <td>
           Test Passed
         </td>
@@ -694,9 +1146,9 @@
           tag=""
           device="">
           <div class="test-detail">
-            <p class="name">searchForProductTest [firefox]</p>
+            <p class="name">verifyProductNameAndPriceTest [chrome]</p>
             <p class="text-sm">
-              <span>11:30:46 PM</span> / <span>00:00:05:553</span>
+              <span>2:39:47 AM</span> / <span>00:00:35:902</span>
               <span class="badge pass-bg log float-right">Pass</span>
             </p>
           </div>
@@ -704,10 +1156,10 @@
 <div class="detail-head">
 <div class="p-v-10">
 <div class="info">
-<h5 class="test-status text-pass">searchForProductTest [firefox]</h5>
-<span class='badge badge-success'>09.09.2026 11:30:46 PM</span>
-<span class='badge badge-danger'>09.09.2026 11:30:52 PM</span>
-<span class='badge badge-default'>00:00:05:553</span>
+<h5 class="test-status text-pass">verifyProductNameAndPriceTest [chrome]</h5>
+<span class='badge badge-success'>09.10.2026 2:39:47 AM</span>
+<span class='badge badge-danger'>09.10.2026 2:40:23 AM</span>
+<span class='badge badge-default'>00:00:35:902</span>
 &middot; <span class='uri-anchor badge badge-default'>#test-id=16</span>
 <span title='Skip to the next failed step' class='badge badge-danger pointer float-right ne ml-1'><i class="fa fa-fast-forward"></i></span>
 <span title='Collapse all nodes' class='badge badge-default pointer float-right ct ml-1'><i class="fa fa-compress"></i></span>
@@ -720,9 +1172,326 @@
   <tbody>
       <tr class="event-row">
         <td><span class="badge log pass-bg">Pass</span></td>
-        <td>11:30:52 PM</td>
+        <td>2:40:23 AM</td>
         <td>
           Test Passed
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="skip" test-id="17"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">categoryNavigationTest [chrome]</p>
+            <p class="text-sm">
+              <span>2:40:00 AM</span> / <span>00:00:08:623</span>
+              <span class="badge skip-bg log float-right">Skip</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-skip">categoryNavigationTest [chrome]</h5>
+<span class='badge badge-success'>09.10.2026 2:40:00 AM</span>
+<span class='badge badge-danger'>09.10.2026 2:40:09 AM</span>
+<span class='badge badge-default'>00:00:08:623</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=17</span>
+<span title='Skip to the next failed step' class='badge badge-danger pointer float-right ne ml-1'><i class="fa fa-fast-forward"></i></span>
+<span title='Collapse all nodes' class='badge badge-default pointer float-right ct ml-1'><i class="fa fa-compress"></i></span>
+<span title='Expand all nodes' class='badge badge-default pointer float-right et'><i class="fa fa-expand"></i></span>
+</div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log skip-bg">Skip</span></td>
+        <td>2:40:09 AM</td>
+        <td>
+          Test Skipped
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="fail" test-id="18"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">categoryNavigationTest [chrome]</p>
+            <p class="text-sm">
+              <span>2:40:13 AM</span> / <span>00:00:27:562</span>
+              <span class="badge fail-bg log float-right">Fail</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-fail">categoryNavigationTest [chrome]</h5>
+<span class='badge badge-success'>09.10.2026 2:40:13 AM</span>
+<span class='badge badge-danger'>09.10.2026 2:40:40 AM</span>
+<span class='badge badge-default'>00:00:27:562</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=18</span>
+<span title='Skip to the next failed step' class='badge badge-danger pointer float-right ne ml-1'><i class="fa fa-fast-forward"></i></span>
+<span title='Collapse all nodes' class='badge badge-default pointer float-right ct ml-1'><i class="fa fa-compress"></i></span>
+<span title='Expand all nodes' class='badge badge-default pointer float-right et'><i class="fa fa-expand"></i></span>
+</div>
+</div>
+</div>    <div class="row mb-3"><div class="col-md-3">
+    
+
+<img data-featherlight='screenshots\categoryNavigationTest_thread_65_1788997240436.png' src="screenshots\categoryNavigationTest_thread_65_1788997240436.png">
+  
+    <div class="title">Failure Screenshot</div>
+
+    </div></div>
+<div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log fail-bg">Fail</span></td>
+        <td>2:40:40 AM</td>
+        <td>
+          <textarea readonly class="code-block">org.openqa.selenium.TimeoutException: Expected condition failed: waiting for element to be clickable, but the element was not visible.
+(tried for 10 seconds with 500 milliseconds interval)
+Build info: version: '4.48.0', revision: '27f5213 27f5213055e28398a5105b7892b7a3bb2012a6ef'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '25.0.1'
+Driver info: jdk.proxy2.$Proxy28
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:85)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:234)
+	at base.BasePage.waitToBeClickable(BasePage.java:52)
+	at base.BasePage.clickOn(BasePage.java:118)
+	at pages.HomePage.navigateToMenTshirtsCategory(HomePage.java:58)
+	at tests.products.ProductListingTests.categoryNavigationTest(ProductListingTests.java:15)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:565)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:697)
+	at org.testng.internal.invokers.TestInvoker.retryFailed(TestInvoker.java:280)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:76)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:1005)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:545)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:328)
+	at org.testng.internal.thread.graph.TestNGFutureTask.run(TestNGFutureTask.java:22)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1090)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:614)
+	at java.base/java.lang.Thread.run(Thread.java:1474)
+</textarea>
+          
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log fail-bg">Fail</span></td>
+        <td>2:40:40 AM</td>
+        <td>
+          Browser JS Error: https://automationexercise.com/ - Mixed Content: The page at 'https://automationexercise.com/' was loaded over HTTPS, but requested an insecure stylesheet 'http://fonts.googleapis.com/css?family=Roboto:400,300,400italic,500,700,100'. This request has been blocked; the content must be served over HTTPS.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log fail-bg">Fail</span></td>
+        <td>2:40:40 AM</td>
+        <td>
+          Browser JS Error: https://automationexercise.com/ - Mixed Content: The page at 'https://automationexercise.com/' was loaded over HTTPS, but requested an insecure stylesheet 'http://fonts.googleapis.com/css?family=Open+Sans:400,800,300,600,700'. This request has been blocked; the content must be served over HTTPS.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log fail-bg">Fail</span></td>
+        <td>2:40:40 AM</td>
+        <td>
+          Browser JS Error: https://automationexercise.com/ - Mixed Content: The page at 'https://automationexercise.com/' was loaded over HTTPS, but requested an insecure stylesheet 'http://fonts.googleapis.com/css?family=Abel'. This request has been blocked; the content must be served over HTTPS.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log fail-bg">Fail</span></td>
+        <td>2:40:40 AM</td>
+        <td>
+          Browser JS Error: https://automationexercise.com/#google_vignette - Blocked aria-hidden on a <body> element because it would hide the entire accessibility tree from assistive technology users. For more details, see the aria-hidden section of the WAI-ARIA specification at https://w3c.github.io/aria/#aria-hidden.
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="fail" test-id="19"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">searchForProductTest [chrome]</p>
+            <p class="text-sm">
+              <span>2:40:26 AM</span> / <span>00:00:47:083</span>
+              <span class="badge fail-bg log float-right">Fail</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-fail">searchForProductTest [chrome]</h5>
+<span class='badge badge-success'>09.10.2026 2:40:26 AM</span>
+<span class='badge badge-danger'>09.10.2026 2:41:13 AM</span>
+<span class='badge badge-default'>00:00:47:083</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=19</span>
+<span title='Skip to the next failed step' class='badge badge-danger pointer float-right ne ml-1'><i class="fa fa-fast-forward"></i></span>
+<span title='Collapse all nodes' class='badge badge-default pointer float-right ct ml-1'><i class="fa fa-compress"></i></span>
+<span title='Expand all nodes' class='badge badge-default pointer float-right et'><i class="fa fa-expand"></i></span>
+</div>
+</div>
+</div>    <div class="row mb-3"><div class="col-md-3">
+    
+
+<img data-featherlight='screenshots\searchForProductTest_thread_311_1788997273428.png' src="screenshots\searchForProductTest_thread_311_1788997273428.png">
+  
+    <div class="title">Failure Screenshot</div>
+
+    </div></div>
+<div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log fail-bg">Fail</span></td>
+        <td>2:41:13 AM</td>
+        <td>
+          <textarea readonly class="code-block">org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of Proxy element for: DefaultElementLocator 'By.xpath: //div[@class="product-information"]/h2'
+(tried for 10 seconds with 500 milliseconds interval)
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:85)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:234)
+	at base.BasePage.waitToVisible(BasePage.java:42)
+	at base.BasePage.getText(BasePage.java:113)
+	at pages.ProdutDetailsPage.getProductNameText(ProdutDetailsPage.java:28)
+	at tests.products.ProductSearchTests.searchForProductTest(ProductSearchTests.java:21)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:565)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:697)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+	at org.testng.internal.invokers.TestMethodWithDataProviderMethodWorker.call(TestMethodWithDataProviderMethodWorker.java:81)
+	at org.testng.internal.thread.Async$AsyncTask.run(Async.java:34)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1090)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:614)
+	at java.base/java.lang.Thread.run(Thread.java:1474)
+Caused by: org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//div[@class="product-information"]/h2"}
+  (Session info: chrome=152.0.7977.83)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#nosuchelementexception
+Build info: version: '4.48.0', revision: '27f5213 27f5213055e28398a5105b7892b7a3bb2012a6ef'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '25.0.1'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [67661887e1e69834b57d02ce9ca1cbdd, findElement {value=//div[@class="product-information"]/h2, using=xpath}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 152.0.7977.83, chrome: {chromedriverVersion: 152.0.7977.82 (d04cdb24d67b..., userDataDir: C:\Users\ahmed\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:53019}, goog:processID: 20900, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:53019/devtoo..., se:cdpVersion: 152.0.7977.83, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 67661887e1e69834b57d02ce9ca1cbdd
+	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:169)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:143)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:196)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:217)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:175)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:653)
+	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:173)
+	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:60)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:417)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:411)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:565)
+	at org.openqa.selenium.support.ThreadGuard$WebDriverInvocationHandler.invokeUnderlying(ThreadGuard.java:99)
+	at org.openqa.selenium.support.ThreadGuard$WebDriverInvocationHandler.invoke(ThreadGuard.java:91)
+	at jdk.proxy2/jdk.proxy2.$Proxy28.findElement(Unknown Source)
+	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
+	at jdk.proxy2/jdk.proxy2.$Proxy31.isDisplayed(Unknown Source)
+	at org.openqa.selenium.support.ui.ExpectedConditions.elementIfVisible(ExpectedConditions.java:365)
+	at org.openqa.selenium.support.ui.ExpectedConditions$10.apply(ExpectedConditions.java:351)
+	at org.openqa.selenium.support.ui.ExpectedConditions$10.apply(ExpectedConditions.java:348)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:210)
+	... 14 more
+</textarea>
+          
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log fail-bg">Fail</span></td>
+        <td>2:41:13 AM</td>
+        <td>
+          Browser JS Error: https://automationexercise.com/ - Mixed Content: The page at 'https://automationexercise.com/' was loaded over HTTPS, but requested an insecure stylesheet 'http://fonts.googleapis.com/css?family=Roboto:400,300,400italic,500,700,100'. This request has been blocked; the content must be served over HTTPS.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log fail-bg">Fail</span></td>
+        <td>2:41:13 AM</td>
+        <td>
+          Browser JS Error: https://automationexercise.com/ - Mixed Content: The page at 'https://automationexercise.com/' was loaded over HTTPS, but requested an insecure stylesheet 'http://fonts.googleapis.com/css?family=Open+Sans:400,800,300,600,700'. This request has been blocked; the content must be served over HTTPS.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log fail-bg">Fail</span></td>
+        <td>2:41:13 AM</td>
+        <td>
+          Browser JS Error: https://automationexercise.com/ - Mixed Content: The page at 'https://automationexercise.com/' was loaded over HTTPS, but requested an insecure stylesheet 'http://fonts.googleapis.com/css?family=Abel'. This request has been blocked; the content must be served over HTTPS.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log fail-bg">Fail</span></td>
+        <td>2:41:13 AM</td>
+        <td>
+          Browser JS Error: https://automationexercise.com/products 18 Mixed Content: The page at 'https://automationexercise.com/products' was loaded over HTTPS, but requested an insecure stylesheet 'http://fonts.googleapis.com/css?family=Roboto:400,300,400italic,500,700,100'. This request has been blocked; the content must be served over HTTPS.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log fail-bg">Fail</span></td>
+        <td>2:41:13 AM</td>
+        <td>
+          Browser JS Error: https://automationexercise.com/products 18 Mixed Content: The page at 'https://automationexercise.com/products' was loaded over HTTPS, but requested an insecure stylesheet 'http://fonts.googleapis.com/css?family=Open+Sans:400,800,300,600,700'. This request has been blocked; the content must be served over HTTPS.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log fail-bg">Fail</span></td>
+        <td>2:41:13 AM</td>
+        <td>
+          Browser JS Error: https://automationexercise.com/products 18 Mixed Content: The page at 'https://automationexercise.com/products' was loaded over HTTPS, but requested an insecure stylesheet 'http://fonts.googleapis.com/css?family=Abel'. This request has been blocked; the content must be served over HTTPS.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log fail-bg">Fail</span></td>
+        <td>2:41:13 AM</td>
+        <td>
+          Browser JS Error: https://automationexercise.com/products?search=Fancy%20Green%20Top 18 Mixed Content: The page at 'https://automationexercise.com/products?search=Fancy%20Green%20Top' was loaded over HTTPS, but requested an insecure stylesheet 'http://fonts.googleapis.com/css?family=Roboto:400,300,400italic,500,700,100'. This request has been blocked; the content must be served over HTTPS.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log fail-bg">Fail</span></td>
+        <td>2:41:13 AM</td>
+        <td>
+          Browser JS Error: https://automationexercise.com/products?search=Fancy%20Green%20Top 18 Mixed Content: The page at 'https://automationexercise.com/products?search=Fancy%20Green%20Top' was loaded over HTTPS, but requested an insecure stylesheet 'http://fonts.googleapis.com/css?family=Open+Sans:400,800,300,600,700'. This request has been blocked; the content must be served over HTTPS.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log fail-bg">Fail</span></td>
+        <td>2:41:13 AM</td>
+        <td>
+          Browser JS Error: https://automationexercise.com/products?search=Fancy%20Green%20Top 18 Mixed Content: The page at 'https://automationexercise.com/products?search=Fancy%20Green%20Top' was loaded over HTTPS, but requested an insecure stylesheet 'http://fonts.googleapis.com/css?family=Abel'. This request has been blocked; the content must be served over HTTPS.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log fail-bg">Fail</span></td>
+        <td>2:41:13 AM</td>
+        <td>
+          Browser JS Error: https://automationexercise.com/products?search=Fancy%20Green%20Top#google_vignette - Blocked aria-hidden on a <body> element because it would hide the entire accessibility tree from assistive technology users. For more details, see the aria-hidden section of the WAI-ARIA specification at https://w3c.github.io/aria/#aria-hidden.
         </td>
       </tr>
   </tbody>
@@ -739,30 +1508,159 @@
 </div>
 <div class="test-content-detail"><div class="detail-body"></div></div>
 </div></div>
-<div class="container-fluid p-4 view dashboard-view">
+<div class="test-wrapper row view exception-view attributes-view">
+<div class="test-list">
+<div class="test-list-tools">
+<ul class="tools pull-left"><li><a href=""><span class="font-size-14">Exception</span></a></li></ul>
+<ul class="tools text-right"><li><a href="#"><span class="badge badge-primary">3</span></a></li></ul>
+</div>
+<div class="test-list-wrapper scrollable">
+<ul class="test-list-item">
+<li class="test-item">
+<div class="test-detail">
+<span class="meta">
+<span class='badge log badge-danger'>1</span>
+</span>
+<p class="name">org.openqa.selenium.NoSuchElementException</p>
+<p class="duration text-sm">1 tests</p>
+</div>
+<div class="test-contents d-none">
+<div class="info">
+<h4>org.openqa.selenium.NoSuchElementException</h4>
+<span status="fail" class='badge log badge-danger'>1 failed</span>
+</div>
+<table class='table table-sm mt-4'>
+<thead>
+<tr>
+<th class="status-col">Status</th>
+<th class="timestamp-col">Timestamp</th>
+<th>TestName</th>
+</tr>
+</thead>
+<tbody>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>02:37:49 AM</td>
+<td>
+<a href="#" class="linked" test-id='11' id='11'>verifySuccessPaymentTest [chrome]</a>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+<li class="test-item">
+<div class="test-detail">
+<span class="meta">
+<span class='badge log badge-danger'>2</span>
+</span>
+<p class="name">org.openqa.selenium.ElementClickInterceptedException</p>
+<p class="duration text-sm">2 tests</p>
+</div>
+<div class="test-contents d-none">
+<div class="info">
+<h4>org.openqa.selenium.ElementClickInterceptedException</h4>
+<span status="fail" class='badge log badge-danger'>2 failed</span>
+</div>
+<table class='table table-sm mt-4'>
+<thead>
+<tr>
+<th class="status-col">Status</th>
+<th class="timestamp-col">Timestamp</th>
+<th>TestName</th>
+</tr>
+</thead>
+<tbody>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>02:38:34 AM</td>
+<td>
+<a href="#" class="linked" test-id='13' id='13'>verifyShippingAddressDisplayTest [chrome]</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>02:38:54 AM</td>
+<td>
+<a href="#" class="linked" test-id='14' id='14'>purchaseFlowE2eTest [chrome]</a>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+<li class="test-item">
+<div class="test-detail">
+<span class="meta">
+<span class='badge log badge-danger'>2</span>
+</span>
+<p class="name">org.openqa.selenium.TimeoutException</p>
+<p class="duration text-sm">2 tests</p>
+</div>
+<div class="test-contents d-none">
+<div class="info">
+<h4>org.openqa.selenium.TimeoutException</h4>
+<span status="fail" class='badge log badge-danger'>2 failed</span>
+</div>
+<table class='table table-sm mt-4'>
+<thead>
+<tr>
+<th class="status-col">Status</th>
+<th class="timestamp-col">Timestamp</th>
+<th>TestName</th>
+</tr>
+</thead>
+<tbody>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>02:40:13 AM</td>
+<td>
+<a href="#" class="linked" test-id='18' id='18'>categoryNavigationTest [chrome]</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>02:40:26 AM</td>
+<td>
+<a href="#" class="linked" test-id='19' id='19'>searchForProductTest [chrome]</a>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="test-content scrollable">
+<div class="test-content-detail">
+<div class="detail-body"></div>
+</div>
+</div>
+</div><div class="container-fluid p-4 view dashboard-view">
 <div class="row">
 <div class="col-md-3">
 <div class="card"><div class="card-body">
 <p class="m-b-0">Started</p>
-<h3>Sep 9, 2026 11:28:20 PM</h3>
+<h3>Sep 10, 2026 02:33:34 AM</h3>
 </div></div>
 </div>
 <div class="col-md-3">
 <div class="card"><div class="card-body">
 <p class="m-b-0">Ended</p>
-<h3>Sep 9, 2026 11:30:52 PM</h3>
+<h3>Sep 10, 2026 02:41:13 AM</h3>
 </div></div>
 </div>
 <div class="col-md-3">
 <div class="card"><div class="card-body">
 <p class="m-b-0 text-pass">Tests Passed</p>
-<h3>16</h3>
+<h3>12</h3>
 </div></div>
 </div>
 <div class="col-md-3">
 <div class="card"><div class="card-body">
 <p class="m-b-0 text-fail">Tests Failed</p>
-<h3>0</h3>
+<h3>5</h3>
 </div></div>
 </div>
 </div>
@@ -778,13 +1676,13 @@
 </div>
 </div>
 <div class="card-footer">
-<div><small data-tooltip='100%'>
-<b>16</b> tests passed
+<div><small data-tooltip='63%'>
+<b>12</b> tests passed
 </small>
 </div>
 <div>
-<small data-tooltip='0%'><b>0</b> tests failed,
-<b>0</b> skipped, <b data-tooltip='0%'>0</b> others
+<small data-tooltip='26%'><b>5</b> tests failed,
+<b>2</b> skipped, <b data-tooltip='0%'>0</b> others
 </small>
 </div>
 </div>
@@ -801,10 +1699,10 @@
 </div>
 </div>
 <div class="card-footer">
-<div><small data-tooltip='100%'><b>16</b> events passed</small></div>
+<div><small data-tooltip='15%'><b>12</b> events passed</small></div>
 <div>
-<small data-tooltip='0%'><b>0</b> events failed,
-<b data-tooltip='%'>0</b> others
+<small data-tooltip='81%'><b>62</b> events failed,
+<b data-tooltip='%'>2</b> others
 </small>
 </div>
 </div>
@@ -820,7 +1718,7 @@
 </div></div>
 <script>
 var timeline = {
-"invalidLoginTest [firefox]":1.075,"validLoginTest [firefox]":7.126,"logoutSuccessTest [firefox]":4.769,"successfulUserRegistration [firefox]":2.837,"addToCartTest [firefox]":9.643,"verifyCartQuantityTest [firefox]":8.668,"verifyCartTotalTest [firefox]":28.122,"verifySameProductAddedToCartTest [firefox]":10.583,"removeCartItemsTest [firefox]":11.89,"navigateFromCartToCheckoutTest [firefox]":10.552,"verifySuccessPaymentTest [firefox]":27.449,"verifyShippingAddressDisplayTest [firefox]":11.628,"homePageUpTest [firefox]":0.073,"verifyProductNameAndPriceTest [firefox]":3.76,"categoryNavigationTest [firefox]":2.634,"searchForProductTest [firefox]":5.553
+"validLoginTest [chrome]":12.592,"invalidLoginTest [chrome]":14.453,"logoutSuccessTest [chrome]":24.548,"successfulUserRegistration [chrome]":20.98,"addToCartTest [chrome]":39.495,"verifyCartQuantityTest [chrome]":34.34,"verifyCartTotalTest [chrome]":66.88,"verifySameProductAddedToCartTest [chrome]":54.531,"removeCartItemsTest [chrome]":25.099,"navigateFromCartToCheckoutTest [chrome]":31.568,"verifySuccessPaymentTest [chrome]":48.881,"verifyShippingAddressDisplayTest [chrome]":27.014,"verifyShippingAddressDisplayTest [chrome]":37.645,"purchaseFlowE2eTest [chrome]":32.658,"homePageUpTest [chrome]":0.363,"verifyProductNameAndPriceTest [chrome]":35.902,"categoryNavigationTest [chrome]":8.623,"categoryNavigationTest [chrome]":27.562,"searchForProductTest [chrome]":47.083
 };
 </script>
 <div class="row">
@@ -843,10 +1741,10 @@ var timeline = {
 <script>
 var statusGroup = {
 parentCount: 5,
-passParent: 16,
-failParent: 0,
+passParent: 12,
+failParent: 5,
 warningParent: 0,
-skipParent: 0,
+skipParent: 2,
 childCount: 5,
 passChild: 0,
 failChild: 0,
@@ -860,10 +1758,10 @@ warningGrandChild: 0,
 skipGrandChild: 0,
 infoGrandChild: 0,
 eventsCount: 5,
-passEvents: 16,
-failEvents: 0,
+passEvents: 12,
+failEvents: 62,
 warningEvents: 0,
-skipEvents: 0,
+skipEvents: 2,
 infoEvents: 0
 };
 </script>        </div>

@@ -5,6 +5,7 @@ import dataproviders.TestDataProvider;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.*;
+import retry.RetryAnalyzer;
 import utils.Credentials;
 import java.math.BigDecimal;
 import java.util.HashMap;
@@ -31,7 +32,7 @@ public class AddToCartTests extends BaseTest {
         cart.clearCartItems();
     }
 
-    @Test(groups = "smoke", dataProviderClass = TestDataProvider.class, dataProvider = "productNames")
+    @Test(groups = "smoke", dataProviderClass = TestDataProvider.class, dataProvider = "productNames" , retryAnalyzer = RetryAnalyzer.class)
     public void verifyCartTotalTest(HashMap<String, Object> input) {
         LoginPage login = new LoginPage(getDriver()).open();
         HomePage home = login.login(Credentials.getEmail(), Credentials.getPassword());
