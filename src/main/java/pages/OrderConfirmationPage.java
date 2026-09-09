@@ -1,10 +1,12 @@
 package pages;
 
 import base.BasePage;
+import constants.Routes;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import utils.ConfigReader;
 
 public class OrderConfirmationPage extends BasePage {
 
@@ -16,7 +18,8 @@ public class OrderConfirmationPage extends BasePage {
         PageFactory.initElements(driver, this);
     }
 
-    @FindBy(xpath = "//h2[@data-qa=\"order-placed\"]/b") private WebElement orderPlacedMessage;
+    @FindBy(xpath = "//h2[@data-qa=\"order-placed\"]/b")
+    private WebElement orderPlacedMessage;
 
     public String getOrderPlacedMessage() {
         return getText(orderPlacedMessage);

@@ -29,7 +29,7 @@ public class TestListener extends BaseTest implements ITestListener {      // we
     @Override
     public void onTestStart(ITestResult result) {
         ITestListener.super.onTestStart(result);
-        String browserName = "["+((HasCapabilities) getDriver()).getCapabilities().getBrowserName()+"]";
+        String browserName = "[" + ((HasCapabilities) getDriver()).getCapabilities().getBrowserName() + "]";
         try {
             ExtentTest test = extent.createTest(result.getName() + " " + browserName);
             extentTest.set(test);

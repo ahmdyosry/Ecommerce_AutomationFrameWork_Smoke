@@ -10,7 +10,7 @@ import utils.JsonDataReader;
 
 public class TestDataProvider {
 
-    @DataProvider(name = "invalidLogins",  parallel = true)
+    @DataProvider(name = "invalidLogins", parallel = true)
     public static Object[][] invalidLogins() throws IOException {
 
         List<HashMap<String, Object>> data =
@@ -23,12 +23,12 @@ public class TestDataProvider {
                 .toArray(Object[][]::new);
     }
 
-    @DataProvider(name = "registerFormData",  parallel = true)
+    @DataProvider(name = "registerFormData", parallel = true)
     public static Object[][] registerFormData() throws IOException {
 
         List<HashMap<String, Object>> data =
                 JsonDataReader.getJsonData(
-                        "src/test/resources/testdata/positiveRegisteration.json"
+                        "src/test/resources/testdata/ValidRegisteration.json"
                 );
 
         return data.stream()
@@ -36,7 +36,7 @@ public class TestDataProvider {
                 .toArray(Object[][]::new);
     }
 
-    @DataProvider(name = "productNames",  parallel = true)
+    @DataProvider(name = "productNames", parallel = true)
     public static Object[][] productNames() throws IOException {
 
         List<HashMap<String, Object>> data =
@@ -49,7 +49,7 @@ public class TestDataProvider {
                 .toArray(Object[][]::new);
     }
 
-    @DataProvider(name = "checkoutData",  parallel = true)
+    @DataProvider(name = "checkoutData", parallel = true)
     public static Object[][] checkoutData() throws IOException {
 
         List<HashMap<String, Object>> data =
@@ -62,7 +62,7 @@ public class TestDataProvider {
                 .toArray(Object[][]::new);
     }
 
-    @DataProvider(name = "paymentData",  parallel = true)
+    @DataProvider(name = "paymentData", parallel = true)
     public static Object[][] paymentData() throws IOException {
 
         List<HashMap<String, Object>> data =
@@ -75,7 +75,7 @@ public class TestDataProvider {
                 .toArray(Object[][]::new);
     }
 
-    @DataProvider(name = "searchData",  parallel = true)
+    @DataProvider(name = "searchData", parallel = true)
     public static Object[][] searchData() throws IOException {
 
         List<HashMap<String, Object>> data =

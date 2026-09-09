@@ -10,17 +10,19 @@ import org.openqa.selenium.support.PageFactory;
 public class SearchResultsPage extends BasePage {
 
     private final WebDriver driver;
+
     public SearchResultsPage(WebDriver driver) {
         super(driver);
         this.driver = driver;
-        PageFactory.initElements(driver,this);
+        PageFactory.initElements(driver, this);
     }
 
-    @FindBy (xpath = "//div[@class='productinfo text-center']/p") private WebElement productName;
-    @FindBy(linkText = "View Product") private WebElement viewProduct;
+    @FindBy(xpath = "//div[@class='productinfo text-center']/p")
+    private WebElement productName;
+    @FindBy(linkText = "View Product")
+    private WebElement viewProduct;
 
     public String isSearchedProductNameDisplayed() {
-        waitToVisible(productName);
         return getText(productName);
     }
 

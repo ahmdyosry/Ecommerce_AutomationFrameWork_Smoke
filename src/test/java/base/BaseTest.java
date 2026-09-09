@@ -12,13 +12,17 @@ import org.openqa.selenium.firefox.FirefoxOptions;
 import org.openqa.selenium.logging.LogType;
 import org.openqa.selenium.logging.LoggingPreferences;
 import org.testng.annotations.*;
+
 import java.time.Duration;
 import java.util.HashMap;
 import java.util.Map;
 import java.io.IOException;
+
 import org.openqa.selenium.support.ThreadGuard;
 import utils.ConfigReader;
+
 import java.util.logging.Level;
+
 import static utils.ConfigReader.getProperty;
 
 public class BaseTest {
@@ -126,12 +130,6 @@ public class BaseTest {
         }
 
         return DRIVER.get();
-    }
-
-    protected void navigateTo(String route) {
-        getDriver().get(
-                ConfigReader.getProperty("baseUrl") + route
-        );
     }
 
 }

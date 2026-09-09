@@ -7,7 +7,6 @@ import java.nio.file.Paths;
 
 public class ExtentReportManager {
     public static ExtentReports getReportObject() {
-        // with help of ExtentReports & ExtentSparkReporter Classes
 
         ExtentSparkReporter reporter = new ExtentSparkReporter(
                 Paths.get(System.getProperty("user.dir"), "reports", "index.html").toString());

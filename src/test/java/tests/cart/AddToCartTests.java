@@ -1,15 +1,11 @@
 package tests.cart;
 
 import base.BaseTest;
-import components.HeaderComponent;
-import constants.Routes;
 import dataproviders.TestDataProvider;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.*;
-import utils.ConfigReader;
 import utils.Credentials;
-
 import java.math.BigDecimal;
 import java.util.HashMap;
 import java.util.List;
@@ -17,53 +13,48 @@ import java.util.List;
 public class AddToCartTests extends BaseTest {
 
 
-    @Test(groups="smoke")
+    @Test(groups = "smoke")
     public void addToCartTest() {
-        HeaderComponent header = new HeaderComponent(getDriver());
-        ProductListPage plp = header.clickProducts();
+        ProductListPage plp = new ProductListPage(getDriver()).open();
         ProdutDetailsPage pdp = plp.clickViewProduct();
         Assert.assertTrue(pdp.clickAddToCart().isAddedToCartMessageDisplayed());
-        Assert.assertEquals(pdp.AddedtoCartMessageText(), "Added!");
+        Assert.assertEquals(pdp.addedtoCartMessageText(), "Added!");
     }
 
-    @Test(groups = "smoke" , dataProviderClass = TestDataProvider.class, dataProvider = "productNames")
+    @Test(groups = "smoke", dataProviderClass = TestDataProvider.class, dataProvider = "productNames")
     public void verifySameProductAddedToCartTest(HashMap<String, Object> input) {
-        HeaderComponent header = new HeaderComponent(getDriver());
-        ProductListPage plp = header.clickProducts();
+        ProductListPage plp = new ProductListPage(getDriver()).open();
         String productNameAdded = plp.addProductToCart(input.get("singleProduct").toString());
         CartPage cart = plp.clickViewCart();
         String productNameInCart = cart.getProductNameText();
-        Assert.assertEquals(productNameInCart,productNameAdded);
+        Assert.assertEquals(productNameInCart, productNameAdded);
         cart.clearCartItems();
     }
 
-    @Test (groups="smoke" , dataProviderClass = TestDataProvider.class, dataProvider = "productNames")
+    @Test(groups = "smoke", dataProviderClass = TestDataProvider.class, dataProvider = "productNames")
     public void verifyCartTotalTest(HashMap<String, Object> input) {
-        HeaderComponent header = new HeaderComponent(getDriver());
-        LoginPage login = header.clickLogin_SignUpButton();
-        login.login(Credentials.getEmail(), Credentials.getPassword());
-        header.waitUntilLoggedIn();
-        header.clickProducts();
+        LoginPage login = new LoginPage(getDriver()).open();
+        HomePage home = login.login(Credentials.getEmail(), Credentials.getPassword());
+        home.header().waitUntilLoggedIn();
+        ProductListPage plp = home.header().clickProducts();
         List<String> products = (List<String>) input.get("multipleProducts");
-        ProductListPage plp = new ProductListPage(getDriver());
         BigDecimal expectedTotal = plp.cartExpectedTotalForMultipleProducts(products);
-        CartPage cart = new HeaderComponent(getDriver()).clickCart();
+        CartPage cart = plp.header().clickCart();
         BigDecimal actualTotal = cart.calculateCartSubtotal();
         CheckoutPage checkout = cart.clickCheckout();
         BigDecimal checkoutTotal = checkout.getCartSubtotal();
         Assert.assertEquals(actualTotal, expectedTotal, "Sum of cart item totals is incorrect");
         Assert.assertEquals(checkoutTotal, expectedTotal, "Displayed cart subtotal is incorrect");
-        header.clickCart();
+        checkout.header().clickCart();
         cart.clearCartItems();
     }
 
-    @Test(groups = "smoke" , dataProviderClass = TestDataProvider.class, dataProvider = "productNames")
+    @Test(groups = "smoke", dataProviderClass = TestDataProvider.class, dataProvider = "productNames")
     public void verifyCartQuantityTest(HashMap<String, Object> input) {
         List<String> products = (List<String>) input.get("multipleProducts");
-        HeaderComponent header = new HeaderComponent(getDriver());
-        ProductListPage plp = header.clickProducts();
+        ProductListPage plp = new ProductListPage(getDriver()).open();
         plp.addMultipleProductsToCart(products);
-        CartPage cart = header.clickCart();
+        CartPage cart = plp.header().clickCart();
         int cartQuantity = cart.cartTotalQuantity();
         Assert.assertEquals(cartQuantity, products.size(), "Cart quantity is incorrect");
         cart.clearCartItems();

@@ -1,11 +1,13 @@
 package pages;
 
 import base.BasePage;
+import constants.Routes;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.Select;
+import utils.ConfigReader;
 
 import java.util.Optional;
 
@@ -15,34 +17,76 @@ public class RegisterationPage extends BasePage {
     public RegisterationPage(WebDriver driver) {
         super(driver);
         this.driver = driver;
-        PageFactory.initElements(driver,this);
+        PageFactory.initElements(driver, this);
     }
 
-    @FindBy(id = "id_gender1") private WebElement genderMrRadioButton;
-    @FindBy(id = "id_gender2") private WebElement genderMrsRadioButton;
-    @FindBy(id = "name") private WebElement nameField;
-    @FindBy(id = "password") private WebElement passwordField;
-    @FindBy(id="days") private WebElement daysDropdown;
-    @FindBy(id="months") private WebElement monthsDropdown;
-    @FindBy(id="years") private WebElement yearsDropdown;
-    @FindBy(id="newsletter") private WebElement newsletterCheckbox;
-    @FindBy(id="optin") private WebElement optinCheckbox;
-    @FindBy(id="first_name") private WebElement firstNameField;
-    @FindBy(id="last_name") private WebElement lastNameField;
-    @FindBy(id="company") private WebElement companyField;
-    @FindBy(id="address1") private WebElement address1Field;
-    @FindBy(id="address2") private WebElement address2Field;
-    @FindBy(id="country") private WebElement countryDropdown;
-    @FindBy(id="state") private WebElement stateField;
-    @FindBy(id="city") private WebElement cityField;
-    @FindBy(id="zipcode") private WebElement zipcodeField;
-    @FindBy(id="mobile_number") private WebElement mobileNumberField;
-    @FindBy(xpath = "//button[text()='Create Account']") private WebElement createAccount;
+    @FindBy(css = "input[data-qa='signup-name']")
+    private WebElement signUpNameField;
+    @FindBy(css = "input[data-qa='signup-email']")
+    private WebElement signUpEmailField;
+    @FindBy(css = "button[data-qa='signup-button']")
+    private WebElement signUpButton;
+    @FindBy(id = "id_gender1")
+    private WebElement genderMrRadioButton;
+    @FindBy(id = "id_gender2")
+    private WebElement genderMrsRadioButton;
+    @FindBy(id = "name")
+    private WebElement nameField;
+    @FindBy(id = "password")
+    private WebElement passwordField;
+    @FindBy(id = "days")
+    private WebElement daysDropdown;
+    @FindBy(id = "months")
+    private WebElement monthsDropdown;
+    @FindBy(id = "years")
+    private WebElement yearsDropdown;
+    @FindBy(id = "newsletter")
+    private WebElement newsletterCheckbox;
+    @FindBy(id = "optin")
+    private WebElement optinCheckbox;
+    @FindBy(id = "first_name")
+    private WebElement firstNameField;
+    @FindBy(id = "last_name")
+    private WebElement lastNameField;
+    @FindBy(id = "company")
+    private WebElement companyField;
+    @FindBy(id = "address1")
+    private WebElement address1Field;
+    @FindBy(id = "address2")
+    private WebElement address2Field;
+    @FindBy(id = "country")
+    private WebElement countryDropdown;
+    @FindBy(id = "state")
+    private WebElement stateField;
+    @FindBy(id = "city")
+    private WebElement cityField;
+    @FindBy(id = "zipcode")
+    private WebElement zipcodeField;
+    @FindBy(id = "mobile_number")
+    private WebElement mobileNumberField;
+    @FindBy(xpath = "//button[text()='Create Account']")
+    private WebElement createAccount;
+
+    public RegisterationPage open() {
+        goTo(ConfigReader.getProperty("baseUrl") + Routes.REGISTER);
+        return this;
+    }
+
+    public RegisterationPage initializeSignUp(String name, String email) {
+        if (email.equalsIgnoreCase("random_email")) {
+            email = "random_email_" + System.currentTimeMillis() + "@example.com";
+        }
+        signUpNameField.sendKeys(name);
+        signUpEmailField.sendKeys(email);
+        clickOn(signUpButton);
+        return this;
+    }
 
     public SuccessRegisterPage fillRegistrationForm(String name, String password, String firstName, String lastName, Optional<String> company,
-                                     String address1, Optional<String> address2, String state, String city,
-                                     String zipcode, String mobileNumber) {
+                                                    String address1, Optional<String> address2, String state, String city,
+                                                    String zipcode, String mobileNumber) {
         clickOn(genderMrRadioButton);
+        nameField.clear();
         nameField.sendKeys(name);
         passwordField.sendKeys(password);
         Select days = new Select(daysDropdown);
@@ -65,10 +109,6 @@ public class RegisterationPage extends BasePage {
         clickOn(createAccount);
         return new SuccessRegisterPage(driver);
     }
-
-
-
-
 
 
 }

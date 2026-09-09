@@ -16,11 +16,12 @@ public class BasePage {
 
     private final WebDriver driver;
 
-    public BasePage (WebDriver driver) {
+    protected BasePage(WebDriver driver) {
         this.driver = driver;
     }
 
-    @FindBy(id= "dismiss-button") private WebElement closeAdButton;
+    @FindBy(id = "dismiss-button")
+    private WebElement closeAdButton;
     private final By closeAd = By.id("dismiss-button");
 
     public HeaderComponent header() {
@@ -36,22 +37,22 @@ public class BasePage {
                                WAITS
   ================================================================================= */
 
-    protected void waitToVisible (WebElement element) {
+    protected void waitToVisible(WebElement element) {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(Long.parseLong(ConfigReader.getProperty("explicitWait"))));
         wait.until(ExpectedConditions.visibilityOf(element));
     }
 
-    protected void waitToInvisible (WebElement element) {
+    protected void waitToInvisible(WebElement element) {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(Long.parseLong(ConfigReader.getProperty("explicitWait"))));
         wait.until(ExpectedConditions.invisibilityOf(element));
     }
 
-    protected void waitToBeClickable (WebElement element) {
+    protected void waitToBeClickable(WebElement element) {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(Long.parseLong(ConfigReader.getProperty("explicitWait"))));
         wait.until(ExpectedConditions.elementToBeClickable(element));
     }
 
-    protected void waitStaleness (WebElement element) {
+    protected void waitStaleness(WebElement element) {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(Long.parseLong(ConfigReader.getProperty("explicitWait"))));
         wait.until(ExpectedConditions.stalenessOf(element));
 
@@ -62,9 +63,9 @@ public class BasePage {
         wait.until(driver -> !driver.getCurrentUrl().equals(oldUrl));
     }
 
-    protected void waitNumberOfElements (By locator, int number) {
+    protected void waitNumberOfElements(By locator, int number) {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(Long.parseLong(ConfigReader.getProperty("explicitWait"))));
-        wait.until(ExpectedConditions.numberOfElementsToBeMoreThan(locator,number));
+        wait.until(ExpectedConditions.numberOfElementsToBeMoreThan(locator, number));
     }
 
     protected boolean waitForOptionalElement(WebElement element, int seconds) {
@@ -105,7 +106,7 @@ public class BasePage {
     }
 
     /* ================================================================================
-                               Click, GetText, GetAttribute
+                               UI Helpers
   ================================================================================= */
 
     protected String getText(WebElement element) {
@@ -116,6 +117,11 @@ public class BasePage {
     protected void clickOn(WebElement element) {
         waitToBeClickable(element);
         element.click();
+    }
+
+    public boolean checkIfDisplayed(WebElement element) {
+        waitToVisible(element);
+        return element.isDisplayed();
     }
 
     protected BigDecimal convertPrice(String priceText) {

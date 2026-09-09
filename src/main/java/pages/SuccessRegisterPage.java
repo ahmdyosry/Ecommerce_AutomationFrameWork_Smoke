@@ -13,12 +13,13 @@ public class SuccessRegisterPage extends BasePage {
     public SuccessRegisterPage(WebDriver driver) {
         super(driver);
         this.driver = driver;
-        PageFactory.initElements(driver,this);
+        PageFactory.initElements(driver, this);
     }
 
-    @FindBy(xpath = "//h2/b") private WebElement successMessage;
+    @FindBy(xpath = "//h2/b")
+    private WebElement successMessage;
 
-    public String getSuccessMessage () {
+    public String getSuccessMessage() {
         waitToVisible(successMessage);
         JavascriptExecutor js = (JavascriptExecutor) driver;
         js.executeScript("arguments[0].scrollIntoView({block: 'center', inline: 'nearest'});", successMessage);

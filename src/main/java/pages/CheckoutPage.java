@@ -1,10 +1,12 @@
 package pages;
 
 import base.BasePage;
+import constants.Routes;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import utils.ConfigReader;
 
 import java.math.BigDecimal;
 import java.util.List;
@@ -12,25 +14,39 @@ import java.util.List;
 public class CheckoutPage extends BasePage {
 
     private final WebDriver driver;
+
     public CheckoutPage(WebDriver driver) {
         super(driver);
         this.driver = driver;
-        PageFactory.initElements(driver,this);
+        PageFactory.initElements(driver, this);
     }
 
 
-    @FindBy(xpath = "(//p[@class='cart_total_price'])[last()]") private WebElement cartSubtotal;
-    @FindBy(xpath = "//div[@class=\"breadcrumbs\"]//li[2]") private WebElement breadCrumb;
-    @FindBy(css = "#address_delivery li:not(:first-child)") private List<WebElement> shippingAddressLines;
-    @FindBy(css = ".btn.btn-default.check_out") private WebElement placeOrderBtn;
+    @FindBy(xpath = "(//p[@class='cart_total_price'])[last()]")
+    private WebElement cartSubtotal;
+    @FindBy(xpath = "//div[@class=\"breadcrumbs\"]//li[2]")
+    private WebElement breadCrumb;
+    @FindBy(css = "#address_delivery li:not(:first-child)")
+    private List<WebElement> shippingAddressLines;
+    @FindBy(css = ".btn.btn-default.check_out")
+    private WebElement placeOrderBtn;
 
+
+    public CheckoutPage open() {
+        goTo(ConfigReader.getProperty("baseUrl") + Routes.CHECKOUT);
+        return this;
+    }
 
     public BigDecimal getCartSubtotal() {
         return convertPrice(getText(cartSubtotal));
     }
 
-    public String getBreadcrumbText () {
+    public String getBreadcrumbText() {
         return getText(breadCrumb);
+    }
+
+    public boolean isCheckoutPageDisplayed() {
+        return checkIfDisplayed(breadCrumb);
     }
 
     public List<String> getShippingAddressLines() {

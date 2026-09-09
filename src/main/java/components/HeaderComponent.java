@@ -12,28 +12,33 @@ import pages.ProductListPage;
 
 public class HeaderComponent extends BasePage {
 
-    private WebDriver driver;
+    private final WebDriver driver;
+
     public HeaderComponent(WebDriver driver) {
         super(driver);
         this.driver = driver;
-        PageFactory.initElements(driver,this);
+        PageFactory.initElements(driver, this);
     }
 
-    @FindBy(css = "img[alt='Website for automation practice']") private WebElement homePageLogo;
-    @FindBy(css = ".fa-home") private WebElement homeButton;
-    @FindBy(css = ".card_travel") private WebElement productsButton;
-    @FindBy(css = "a[href='/view_cart'] .fa-shopping-cart") private WebElement cartButton;
-    @FindBy(xpath="//a[text()=' Signup / Login']") private WebElement login_SignUpButton;
-    @FindBy(xpath = "//a[text()=' Logout']") private WebElement logoutButton;
+    @FindBy(css = "img[alt='Website for automation practice']")
+    private WebElement homePageLogo;
+    @FindBy(css = ".fa-home")
+    private WebElement homeButton;
+    @FindBy(css = ".card_travel")
+    private WebElement productsButton;
+    @FindBy(css = "a[href='/view_cart'] .fa-shopping-cart")
+    private WebElement cartButton;
+    @FindBy(xpath = "//a[text()=' Signup / Login']")
+    private WebElement login_SignUpButton;
+    @FindBy(xpath = "//a[text()=' Logout']")
+    private WebElement logoutButton;
 
-    public boolean isCartButtonDisplayed () {
-        waitToVisible(cartButton);
-        return cartButton.isDisplayed();
+    public boolean isCartButtonDisplayed() {
+        return checkIfDisplayed(cartButton);
     }
 
-    public boolean isHomePageLogoDisplayed () {
-        waitToVisible(homePageLogo);
-        return homePageLogo.isDisplayed();
+    public boolean isHomePageLogoDisplayed() {
+        return checkIfDisplayed(homePageLogo);
     }
 
     public String LogoutButtonText() {
@@ -62,15 +67,16 @@ public class HeaderComponent extends BasePage {
     }
 
     public boolean isLogin_SignupButtonDisplayed() {
-        waitToVisible(login_SignUpButton);
-        return login_SignUpButton.isDisplayed();
+        return checkIfDisplayed(login_SignUpButton);
+    }
+
+    public boolean isLogoutButtonDisplayed() {
+        return checkIfDisplayed(logoutButton);
     }
 
     public void waitUntilLoggedIn() {
-    waitToVisible(logoutButton);
+        waitToVisible(logoutButton);
     }
-
-
 
 
 }

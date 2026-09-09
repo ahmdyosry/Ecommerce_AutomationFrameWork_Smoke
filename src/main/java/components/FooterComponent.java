@@ -8,17 +8,18 @@ import org.openqa.selenium.support.PageFactory;
 
 public class FooterComponent extends BasePage {
 
-    private WebDriver driver;
+    private final WebDriver driver;
+
     public FooterComponent(WebDriver driver) {
         super(driver);
         this.driver = driver;
-        PageFactory.initElements(driver,this);
+        PageFactory.initElements(driver, this);
     }
 
-    @FindBy(xpath = "//h2[contains(text(),'Subscription')]") private WebElement subscriptionText;
+    @FindBy(xpath = "//h2[contains(text(),'Subscription')]")
+    private WebElement subscriptionText;
 
-    public boolean isSubscriptionTextDisplayed () {
-        waitToVisible(subscriptionText);
-        return subscriptionText.isDisplayed();
+    public boolean isSubscriptionTextDisplayed() {
+        return checkIfDisplayed(subscriptionText);
     }
 }

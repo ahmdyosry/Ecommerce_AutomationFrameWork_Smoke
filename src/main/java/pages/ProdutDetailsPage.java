@@ -8,30 +8,32 @@ import org.openqa.selenium.support.PageFactory;
 
 public class ProdutDetailsPage extends BasePage {
     private final WebDriver driver;
+
     public ProdutDetailsPage(WebDriver driver) {
         super(driver);
         this.driver = driver;
-        PageFactory.initElements(driver,this);
+        PageFactory.initElements(driver, this);
     }
 
-    @FindBy (xpath = "//div[@class=\"product-information\"]/h2") private WebElement productName;
-    @FindBy(xpath = "//div[@class=\"product-information\"]/span/span") private WebElement productPrice;
-    @FindBy(css=".btn-default.cart") private WebElement addToCartButton;
-    @FindBy(xpath = "//div[@class=\"modal-header\"]/h4") private WebElement addedtoCartMessage;
+    @FindBy(xpath = "//div[@class=\"product-information\"]/h2")
+    private WebElement productName;
+    @FindBy(xpath = "//div[@class=\"product-information\"]/span/span")
+    private WebElement productPrice;
+    @FindBy(css = ".btn-default.cart")
+    private WebElement addToCartButton;
+    @FindBy(xpath = "//div[@class=\"modal-header\"]/h4")
+    private WebElement addedtoCartMessage;
 
     public String getProductNameText() {
-        waitToVisible(productName);
         return getText(productName);
     }
 
     public boolean isProductPriceDisplayed() {
-        waitToVisible(productPrice);
-        return productPrice.isDisplayed();
+        return checkIfDisplayed(productPrice);
     }
 
     public boolean isProductNameDisplayed() {
-        waitToVisible(productName);
-        return productName.isDisplayed();
+        return checkIfDisplayed(productName);
     }
 
     public ProdutDetailsPage clickAddToCart() {
@@ -40,12 +42,10 @@ public class ProdutDetailsPage extends BasePage {
     }
 
     public boolean isAddedToCartMessageDisplayed() {
-        waitToVisible(addedtoCartMessage);
-        return addedtoCartMessage.isDisplayed();
+        return checkIfDisplayed(addedtoCartMessage);
     }
 
-    public String AddedtoCartMessageText() {
-        waitToVisible(addedtoCartMessage);
+    public String addedtoCartMessageText() {
         return getText(addedtoCartMessage);
     }
 }

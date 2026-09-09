@@ -25,7 +25,8 @@ public class JsonDataReader {
 
         return mapper.readValue(
                 jsonContent,
-                new TypeReference<List<HashMap<String, Object>>>() {}
+                new TypeReference<List<HashMap<String, Object>>>() {
+                }
         );
     }
 }
