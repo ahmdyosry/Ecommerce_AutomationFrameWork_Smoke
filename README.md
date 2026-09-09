@@ -486,7 +486,7 @@ Screenshot utilities are included in the framework to capture browser state duri
 Screenshots are stored under:
 
 ```text
-screenshots/
+reports/screenshots/
 ```
 
 ---
