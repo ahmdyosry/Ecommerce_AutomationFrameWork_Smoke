@@ -87,7 +87,7 @@ Ecommerce_AutomationFrameWork_Smoke/
 │
 ├── logs/
 ├── reports/
-├── screenshots/
+│
 │
 ├── src/
 │   ├── main/
@@ -141,10 +141,26 @@ Ecommerce_AutomationFrameWork_Smoke/
 │       │   │
 │       │   └── tests/
 │       │       ├── auth/
+│       │       │   ├── LoginTests.java
+│       │       │   ├── LogoutTests.java
+│       │       │   └── RegisterationTests.java
+│       │       │
 │       │       ├── cart/
+│       │       │   ├── AddToCartTests.java
+│       │       │   └── RemoveFromCartTests.java
+│       │       │
 │       │       ├── checkout/
+│       │       │   ├── CheckoutTests.java
+│       │       │   ├── ShippingTests.java
+│       │       │   └── PaymentTests.java
+│       │       │
 │       │       ├── home/
+│       │       │   └── HomepageTests.java
+│       │       │
 │       │       └── products/
+│       │           ├── ProductListingTests.java
+│       │           ├── ProductDetailsTests.java
+│       │           └── ProductSearchTests.java
 │       │
 │       └── resources/
 │           ├── testdata/
