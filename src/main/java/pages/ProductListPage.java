@@ -62,13 +62,13 @@ public class ProductListPage extends BasePage {
         return new ProdutDetailsPage(driver);
     }
 
-    public String addProductToCart(String productName) {
+    public ProductListPage addProductToCart(String productName) {
         WebElement productNameLocator = getProductName(productName);
         scrollToElement(productNameLocator);
         WebElement addToCart = productNameLocator.findElement(By.xpath("../a"));
         new Actions(driver).moveToElement(addToCart).perform();
         clickOn(addToCart);
-        return productName;
+        return this;
     }
 
     public CartPage clickViewCart() {
@@ -92,12 +92,13 @@ public class ProductListPage extends BasePage {
         return checkIfDisplayed(addedtoCartMessage);
     }
 
-    public String addedtoCartMessageText() {
+    public String getAddedtoCartMessageText() {
         return getText(addedtoCartMessage);
     }
 
-    public void continueShopping() {
+    public ProductListPage continueShopping() {
         clickOn(continueShoppingButton);
+        return this;
     }
 
     public BigDecimal cartExpectedTotalForMultipleProducts(List<String> products) {
@@ -112,11 +113,12 @@ public class ProductListPage extends BasePage {
                 .reduce(BigDecimal.ZERO, BigDecimal::add);
     }
 
-    public void addMultipleProductsToCart(List<String> products) {
+    public ProductListPage addMultipleProductsToCart(List<String> products) {
         products.forEach(productName -> {
             addProductToCart(productName);
             continueShopping();
         });
+        return this;
     }
 
 

@@ -6,23 +6,25 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.*;
 import utils.Credentials;
+
 import java.util.HashMap;
 
 public class PaymentTests extends BaseTest {
 
     @Test(groups = "smoke", dataProviderClass = TestDataProvider.class, dataProvider = "paymentData")
     public void verifySuccessPaymentTest(HashMap<String, String> input) {
-        LoginPage login = new LoginPage(getDriver()).open();
-        HomePage home = login.login(Credentials.getEmail(), Credentials.getPassword());
-        home.header().waitUntilLoggedIn();
-        ProductListPage plp = home.header().clickProducts();
-        plp.addProductToCart(input.get("product"));
-        CartPage cart = plp.clickViewCart();
-        CheckoutPage checkout = cart.clickCheckout();
-        PaymentPage payment = checkout.clickPlaceOrderBtn();
-        OrderConfirmationPage order = payment.pay(input.get("nameOnCard"), input.get("cardNumber"), input.get("cvc"), input.get("expiryMonth"), input.get("expiryYear"));
-        Assert.assertEquals(order.getOrderPlacedMessage(), input.get("successMessage"));
-        order.header().clickCart();
-        cart.clearCartItems();
+        HomePage home = new LoginPage(getDriver()).open().login(Credentials.getEmail(), Credentials.getPassword());
+        OrderConfirmationPage order = home.header().waitUntilLoggedIn()
+                .clickProducts()
+                .addProductToCart(input.get("product"))
+                .clickViewCart()
+                .clickCheckout()
+                .clickPlaceOrderBtn()
+                .pay(input.get("nameOnCard"), input.get("cardNumber"), input.get("cvc"), input.get("expiryMonth"), input.get("expiryYear"));
+        try {
+            Assert.assertEquals(order.getOrderPlacedMessage(), input.get("successMessage"));
+        } finally {
+            order.header().clickCart().clearCartItems();
+        }
     }
 }

@@ -6,6 +6,7 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.*;
 import utils.Credentials;
+
 import java.util.HashMap;
 
 public class CheckoutTests extends BaseTest {
@@ -13,16 +14,18 @@ public class CheckoutTests extends BaseTest {
 
     @Test(groups = "smoke", dataProviderClass = TestDataProvider.class, dataProvider = "checkoutData")
     public void navigateFromCartToCheckoutTest(HashMap<String, Object> input) {
-        LoginPage login = new LoginPage(getDriver()).open();
-        HomePage home = login.login(Credentials.getEmail(), Credentials.getPassword());
+        HomePage home = new LoginPage(getDriver()).open().login(Credentials.getEmail(), Credentials.getPassword());
         home.header().waitUntilLoggedIn();
-        ProductListPage plp = home.header().clickProducts();
-        plp.addProductToCart(input.get("product").toString());
-        CartPage cart = plp.clickViewCart();
-        CheckoutPage checkout = cart.clickCheckout();
-        Assert.assertEquals(checkout.getBreadcrumbText(), input.get("breadCrumbText").toString());
-        checkout.header().clickCart();
-        cart.clearCartItems();
+        CheckoutPage checkout = home.header()
+                .clickProducts()
+                .addProductToCart(input.get("product").toString())
+                .clickViewCart()
+                .clickCheckout();
+        try {
+            Assert.assertEquals(checkout.getBreadcrumbText(), input.get("breadCrumbText").toString());
+        } finally {
+            checkout.header().clickCart().clearCartItems();
+        }
     }
 
 

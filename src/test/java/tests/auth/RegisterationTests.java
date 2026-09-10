@@ -6,15 +6,16 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.RegisterationPage;
 import pages.SuccessRegisterPage;
+
 import java.util.HashMap;
 import java.util.Optional;
 
 public class RegisterationTests extends BaseTest {
 
     @Test(groups = "smoke", dataProvider = "registerFormData", dataProviderClass = TestDataProvider.class)
-    public void successfulUserRegistration(HashMap<String, String> input) {
-        RegisterationPage register = new RegisterationPage(getDriver()).open();
-        SuccessRegisterPage success = register.initializeSignUp(input.get("name"), input.get("email"))
+    public void successfulRegistrationTest(HashMap<String, String> input) {
+        SuccessRegisterPage success = new RegisterationPage(getDriver()).open()
+                .initializeSignUp(input.get("name"), input.get("email"))
                 .fillRegistrationForm(
                         input.get("name"),
                         input.get("password"),
@@ -30,8 +31,5 @@ public class RegisterationTests extends BaseTest {
                 );
 
         Assert.assertEquals(success.getSuccessMessage(), input.get("successMessage"));
-        // registeration.signUp(input.get("name"), input.get("email"));
-        //HeaderComponent header = new HeaderComponent(getDriver());
-        //Assert.assertEquals(header.LogoutButtonText(),"Logout");
     }
 }

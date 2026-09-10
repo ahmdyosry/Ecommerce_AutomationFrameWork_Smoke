@@ -20,7 +20,7 @@
     </test> -->
 
     <test name="smoke tests firefox" parallel="methods" thread-count="2">
-        <parameter name="browser" value="firefox"/>
+        <parameter name="browser" value="chrome"/>
         <groups>
             <run>
                 <include name="smoke"/>

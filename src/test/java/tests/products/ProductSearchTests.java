@@ -14,9 +14,8 @@ public class ProductSearchTests extends BaseTest {
 
     @Test(groups = "smoke", dataProviderClass = dataproviders.TestDataProvider.class, dataProvider = "searchData")
     public void searchForProductTest(HashMap<String, String> input) {
-        ProductListPage plp = new ProductListPage(getDriver()).open();
-        SearchResultsPage searchResults = plp.searchProduct(input.get("product"));
-        Assert.assertEquals(searchResults.isSearchedProductNameDisplayed(), input.get("product"));
+        SearchResultsPage searchResults = new ProductListPage(getDriver()).open().searchProduct(input.get("product"));
+        Assert.assertEquals(searchResults.getSearchedProductNameText(), input.get("product"));
         ProdutDetailsPage pdp = searchResults.clickViewProduct();
         Assert.assertEquals(pdp.getProductNameText(), input.get("product"));
     }

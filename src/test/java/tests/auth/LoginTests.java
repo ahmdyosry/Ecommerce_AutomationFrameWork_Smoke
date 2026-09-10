@@ -6,6 +6,7 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.LoginPage;
 import utils.Credentials;
+
 import java.util.HashMap;
 
 public class LoginTests extends BaseTest {

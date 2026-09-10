@@ -23,6 +23,8 @@ public class ProdutDetailsPage extends BasePage {
     private WebElement addToCartButton;
     @FindBy(xpath = "//div[@class=\"modal-header\"]/h4")
     private WebElement addedtoCartMessage;
+    @FindBy(xpath = "//div[@class=\"modal-body\"]//u")
+    private WebElement viewCartButton;
 
     public String getProductNameText() {
         return getText(productName);
@@ -45,7 +47,12 @@ public class ProdutDetailsPage extends BasePage {
         return checkIfDisplayed(addedtoCartMessage);
     }
 
-    public String addedtoCartMessageText() {
+    public String getAddedtoCartMessageText() {
         return getText(addedtoCartMessage);
+    }
+
+    public CartPage clickViewCart() {
+        clickOn(viewCartButton);
+        return new CartPage(driver);
     }
 }

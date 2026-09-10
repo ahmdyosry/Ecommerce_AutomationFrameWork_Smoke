@@ -22,7 +22,7 @@ public class SearchResultsPage extends BasePage {
     @FindBy(linkText = "View Product")
     private WebElement viewProduct;
 
-    public String isSearchedProductNameDisplayed() {
+    public String getSearchedProductNameText() {
         return getText(productName);
     }
 

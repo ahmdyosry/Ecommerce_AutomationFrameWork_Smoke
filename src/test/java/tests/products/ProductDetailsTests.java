@@ -10,8 +10,7 @@ public class ProductDetailsTests extends BaseTest {
 
     @Test(groups = "smoke")
     public void verifyProductNameAndPriceTest() {
-        ProductListPage plp = new ProductListPage(getDriver()).open();
-        ProdutDetailsPage pdp = plp.clickViewProduct();
+        ProdutDetailsPage pdp = new ProductListPage(getDriver()).open().clickViewProduct();
         Assert.assertTrue(pdp.isProductNameDisplayed());
         Assert.assertTrue(pdp.isProductPriceDisplayed());
     }

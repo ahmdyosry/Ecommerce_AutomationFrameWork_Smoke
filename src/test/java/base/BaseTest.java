@@ -3,10 +3,6 @@ package base;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.Dimension;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.bidi.module.Network;
-import org.openqa.selenium.bidi.module.Script;
-import org.openqa.selenium.bidi.network.AddInterceptParameters;
-import org.openqa.selenium.bidi.network.InterceptPhase;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.edge.EdgeDriver;
@@ -16,7 +12,12 @@ import org.openqa.selenium.firefox.FirefoxOptions;
 import org.openqa.selenium.logging.LogType;
 import org.openqa.selenium.logging.LoggingPreferences;
 import org.testng.annotations.*;
+import org.openqa.selenium.bidi.webextension.ExtensionPath;
+import org.openqa.selenium.bidi.webextension.InstallExtensionParameters;
+import org.openqa.selenium.bidi.webextension.WebExtension;
 
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.time.Duration;
 import java.util.HashMap;
 import java.util.List;
@@ -38,7 +39,6 @@ public class BaseTest {
     @BeforeMethod(alwaysRun = true)
     protected void launchApp(@Optional("") String browserParameter) throws IOException {
         initializeDriver(browserParameter);
-        blockAds();
         getDriver().get(getProperty("baseUrl"));
     }
 
@@ -80,6 +80,18 @@ public class BaseTest {
 
         if (browserName.equalsIgnoreCase("chrome")) {
             ChromeOptions options = new ChromeOptions();
+            options.enableBiDi();
+            options.addArguments("--remote-debugging-pipe");
+            options.addArguments("--enable-unsafe-extension-debugging");
+
+            Path path = Paths.get(
+                    System.getProperty("user.dir"),
+                    "src",
+                    "test",
+                    "resources",
+                    "adsblocker"
+            ).toAbsolutePath().normalize();
+
             Map<String, Object> prefs = new HashMap<>();
             prefs.put("profile.default_content_setting_values.notifications", 2); // don't allow notifications from websites
             prefs.put("profile.default_content_setting_values.popups", 2);
@@ -95,6 +107,11 @@ public class BaseTest {
             WebDriverManager.chromedriver().setup();
             DRIVER.set(ThreadGuard.protect(new ChromeDriver(options)));
 
+            WebExtension extension = new WebExtension(getDriver());
+            ExtensionPath extensionPath = new ExtensionPath(path.toString());
+            InstallExtensionParameters parameters = new InstallExtensionParameters(extensionPath);
+            extension.install(parameters);
+
         } else if (browserName.equalsIgnoreCase("firefox")) {
             FirefoxOptions options = new FirefoxOptions();
             options.enableBiDi();
@@ -103,6 +120,7 @@ public class BaseTest {
                 options.addArguments("-headless");
             }
             DRIVER.set(ThreadGuard.protect(new FirefoxDriver(options)));
+
         } else if (browserName.equalsIgnoreCase("edge")) {
             EdgeOptions options = new EdgeOptions();
             WebDriverManager.edgedriver().setup();
@@ -110,6 +128,7 @@ public class BaseTest {
                 options.addArguments("--headless=new");
             }
             DRIVER.set(ThreadGuard.protect(new EdgeDriver(options)));
+
         } else {
             throw new IllegalArgumentException(
                     "Unsupported browser: " + browserName
@@ -139,114 +158,6 @@ public class BaseTest {
         }
 
         return DRIVER.get();
-    }
-
-    private void blockAds() {
-
-        final List<String> AD_DOMAINS = List.of(
-                "*://*.doubleclick.net/*",
-                "*://*.googlesyndication.com/*",
-                "*://*.googleadservices.com/*",
-                "*://*.googletagservices.com/*",
-                "*://*.adservice.google.com/*",
-                "*://*.flashtalking.com/*",
-                "*://*.brevolinks.com/*",
-                "*://*.brevo.com/*",
-                "*://*.brevosend.com/*",
-                "*://*.sendinblue.com/*",
-                "*://*.adnxs.com/*",
-                "*://*.adsrvr.org/*",
-                "*://*.criteo.com/*",
-                "*://*.criteo.net/*",
-                "*://*.taboola.com/*",
-                "*://*.outbrain.com/*",
-                "*://*.amazon-adsystem.com/*",
-                "*://*.pubmatic.com/*",
-                "*://*.rubiconproject.com/*",
-                "*://*.openx.net/*",
-                "*://*.casalemedia.com/*",
-                "*://*.quantserve.com/*",
-                "*://*.scorecardresearch.com/*",
-                "*://*.zedo.com/*"
-        );
-
-        String removeFrames = """
-        () => {
-
-            const removeAds = () => {
-
-                // Remove Google fullscreen/vignette ad containers
-                document.querySelectorAll(
-                    "ins[data-vignette-loaded='true']"
-                ).forEach(ad => ad.remove());
-
-                // Remove any remaining iframes
-                document.querySelectorAll('iframe')
-                    .forEach(frame => frame.remove());
-            };
-
-            removeAds();
-
-            new MutationObserver(removeAds)
-                .observe(document, {
-                    childList: true,
-                    subtree: true,
-                    attributes: true,
-                    attributeFilter: [
-                        'data-vignette-loaded',
-                        'class',
-                        'style'
-                    ]
-                });
-        }
-        """;
-
-
-        if (getDriver() instanceof ChromeDriver chromeDriver) {
-
-            chromeDriver.executeCdpCommand(
-                    "Network.enable",
-                    Map.of()
-            );
-
-            chromeDriver.executeCdpCommand(
-                    "Network.setBlockedURLs",
-                    Map.of("urls",AD_DOMAINS));
-
-            chromeDriver.executeCdpCommand(
-                    "Page.addScriptToEvaluateOnNewDocument",
-                    Map.of("source", "(" + removeFrames + ")();")
-            );
-        }
-
-        else if (getDriver() instanceof FirefoxDriver) {
-
-            Network network = new Network(getDriver());
-
-            network.addIntercept(
-                    new AddInterceptParameters(
-                            InterceptPhase.BEFORE_REQUEST_SENT
-                    )
-            );
-
-            network.onBeforeRequestSent(event -> {
-
-                String url = event.getRequest().getUrl();
-
-                boolean isAd = AD_DOMAINS.stream()
-                        .anyMatch(url::contains);
-
-                if (isAd) {
-                    network.failRequest(
-                            event.getRequest().getRequestId()
-                    );
-                }
-            });
-
-            Script script = new Script(getDriver());
-
-            script.addPreloadScript(removeFrames);
-        }
     }
 
 }

@@ -42,7 +42,6 @@ public class CartPage extends BasePage {
     }
 
     public String getProductNameText() {
-        waitToVisible(productName);
         return getText(productName);
     }
 
@@ -56,12 +55,13 @@ public class CartPage extends BasePage {
         return new CheckoutPage(driver);
     }
 
-    public void clearCartItems() {
+    public CartPage clearCartItems() {
+
         deleteCartItems.forEach(WebElement::click);
+        return this;
     }
 
-    public String emptyCartText() {
-        waitToVisible(emptyCartText);
+    public String getEmptyCartText() {
         return getText(emptyCartText);
     }
 

@@ -74,8 +74,9 @@ public class HeaderComponent extends BasePage {
         return checkIfDisplayed(logoutButton);
     }
 
-    public void waitUntilLoggedIn() {
+    public HeaderComponent waitUntilLoggedIn() {
         waitToVisible(logoutButton);
+        return this;
     }
 
 
