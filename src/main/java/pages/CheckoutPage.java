@@ -61,4 +61,5 @@ public class CheckoutPage extends BasePage {
         clickOn(placeOrderBtn);
         return new PaymentPage(driver);
     }
+
 }
