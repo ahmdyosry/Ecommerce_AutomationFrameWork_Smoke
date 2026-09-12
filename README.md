@@ -429,7 +429,7 @@ The smoke suite is configured for parallel execution with TestNG.
 The smoke test block also enables method-level parallelism:
 
 ```xml
-<test name="smoke tests firefox" parallel="methods" thread-count="2">
+<test name="smoke tests" parallel="methods" thread-count="2">
 ```
 
 The framework protects each test thread with its own WebDriver instance using:
