@@ -15,7 +15,7 @@ import java.util.List;
 
 public class CartTests extends BaseTest {
 
-    @Test(groups = {"smoke", "cartState"}, dataProviderClass = TestDataProvider.class, dataProvider = "productNames", retryAnalyzer = RetryAnalyzer.class)
+    @Test(groups = {"smoke", "smokeLoggedIn"}, dataProviderClass = TestDataProvider.class, dataProvider = "productNames", retryAnalyzer = RetryAnalyzer.class)
     public void verifyCartTotalTest(HashMap<String, Object> input) {
         ProductListPage plp = new LoginPage(getDriver()).open()
                 .login(Credentials.getEmail(), Credentials.getPassword())
