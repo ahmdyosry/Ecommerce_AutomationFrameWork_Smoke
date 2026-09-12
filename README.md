@@ -2,11 +2,11 @@
 
 [![Selenium Tests](https://github.com/ahmdyosry/Ecommerce_AutomationFrameWork_Smoke/actions/workflows/test.yml/badge.svg)](https://github.com/ahmdyosry/Ecommerce_AutomationFrameWork_Smoke/actions/workflows/test.yml)
 ![Java](https://img.shields.io/badge/Java-25-orange?logo=openjdk)
-![Selenium](https://img.shields.io/badge/Selenium-4.46.0-43B02A?logo=selenium)
+![Selenium](https://img.shields.io/badge/Selenium-4.48.0-43B02A?logo=selenium)
 ![TestNG](https://img.shields.io/badge/TestNG-7.12.0-red)
 ![Maven](https://img.shields.io/badge/Maven-Project-C71A36?logo=apachemaven)
 
-A scalable **UI test automation framework** for the [Automation Exercise](https://automationexercise.com) e-commerce application.
+A scalable **UI test automation framework** for the [Automation Exercise](https://automationexercise.com) e-commerce application, automating smoke & E2E scenarios.
 
 The project is built with **Java, Selenium WebDriver, TestNG, Maven, Page Object Model (POM), data-driven testing, Extent Reports, Log4j2, retry handling, screenshots, parallel execution, and GitHub Actions CI**.
 
@@ -17,24 +17,28 @@ The current repository focuses on a **Smoke Test Suite** covering the applicatio
 ## Features
 
 - Page Object Model design
-- Reusable `BasePage`
+- Reusable `BasePage` for common page-object functionality
+- Reusable `BaseTest` for test setup, teardown, and WebDriver management
 - Reusable header and footer components
+- Separating page logic, reusable components, test logic, configuration, and test data
+- Writing TestNG smoke and end-to-end tests
 - Cross-browser WebDriver setup
 - Chrome, Firefox, and Edge support
-- Headless execution
+- Supporting headed and headless browser execution
 - Thread-safe WebDriver using `ThreadLocal`
 - Parallel TestNG execution
 - Smoke test grouping
-- JSON-based test data
+- JSON-based data-driven test data
 - Environment-variable-based credentials
 - TestNG listeners
-- Automatic screenshots
-- Extent Reports
-- Log4j2 logging
-- Retry mechanism for failed tests
-- Maven profiles
-- GitHub Actions CI
-- CI artifact upload for reports and logs
+- Automatic screenshots for failed tests
+- Generating ExtentReports HTML reports
+- Capturing severe browser-console JavaScript errors during failures
+- Logging execution information with Log4j2
+- Retrying selected failed tests with a TestNG retry analyzer
+- Executing smoke tests through Maven profiles
+- Running automated tests in GitHub Actions CI
+- CI artifact upload for reports, Surefire results, and logs.
 
 ---
 
@@ -48,31 +52,29 @@ Default configuration:
 
 ```properties
 baseUrl=https://automationexercise.com
-environment=qa
 browser=chrome
 headless=false
 implicitWait=10
 explicitWait=10
 ```
 
-> Note: `smoke.xml` currently passes `firefox` as the browser parameter, so the smoke suite runs on Firefox unless that TestNG parameter is changed.
+> Note: `smoke.xml` currently passes `chrome` as the browser parameter, so the smoke suite runs on Chrome unless that TestNG parameter is changed.
 
 ---
 
 ## Tech Stack
 
-| Technology | Usage |
-|---|---|
-| Java 25 | Programming language |
-| Selenium WebDriver 4.46.0 | Browser automation |
-| TestNG 7.12.0 | Test execution and assertions |
-| Maven | Build and dependency management |
-| WebDriverManager 6.3.4 | Browser driver management |
-| Extent Reports 5.1.2 | HTML test reporting |
-| Log4j2 | Logging |
-| Jackson Databind | JSON test-data handling |
-| Apache POI | Spreadsheet support |
-| GitHub Actions | Continuous Integration |
+| Technology                | Usage |
+|---------------------------|---|
+| Java 25                   | Programming language |
+| Selenium WebDriver 4.48.0 | Browser automation |
+| TestNG 7.12.0             | Test execution and assertions |
+| Maven                     | Build and dependency management |
+| WebDriverManager 6.3.4    | Browser driver management |
+| Extent Reports 5.1.2      | HTML test reporting |
+| Log4j2                    | Logging |
+| Jackson Databind          | JSON test-data handling |
+| GitHub Actions            | Continuous Integration |
 
 ---
 
@@ -85,7 +87,7 @@ Ecommerce_AutomationFrameWork_Smoke/
 │   └── workflows/
 │       └── test.yml
 │
-├── logs/
+│
 ├── reports/
 │
 │
@@ -111,8 +113,8 @@ Ecommerce_AutomationFrameWork_Smoke/
 │   │       │   ├── OrderConfirmationPage.java
 │   │       │   ├── PaymentPage.java
 │   │       │   ├── ProductListPage.java
-│   │       │   ├── ProdutDetailsPage.java
-│   │       │   ├── RegisterationPage.java
+│   │       │   ├── ProductDetailsPage.java
+│   │       │   ├── RegistrationPage.java
 │   │       │   ├── SearchResultsPage.java
 │   │       │   └── SuccessRegisterPage.java
 │   │       │
@@ -143,7 +145,7 @@ Ecommerce_AutomationFrameWork_Smoke/
 │       │       ├── auth/
 │       │       │   ├── LoginTests.java
 │       │       │   ├── LogoutTests.java
-│       │       │   └── RegisterationTests.java
+│       │       │   └── RegistrationTests.java
 │       │       │
 │       │       ├── cart/
 │       │       │   ├── AddToCartTests.java
@@ -153,6 +155,9 @@ Ecommerce_AutomationFrameWork_Smoke/
 │       │       │   ├── CheckoutTests.java
 │       │       │   ├── ShippingTests.java
 │       │       │   └── PaymentTests.java
+│       │       │
+│       │       ├── e2e/
+│       │       │   └── PurchaseFlowE2eTest.java
 │       │       │
 │       │       ├── home/
 │       │       │   └── HomepageTests.java
@@ -167,7 +172,7 @@ Ecommerce_AutomationFrameWork_Smoke/
 │           │   ├── checkout.json
 │           │   ├── invalidLogins.json
 │           │   ├── paymentDetails.json
-│           │   ├── positiveRegisteration.json
+│           │   ├── validRegistration.json
 │           │   ├── products.json
 │           │   └── searchData.json
 │           │
@@ -195,7 +200,7 @@ Test classes:
 ```text
 LoginTests.java
 LogoutTests.java
-RegisterationTests.java
+RegistrationTests.java
 ```
 
 ### Home Page
@@ -225,13 +230,15 @@ ProductSearchTests.java
 ### Cart
 
 - Add product to cart
+- Verify product quantity in cart
+- Verify cart total price
 - Remove product from cart
 
 Test classes:
 
 ```text
 AddToCartTests.java
-RemoveFromCartTests.java
+CartTests.java
 ```
 
 ### Checkout
@@ -246,6 +253,16 @@ Test classes:
 CheckoutTests.java
 ShippingTests.java
 PaymentTests.java
+```
+
+### End-to-End Purchase Flow
+
+- e-commerce purchase flow from login to order completion
+
+Test class:
+
+```text
+PurchaseFlowE2eTest.java
 ```
 
 ---
@@ -380,17 +397,17 @@ config.properties
 The current `smoke.xml` contains:
 
 ```xml
-<parameter name="browser" value="firefox"/>
+<parameter name="browser" value="chrome"/>
 ```
 
-Therefore, the smoke suite currently executes with **Firefox**.
+Therefore, the smoke suite currently executes with **Chrome**.
 
-To run the smoke suite using Chrome or Edge, update the browser parameter in `smoke.xml`.
+To run the smoke suite using Firefox or Edge, update the browser parameter in `smoke.xml`.
 
 Example:
 
 ```xml
-<parameter name="browser" value="chrome"/>
+<parameter name="browser" value="firefox"/>
 ```
 
 or:
@@ -439,7 +456,7 @@ Examples include:
 checkout.json
 invalidLogins.json
 paymentDetails.json
-positiveRegisteration.json
+validRegistration.json
 products.json
 searchData.json
 ```
@@ -462,7 +479,6 @@ Current properties:
 
 ```properties
 baseUrl=https://automationexercise.com
-environment=qa
 browser=chrome
 headless=false
 implicitWait=10
@@ -671,12 +687,10 @@ Close browser
 
 ## Maven Profiles
 
-The `pom.xml` defines multiple execution profiles, including:
+The `pom.xml` define this execution profile:
 
 ```text
 smoke
-regression
-testng
 ```
 
 The smoke profile points to:
@@ -693,20 +707,36 @@ mvn clean test -Psmoke
 
 ---
 
-## Possible Future Improvements
+## Key Automation Concepts Applied
 
-Some useful next steps for the framework could include:
-
-- Add a dedicated regression suite file to the repository
-- Add browser matrix execution in GitHub Actions
-- Add explicit test environment selection from the command line
-- Add Allure reporting as an optional second report
-- Add Dockerized Selenium Grid execution
-- Add test tagging for smoke, regression, and end-to-end layers
-- Add code-quality checks to CI
-- Add flaky-test trend tracking
-- Add README screenshots of Extent Report results
-- Add a test-results badge based on the CI workflow
+- Selenium WebDriver
+- TestNG annotations and assertions
+- Page Object Model (POM)
+- Reusable page components
+- Base test and base page abstractions
+- Explicit waits
+- Browser configuration
+- Headless execution
+- Cross-browser driver setup
+- WebDriverManager
+- ThreadLocal WebDriver
+- Selenium ThreadGuard
+- Parallel test execution
+- TestNG groups
+- TestNG DataProviders
+- JSON-based data-driven testing
+- Environment variables
+- GitHub Secrets
+- Test listeners
+- ExtentReports
+- Failure screenshots
+- Browser-console error capture
+- Log4j2
+- Retry analyzer
+- Maven profiles
+- GitHub Actions CI
+- CI artifact publishing
+- End-to-end test automation
 
 ---
 

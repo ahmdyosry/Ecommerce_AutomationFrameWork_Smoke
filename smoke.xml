@@ -19,7 +19,7 @@
         </classes>
     </test> -->
 
-    <test name="smoke tests firefox" parallel="methods" thread-count="2">
+    <test name="smoke tests" parallel="methods" thread-count="2">
         <parameter name="browser" value="chrome"/>
         <groups>
             <run>
@@ -27,7 +27,7 @@
             </run>
         </groups>
         <!-- <classes>
-            <class name="tests.auth.RegisterationTests"/>
+            <class name="tests.auth.RegistrationTests"/>
             <class name="tests.auth.LoginTests"/>
             <class name="tests.auth.LogoutTests"/>
             <class name="tests.home.HomepageTests"/>

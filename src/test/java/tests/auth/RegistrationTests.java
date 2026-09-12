@@ -4,17 +4,17 @@ import base.BaseTest;
 import dataproviders.TestDataProvider;
 import org.testng.Assert;
 import org.testng.annotations.Test;
-import pages.RegisterationPage;
+import pages.RegistrationPage;
 import pages.SuccessRegisterPage;
 
 import java.util.HashMap;
 import java.util.Optional;
 
-public class RegisterationTests extends BaseTest {
+public class RegistrationTests extends BaseTest {
 
     @Test(groups = "smoke", dataProvider = "registerFormData", dataProviderClass = TestDataProvider.class)
     public void successfulRegistrationTest(HashMap<String, String> input) {
-        SuccessRegisterPage success = new RegisterationPage(getDriver()).open()
+        SuccessRegisterPage success = new RegistrationPage(getDriver()).open()
                 .initializeSignUp(input.get("name"), input.get("email"))
                 .fillRegistrationForm(
                         input.get("name"),

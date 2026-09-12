@@ -117,26 +117,6 @@
     <profiles>
 
         <profile>
-            <id>regression</id>
-            <build>
-                <pluginManagement>
-                    <plugins>
-                        <plugin>
-                            <groupId>org.apache.maven.plugins</groupId>
-                            <artifactId>maven-surefire-plugin</artifactId>
-                            <version>3.5.5</version>
-                            <configuration>
-                                <suiteXmlFiles>
-                                    <suiteXmlFile>regression.xml</suiteXmlFile>
-                                </suiteXmlFiles>
-                            </configuration>
-                        </plugin>
-                    </plugins>
-                </pluginManagement>
-            </build>
-        </profile>
-
-        <profile>
             <id>smoke</id>
             <build>
                 <pluginManagement>
@@ -155,29 +135,6 @@
                 </pluginManagement>
             </build>
         </profile>
-
-        <profile>
-            <id>testng</id>
-            <build>
-                <pluginManagement>
-                    <plugins>
-
-                        <plugin>
-                            <groupId>org.apache.maven.plugins</groupId>
-                            <artifactId>maven-surefire-plugin</artifactId>
-                            <version>3.5.5</version>
-                            <configuration>
-                                <suiteXmlFiles>
-                                    <suiteXmlFile>testng.xml</suiteXmlFile>
-                                </suiteXmlFiles>
-                            </configuration>
-                        </plugin>
-
-                    </plugins>
-                </pluginManagement>
-            </build>
-        </profile>
-
 
     </profiles>
 

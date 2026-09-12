@@ -28,7 +28,7 @@ public class TestDataProvider {
 
         List<HashMap<String, Object>> data =
                 JsonDataReader.getJsonData(
-                        "src/test/resources/testdata/ValidRegisteration.json"
+                        "src/test/resources/testdata/validRegistration.json"
                 );
 
         return data.stream()

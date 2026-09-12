@@ -11,10 +11,10 @@ import utils.ConfigReader;
 
 import java.util.Optional;
 
-public class RegisterationPage extends BasePage {
+public class RegistrationPage extends BasePage {
     private final WebDriver driver;
 
-    public RegisterationPage(WebDriver driver) {
+    public RegistrationPage(WebDriver driver) {
         super(driver);
         this.driver = driver;
         PageFactory.initElements(driver, this);
@@ -67,12 +67,12 @@ public class RegisterationPage extends BasePage {
     @FindBy(xpath = "//button[text()='Create Account']")
     private WebElement createAccount;
 
-    public RegisterationPage open() {
+    public RegistrationPage open() {
         goTo(ConfigReader.getProperty("baseUrl") + Routes.REGISTER);
         return this;
     }
 
-    public RegisterationPage initializeSignUp(String name, String email) {
+    public RegistrationPage initializeSignUp(String name, String email) {
         if (email.equalsIgnoreCase("random_email")) {
             email = "random_email_" + System.currentTimeMillis() + "@example.com";
         }
