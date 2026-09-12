@@ -14,12 +14,10 @@ public class AddToCartTests extends BaseTest {
     @Test(groups = "smoke")
     public void addToCartTest() {
         ProductDetailsPage pdp = new ProductListPage(getDriver()).open().clickViewProduct();
-        try {
+
             Assert.assertTrue(pdp.clickAddToCart().isAddedToCartMessageDisplayed());
             Assert.assertEquals(pdp.getAddedtoCartMessageText(), "Added!");
-        } finally {
-            pdp.clickViewCart().clearCartItems();
-        }
+
     }
 
     @Test(groups = "smoke", dataProviderClass = TestDataProvider.class, dataProvider = "productNames")
@@ -28,10 +26,7 @@ public class AddToCartTests extends BaseTest {
                 .addProductToCart(input.get("singleProduct").toString())
                 .clickViewCart()
                 .getProductNameText();
-        try {
+
             Assert.assertEquals(productNameInCart, input.get("singleProduct").toString());
-        } finally {
-            new CartPage(getDriver()).clearCartItems();
-        }
     }
 }

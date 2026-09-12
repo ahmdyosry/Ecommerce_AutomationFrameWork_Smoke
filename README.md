@@ -353,7 +353,7 @@ smoke.xml
 The suite includes tests tagged with:
 
 ```java
-groups = "smoke"
+groups = "smoke" & groups = "smokeLoggedIn"
 ```
 
 ---
@@ -426,7 +426,7 @@ The smoke suite is configured for parallel execution with TestNG.
 <suite name="smokesuite" parallel="tests" thread-count="4">
 ```
 
-The smoke test block also enables method-level parallelism:
+The "smoke tests" test block also enables method-level parallelism:
 
 ```xml
 <test name="smoke tests" parallel="methods" thread-count="2">

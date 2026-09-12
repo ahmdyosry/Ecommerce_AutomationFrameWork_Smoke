@@ -24,7 +24,7 @@ public class CartPage extends BasePage {
     @FindBy(xpath = "//h4/a")
     private WebElement productName;
     @FindBy(xpath = "//p[@class='cart_total_price']")
-    private List<WebElement> cartItemsTotals;
+    private List<WebElement> cartItemPrice;
     @FindBy(css = ".btn.btn-default.check_out")
     private WebElement checkOutButton;
     @FindBy(xpath = "//a[@href=\"/login\"]/u")
@@ -47,7 +47,7 @@ public class CartPage extends BasePage {
 
     public BigDecimal calculateCartSubtotal() {
 
-        return cartItemsTotals.stream().map(WebElement::getText).map(this::convertPrice).reduce(BigDecimal.ZERO, BigDecimal::add);
+        return cartItemPrice.stream().map(WebElement::getText).map(this::convertPrice).reduce(BigDecimal.ZERO, BigDecimal::add);
     }
 
     public CheckoutPage clickCheckout() {
@@ -57,7 +57,9 @@ public class CartPage extends BasePage {
 
     public CartPage clearCartItems() {
 
-        deleteCartItems.forEach(WebElement::click);
+        if (!deleteCartItems.isEmpty()) {
+            deleteCartItems.forEach(WebElement::click);
+        }
         return this;
     }
 

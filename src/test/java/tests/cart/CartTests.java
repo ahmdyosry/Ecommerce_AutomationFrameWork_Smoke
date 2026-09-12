@@ -12,26 +12,30 @@ import java.math.BigDecimal;
 import java.util.HashMap;
 import java.util.List;
 
+
 public class CartTests extends BaseTest {
 
-    @Test(groups = "smoke", dataProviderClass = TestDataProvider.class, dataProvider = "productNames", retryAnalyzer = RetryAnalyzer.class)
+    @Test(groups = {"smoke", "cartState"}, dataProviderClass = TestDataProvider.class, dataProvider = "productNames", retryAnalyzer = RetryAnalyzer.class)
     public void verifyCartTotalTest(HashMap<String, Object> input) {
         ProductListPage plp = new LoginPage(getDriver()).open()
                 .login(Credentials.getEmail(), Credentials.getPassword())
                 .header().waitUntilLoggedIn()
                 .clickProducts();
         List<String> products = (List<String>) input.get("multipleProducts");
-        BigDecimal expectedTotal = plp.cartExpectedTotalPriceForMultipleProducts(products);
-        CartPage cart = plp.header().clickCart();
+        BigDecimal expectedTotal = plp.getExpectedTotalPriceForMultipleProducts(products);
+        CartPage cart = plp.addMultipleProductsToCart(products).header().clickCart();
         BigDecimal actualTotal = cart.calculateCartSubtotal();
         CheckoutPage checkout = cart.clickCheckout();
-        BigDecimal checkoutTotal = checkout.getCartSubtotal();
+        BigDecimal checkoutTotal = checkout.getCheckoutSubtotal();
+
         try {
             Assert.assertEquals(actualTotal, expectedTotal, "Sum of cart item totals is incorrect");
-            Assert.assertEquals(checkoutTotal, expectedTotal, "Displayed cart subtotal is incorrect");
+            Assert.assertEquals(checkoutTotal, expectedTotal, "Displayed checkout subtotal is incorrect");
         } finally {
             checkout.header().clickCart().clearCartItems();
         }
+
+
     }
 
     @Test(groups = "smoke")
@@ -39,11 +43,8 @@ public class CartTests extends BaseTest {
         ProductDetailsPage pdp = new ProductListPage(getDriver()).open().clickViewProduct();
         int selectedQuantity = pdp.setProductQuantity(4).getSelectedQuantity();
         int cartQuantity = pdp.clickAddToCart().clickViewCart().getCartTotalQuantity();
-        try {
-            Assert.assertEquals(cartQuantity, selectedQuantity, "Cart quantity is incorrect");
-        } finally {
-            new CartPage(getDriver()).clearCartItems();
-        }
+
+        Assert.assertEquals(cartQuantity, selectedQuantity, "Cart quantity is incorrect");
     }
 
     @Test(groups = "smoke", dataProviderClass = TestDataProvider.class, dataProvider = "productNames")

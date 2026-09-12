@@ -12,7 +12,7 @@ import java.util.HashMap;
 
 public class PurchaseFlowE2eTest extends BaseTest {
 
-    @Test(groups = "smoke", dataProviderClass = TestDataProvider.class, dataProvider = "paymentData", retryAnalyzer = RetryAnalyzer.class)
+    @Test(groups = {"smoke" , "smokeLoggedIn"}, dataProviderClass = TestDataProvider.class, dataProvider = "paymentData", retryAnalyzer = RetryAnalyzer.class)
     public void purchaseFlowE2eTest(HashMap<String, String> input) {
 
         HomePage home = new LoginPage(getDriver()).open()

@@ -101,13 +101,10 @@ public class ProductListPage extends BasePage {
         return this;
     }
 
-    public BigDecimal cartExpectedTotalPriceForMultipleProducts(List<String> products) {
+    public BigDecimal getExpectedTotalPriceForMultipleProducts(List<String> products) {
         return products.stream().map(productName -> {
 
                     BigDecimal price = getProductPrice(productName);
-                    addProductToCart(productName);
-                    continueShopping();
-
                     return price;
                 })
                 .reduce(BigDecimal.ZERO, BigDecimal::add);

@@ -37,7 +37,7 @@ public class CheckoutPage extends BasePage {
         return this;
     }
 
-    public BigDecimal getCartSubtotal() {
+    public BigDecimal getCheckoutSubtotal() {
         return convertPrice(getText(cartSubtotal));
     }
 

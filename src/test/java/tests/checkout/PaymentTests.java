@@ -11,7 +11,7 @@ import java.util.HashMap;
 
 public class PaymentTests extends BaseTest {
 
-    @Test(groups = "smoke", dataProviderClass = TestDataProvider.class, dataProvider = "paymentData")
+    @Test(groups = {"smoke", "smokeLoggedIn"}, dataProviderClass = TestDataProvider.class, dataProvider = "paymentData")
     public void verifySuccessPaymentTest(HashMap<String, String> input) {
         HomePage home = new LoginPage(getDriver()).open().login(Credentials.getEmail(), Credentials.getPassword());
         OrderConfirmationPage order = home.header().waitUntilLoggedIn()
@@ -21,10 +21,9 @@ public class PaymentTests extends BaseTest {
                 .clickCheckout()
                 .clickPlaceOrderBtn()
                 .pay(input.get("nameOnCard"), input.get("cardNumber"), input.get("cvc"), input.get("expiryMonth"), input.get("expiryYear"));
-        try {
-            Assert.assertEquals(order.getOrderPlacedMessage(), input.get("successMessage"));
-        } finally {
-            order.header().clickCart().clearCartItems();
-        }
+
+
+        Assert.assertEquals(order.getOrderPlacedMessage(), input.get("successMessage"));
+
     }
 }
