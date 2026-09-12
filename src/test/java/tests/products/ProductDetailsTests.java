@@ -4,13 +4,13 @@ import base.BaseTest;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.ProductListPage;
-import pages.ProdutDetailsPage;
+import pages.ProductDetailsPage;
 
 public class ProductDetailsTests extends BaseTest {
 
     @Test(groups = "smoke")
     public void verifyProductNameAndPriceTest() {
-        ProdutDetailsPage pdp = new ProductListPage(getDriver()).open().clickViewProduct();
+        ProductDetailsPage pdp = new ProductListPage(getDriver()).open().clickViewProduct();
         Assert.assertTrue(pdp.isProductNameDisplayed());
         Assert.assertTrue(pdp.isProductPriceDisplayed());
     }

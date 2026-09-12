@@ -65,7 +65,7 @@ public class CartPage extends BasePage {
         return getText(emptyCartText);
     }
 
-    public int cartTotalQuantity() {
+    public int getCartTotalQuantity() {
         return itemQuantityButtons.stream().map(WebElement::getText).map(String::trim).mapToInt(Integer::parseInt).sum();
     }
 }

@@ -1,15 +1,16 @@
 package pages;
 
 import base.BasePage;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class ProdutDetailsPage extends BasePage {
+public class ProductDetailsPage extends BasePage {
     private final WebDriver driver;
 
-    public ProdutDetailsPage(WebDriver driver) {
+    public ProductDetailsPage(WebDriver driver) {
         super(driver);
         this.driver = driver;
         PageFactory.initElements(driver, this);
@@ -25,6 +26,8 @@ public class ProdutDetailsPage extends BasePage {
     private WebElement addedtoCartMessage;
     @FindBy(xpath = "//div[@class=\"modal-body\"]//u")
     private WebElement viewCartButton;
+    @FindBy(id = "quantity")
+    private WebElement quantityInput;
 
     public String getProductNameText() {
         return getText(productName);
@@ -38,7 +41,7 @@ public class ProdutDetailsPage extends BasePage {
         return checkIfDisplayed(productName);
     }
 
-    public ProdutDetailsPage clickAddToCart() {
+    public ProductDetailsPage clickAddToCart() {
         clickOn(addToCartButton);
         return this;
     }
@@ -54,5 +57,17 @@ public class ProdutDetailsPage extends BasePage {
     public CartPage clickViewCart() {
         clickOn(viewCartButton);
         return new CartPage(driver);
+    }
+
+    public ProductDetailsPage setProductQuantity(int qty) {
+        while (Integer.parseInt(quantityInput.getDomProperty("value")) < qty) {
+            clickOn(quantityInput);
+            quantityInput.sendKeys(Keys.ARROW_UP);
+        }
+        return this;
+    }
+
+    public int getSelectedQuantity() {
+        return Integer.parseInt(quantityInput.getDomProperty("value"));
     }
 }

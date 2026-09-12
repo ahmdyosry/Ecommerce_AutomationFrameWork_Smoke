@@ -55,11 +55,11 @@ public class ProductListPage extends BasePage {
         return new SearchResultsPage(driver);
     }
 
-    public ProdutDetailsPage clickViewProduct() {
+    public ProductDetailsPage clickViewProduct() {
         JavascriptExecutor js = (JavascriptExecutor) driver;
         js.executeScript("arguments[0].scrollIntoView({block: 'center', inline: 'nearest'});", viewProduct);
         clickOn(viewProduct);
-        return new ProdutDetailsPage(driver);
+        return new ProductDetailsPage(driver);
     }
 
     public ProductListPage addProductToCart(String productName) {
@@ -101,7 +101,7 @@ public class ProductListPage extends BasePage {
         return this;
     }
 
-    public BigDecimal cartExpectedTotalForMultipleProducts(List<String> products) {
+    public BigDecimal cartExpectedTotalPriceForMultipleProducts(List<String> products) {
         return products.stream().map(productName -> {
 
                     BigDecimal price = getProductPrice(productName);

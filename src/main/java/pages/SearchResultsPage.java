@@ -26,10 +26,10 @@ public class SearchResultsPage extends BasePage {
         return getText(productName);
     }
 
-    public ProdutDetailsPage clickViewProduct() {
+    public ProductDetailsPage clickViewProduct() {
         JavascriptExecutor js = (JavascriptExecutor) driver;
         js.executeScript("arguments[0].scrollIntoView({block: 'center', inline: 'nearest'});", viewProduct);
         clickOn(viewProduct);
-        return new ProdutDetailsPage(driver);
+        return new ProductDetailsPage(driver);
     }
 }
