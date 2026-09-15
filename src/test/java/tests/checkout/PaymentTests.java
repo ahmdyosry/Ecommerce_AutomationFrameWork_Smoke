@@ -11,7 +11,7 @@ import java.util.HashMap;
 
 public class PaymentTests extends BaseTest {
 
-    @Test(groups = {"smoke", "smokeLoggedIn"}, dataProviderClass = TestDataProvider.class, dataProvider = "paymentData")
+    @Test(groups = {"smoke"}, dataProviderClass = TestDataProvider.class, dataProvider = "paymentData")
     public void verifySuccessPaymentTest(HashMap<String, String> input) {
         HomePage home = new LoginPage(getDriver()).open().login(Credentials.getEmail(), Credentials.getPassword());
         OrderConfirmationPage order = home.header().waitUntilLoggedIn()

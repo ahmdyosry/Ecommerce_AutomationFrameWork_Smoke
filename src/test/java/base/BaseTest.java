@@ -1,5 +1,6 @@
 package base;
 
+import components.HeaderComponent;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.Dimension;
 import org.openqa.selenium.WebDriver;
@@ -16,9 +17,11 @@ import org.openqa.selenium.bidi.webextension.ExtensionPath;
 import org.openqa.selenium.bidi.webextension.InstallExtensionParameters;
 import org.openqa.selenium.bidi.webextension.WebExtension;
 
+import java.lang.reflect.Method;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.time.Duration;
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -44,9 +47,13 @@ public class BaseTest {
 
 
     @AfterMethod(alwaysRun = true)
-    protected void teardown() {
+    protected void teardown(Method method) {
 
         WebDriver currentDriver = DRIVER.get();
+
+        if (Arrays.asList(method.getAnnotation(Test.class).groups()).contains("cartState")) {
+            new HeaderComponent(currentDriver).clickCart().clearCartItems();
+        }
 
         try {
 

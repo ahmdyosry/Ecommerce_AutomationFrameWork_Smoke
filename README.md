@@ -87,9 +87,10 @@ Ecommerce_AutomationFrameWork_Smoke/
 │   └── workflows/
 │       └── test.yml
 │
-│
 ├── reports/
+│   └── screenshots/
 │
+├── logs/
 │
 ├── src/
 │   ├── main/
@@ -149,7 +150,7 @@ Ecommerce_AutomationFrameWork_Smoke/
 │       │       │
 │       │       ├── cart/
 │       │       │   ├── AddToCartTests.java
-│       │       │   └── RemoveFromCartTests.java
+│       │       │   └── CartTests.java
 │       │       │
 │       │       ├── checkout/
 │       │       │   ├── CheckoutTests.java
@@ -353,7 +354,7 @@ smoke.xml
 The suite includes tests tagged with:
 
 ```java
-groups = "smoke" & groups = "smokeLoggedIn"
+groups = "smoke" & groups = "cartState"
 ```
 
 ---

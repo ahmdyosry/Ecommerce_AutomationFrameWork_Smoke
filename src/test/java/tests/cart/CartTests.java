@@ -15,7 +15,7 @@ import java.util.List;
 
 public class CartTests extends BaseTest {
 
-    @Test(groups = {"smoke", "smokeLoggedIn"}, dataProviderClass = TestDataProvider.class, dataProvider = "productNames", retryAnalyzer = RetryAnalyzer.class)
+    @Test(groups = {"smoke", "cartState"}, dataProviderClass = TestDataProvider.class, dataProvider = "productNames", retryAnalyzer = RetryAnalyzer.class)
     public void verifyCartTotalTest(HashMap<String, Object> input) {
         ProductListPage plp = new LoginPage(getDriver()).open()
                 .login(Credentials.getEmail(), Credentials.getPassword())
@@ -28,12 +28,9 @@ public class CartTests extends BaseTest {
         CheckoutPage checkout = cart.clickCheckout();
         BigDecimal checkoutTotal = checkout.getCheckoutSubtotal();
 
-        try {
-            Assert.assertEquals(actualTotal, expectedTotal, "Sum of cart item totals is incorrect");
-            Assert.assertEquals(checkoutTotal, expectedTotal, "Displayed checkout subtotal is incorrect");
-        } finally {
-            checkout.header().clickCart().clearCartItems();
-        }
+
+        Assert.assertEquals(actualTotal, expectedTotal, "Sum of cart item totals is incorrect");
+        Assert.assertEquals(checkoutTotal, expectedTotal, "Displayed checkout subtotal is incorrect");
 
 
     }

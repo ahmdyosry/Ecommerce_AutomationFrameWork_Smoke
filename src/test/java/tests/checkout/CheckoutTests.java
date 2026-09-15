@@ -12,7 +12,7 @@ import java.util.HashMap;
 public class CheckoutTests extends BaseTest {
 
 
-    @Test(groups = {"smoke", "smokeLoggedIn"}, dataProviderClass = TestDataProvider.class, dataProvider = "checkoutData")
+    @Test(groups = {"smoke", "cartState"}, dataProviderClass = TestDataProvider.class, dataProvider = "checkoutData")
     public void navigateFromCartToCheckoutTest(HashMap<String, Object> input) {
         HomePage home = new LoginPage(getDriver()).open().login(Credentials.getEmail(), Credentials.getPassword());
         home.header().waitUntilLoggedIn();
@@ -22,11 +22,9 @@ public class CheckoutTests extends BaseTest {
                 .clickViewCart()
                 .clickCheckout();
 
-        try {
-            Assert.assertEquals(checkout.getBreadcrumbText(), input.get("breadCrumbText").toString());
-        } finally {
-            checkout.header().clickCart().clearCartItems();
-        }
+
+        Assert.assertEquals(checkout.getBreadcrumbText(), input.get("breadCrumbText").toString());
+
     }
 
 

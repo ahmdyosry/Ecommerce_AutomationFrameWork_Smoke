@@ -10,7 +10,7 @@
         <groups>
             <run>
                 <include name="smoke"/>
-                <exclude name="smokeLoggedIn"/>
+                <exclude name="cartState"/>
             </run>
         </groups>
 
@@ -19,11 +19,11 @@
         </packages>
     </test>
 
-    <test name="loggedIn smoke tests" parallel="none">
+    <test name="CartState smoke tests" parallel="none">
         <parameter name="browser" value="chrome"/>
         <groups>
             <run>
-                <include name="smokeLoggedIn"/>
+                <include name="cartState"/>
             </run>
         </groups>
 
