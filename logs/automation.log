@@ -1,5 +1,0 @@
-2026-09-15 08:24:00 INFO  [main] org.testng.internal.Utils - [TestNG] Running:
-  C:\Users\ahmed\AppData\Local\JetBrains\IntelliJIdea2025.3\temp-testng-customsuite.xml
-
-2026-09-15 08:24:01 INFO  [TestNG-PoolService-1] io.github.bonigarcia.wdm.WebDriverManager - Using chromedriver 152.0.7977.82 (resolved driver for Chrome 152)
-2026-09-15 08:24:01 INFO  [TestNG-PoolService-1] io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\ahmed\.cache\selenium\chromedriver\win64\152.0.7977.82\chromedriver.exe
