@@ -65,9 +65,7 @@ public class ProductListPage extends BasePage {
     public ProductListPage addProductToCart(String productName) {
         WebElement productNameLocator = getProductName(productName);
         scrollToElement(productNameLocator);
-        WebElement addToCart = productNameLocator.findElement(By.xpath("../a"));
-        new Actions(driver).moveToElement(addToCart).perform();
-        clickOn(addToCart);
+        new Actions(driver).moveToElement(productNameLocator.findElement(By.xpath("../a"))).click().perform();
         return this;
     }
 
