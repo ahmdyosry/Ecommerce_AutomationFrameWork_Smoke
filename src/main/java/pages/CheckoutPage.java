@@ -2,6 +2,7 @@ package pages;
 
 import base.BasePage;
 import constants.Routes;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -30,6 +31,7 @@ public class CheckoutPage extends BasePage {
     private List<WebElement> shippingAddressLines;
     @FindBy(css = ".btn.btn-default.check_out")
     private WebElement placeOrderBtn;
+    By shippingAddressRows = By.cssSelector("#address_delivery li:not(:first-child)");
 
 
     public CheckoutPage open() {
@@ -50,6 +52,7 @@ public class CheckoutPage extends BasePage {
     }
 
     public List<String> getShippingAddressLines() {
+        waitNumberOfElements(shippingAddressRows,4);
         return shippingAddressLines.stream()
                 .map(WebElement::getText)
                 .map(String::trim)

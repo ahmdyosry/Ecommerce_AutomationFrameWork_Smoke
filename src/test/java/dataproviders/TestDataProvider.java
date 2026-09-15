@@ -36,7 +36,7 @@ public class TestDataProvider {
                 .toArray(Object[][]::new);
     }
 
-    @DataProvider(name = "productNames", parallel = true)
+    @DataProvider(name = "productNames")
     public static Object[][] productNames() throws IOException {
 
         List<HashMap<String, Object>> data =
@@ -49,7 +49,7 @@ public class TestDataProvider {
                 .toArray(Object[][]::new);
     }
 
-    @DataProvider(name = "checkoutData", parallel = true)
+    @DataProvider(name = "checkoutData")
     public static Object[][] checkoutData() throws IOException {
 
         List<HashMap<String, Object>> data =
@@ -62,7 +62,7 @@ public class TestDataProvider {
                 .toArray(Object[][]::new);
     }
 
-    @DataProvider(name = "paymentData", parallel = true)
+    @DataProvider(name = "paymentData")
     public static Object[][] paymentData() throws IOException {
 
         List<HashMap<String, Object>> data =

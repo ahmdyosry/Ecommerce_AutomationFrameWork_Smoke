@@ -2,6 +2,7 @@ package pages;
 
 import base.BasePage;
 import constants.Routes;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -27,14 +28,16 @@ public class CartPage extends BasePage {
     private List<WebElement> cartItemPrice;
     @FindBy(css = ".btn.btn-default.check_out")
     private WebElement checkOutButton;
-    @FindBy(xpath = "//a[@href=\"/login\"]/u")
-    private WebElement loginToCheckoutLink;
-    @FindBy(css = ".cart_quantity_delete")
-    private List<WebElement> deleteCartItems;
     @FindBy(xpath = "//span[@id=\"empty_cart\"]//b")
     private WebElement emptyCartText;
     @FindBy(css = ".cart_quantity button")
     private List<WebElement> itemQuantityButtons;
+
+    private final By deleteCartItemButtons =
+            By.cssSelector(".cart_quantity_delete");
+
+    private final By emptyCartState =
+            By.xpath("//span[@id=\"empty_cart\"]//b");
 
     public CartPage open() {
         goTo(ConfigReader.getProperty("baseUrl") + Routes.CART);
@@ -55,14 +58,6 @@ public class CartPage extends BasePage {
         return new CheckoutPage(driver);
     }
 
-    public CartPage clearCartItems() {
-
-        if (!deleteCartItems.isEmpty()) {
-            deleteCartItems.forEach(WebElement::click);
-        }
-        return this;
-    }
-
     public String getEmptyCartText() {
         return getText(emptyCartText);
     }
@@ -70,4 +65,24 @@ public class CartPage extends BasePage {
     public int getCartTotalQuantity() {
         return itemQuantityButtons.stream().map(WebElement::getText).map(String::trim).mapToInt(Integer::parseInt).sum();
     }
+
+    public CartPage clearCartItems() {
+
+        while (!driver.findElements(deleteCartItemButtons).isEmpty()) {
+
+            List<WebElement> deleteButtons =
+                    driver.findElements(deleteCartItemButtons);
+
+            WebElement deleteButton = deleteButtons.getFirst();
+
+            clickOn(deleteButton);
+
+            waitStaleness(deleteButton);
+        }
+
+        waitToVisible(emptyCartText);
+
+        return this;
+    }
+
 }

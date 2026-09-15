@@ -54,6 +54,6 @@ public class CategoryPage extends BasePage {
 
     public boolean isProductsDisplayed() {
         waitNumberOfElements(aToCButtons, 5);
-        return addToCartButtons.size() >= 5;
+        return addToCartButtons.size() > 5;
     }
 }

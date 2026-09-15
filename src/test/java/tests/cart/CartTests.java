@@ -38,10 +38,11 @@ public class CartTests extends BaseTest {
     @Test(groups = "smoke")
     public void verifyCartQuantityTest() {
         ProductDetailsPage pdp = new ProductListPage(getDriver()).open().clickViewProduct();
-        int selectedQuantity = pdp.setProductQuantity(4).getSelectedQuantity();
+        int requestedQuantity = 4;
+        int selectedQuantity = pdp.setProductQuantity(requestedQuantity).getSelectedQuantity();
+        Assert.assertEquals(selectedQuantity, requestedQuantity);
         int cartQuantity = pdp.clickAddToCart().clickViewCart().getCartTotalQuantity();
-
-        Assert.assertEquals(cartQuantity, selectedQuantity, "Cart quantity is incorrect");
+        Assert.assertEquals(cartQuantity, requestedQuantity, "Cart quantity is incorrect");
     }
 
     @Test(groups = "smoke", dataProviderClass = TestDataProvider.class, dataProvider = "productNames")

@@ -9,6 +9,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.logging.LogEntries;
 import org.openqa.selenium.logging.LogType;
 import org.openqa.selenium.logging.LogEntry;
+import org.testng.IConfigurationListener;
 import org.testng.ITestContext;
 import org.testng.ITestListener;
 import org.testng.ITestResult;
@@ -21,7 +22,7 @@ import org.apache.logging.log4j.Logger;
 import utils.ScreenshotUtils;
 
 
-public class TestListener extends BaseTest implements ITestListener {      // we implement ITestListener Interface
+public class TestListener extends BaseTest implements ITestListener, IConfigurationListener {      // we implement ITestListener Interface
     private final ExtentReports extent = ExtentReportManager.getReportObject();
     private final ThreadLocal<ExtentTest> extentTest = new ThreadLocal<ExtentTest>();
     private static final Logger logger = LogManager.getLogger(TestListener.class);
@@ -39,10 +40,44 @@ public class TestListener extends BaseTest implements ITestListener {      // we
 
     }
 
+
+    @Override
+    public void onConfigurationFailure(ITestResult result) {
+
+        ExtentTest currentExtentTest = extentTest.get();
+
+        if (currentExtentTest == null) {
+            currentExtentTest = extent.createTest(result.getMethod().getMethodName());
+
+            extentTest.set(currentExtentTest);
+        }
+
+        currentExtentTest.log(Status.FAIL,
+                "Configuration method failed: " + result.getMethod().getMethodName());
+
+        if (result.getThrowable() != null) {
+            currentExtentTest.log(Status.FAIL, result.getThrowable());
+        }
+    }
+
+    @Override
+    public void onConfigurationSkip(ITestResult result) {
+
+        ExtentTest currentExtentTest = extentTest.get();
+
+        if (currentExtentTest != null) {
+            currentExtentTest.log(Status.SKIP,
+                    "Configuration skipped: " + result.getMethod().getMethodName());
+        }
+    }
+
     @Override
     public void onTestSuccess(ITestResult result) {
-        extentTest.get().log(Status.PASS, "Test Passed");
-        extentTest.remove();
+        ExtentTest currentExtentTest = extentTest.get();
+        if (currentExtentTest != null) {
+            currentExtentTest.log(Status.PASS, "Test Passed");
+            extentTest.remove();
+        }
     }
 
     @Override
@@ -135,7 +170,28 @@ public class TestListener extends BaseTest implements ITestListener {      // we
 
     @Override
     public void onTestSkipped(ITestResult result) {
-        extentTest.get().log(Status.SKIP, "Test Skipped");
+        ExtentTest currentExtentTest = extentTest.get();
+
+        if (currentExtentTest == null) {
+            return;
+        }
+
+        currentExtentTest.log(Status.SKIP, "Test Skipped");
+
+        if (result.getThrowable() != null) {
+            currentExtentTest.log(Status.SKIP, result.getThrowable());
+        }
+
+        Boolean retrying = (Boolean) result.getAttribute("retrying");
+
+        Integer retryCount = (Integer) result.getAttribute("retryCount");
+
+        if (Boolean.TRUE.equals(retrying)) {
+            currentExtentTest.log(Status.INFO, "Test is being retried. Attempt: " + retryCount);
+        } else {
+            currentExtentTest.log(Status.INFO, "Test skipped without retry");
+        }
+
         extentTest.remove();
     }
 

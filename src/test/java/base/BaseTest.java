@@ -51,24 +51,27 @@ public class BaseTest {
 
         WebDriver currentDriver = DRIVER.get();
 
-        if (Arrays.asList(method.getAnnotation(Test.class).groups()).contains("cartState")) {
-            new HeaderComponent(currentDriver).clickCart().clearCartItems();
-        }
-
         try {
-
-            if (currentDriver != null) {
-                currentDriver.quit();
+            if (currentDriver != null && Arrays.asList(method.getAnnotation(Test.class).groups()).contains("cartState")) {
+                new HeaderComponent(currentDriver).clickCart().clearCartItems();
             }
-
         } finally {
 
-            DRIVER.remove();
+            try {
 
-            System.out.println(
-                    "Browser closed on thread: "
-                            + Thread.currentThread().getId()
-            );
+                if (currentDriver != null) {
+                    currentDriver.quit();
+                }
+
+            } finally {
+
+                DRIVER.remove();
+
+                System.out.println(
+                        "Browser closed on thread: "
+                                + Thread.currentThread().getId()
+                );
+            }
         }
     }
 
@@ -146,9 +149,6 @@ public class BaseTest {
         } else {
             getDriver().manage().window().maximize();
         }
-
-        getDriver().manage().timeouts().implicitlyWait(Duration.ofSeconds(Long.parseLong(ConfigReader.getProperty("implicitWait"))));
-
     }
 
     protected final WebDriver getDriver() {

@@ -32,10 +32,6 @@ public class ProductListPage extends BasePage {
     private WebElement viewProduct;
     @FindBy(xpath = "//div[@class='productinfo text-center']/p")
     private List<WebElement> productNames;
-    @FindBy(xpath = "//div[@class='productinfo text-center']/h2")
-    private List<WebElement> productPrices;
-    @FindBy(css = ".btn.btn-default.add-to-cart")
-    private List<WebElement> addToCartButtons;
     @FindBy(xpath = "//div[@class=\"modal-header\"]/h4")
     private WebElement addedtoCartMessage;
     @FindBy(xpath = "//div[@class=\"modal-body\"]//u")
@@ -63,9 +59,11 @@ public class ProductListPage extends BasePage {
     }
 
     public ProductListPage addProductToCart(String productName) {
-        WebElement productNameLocator = getProductName(productName);
-        scrollToElement(productNameLocator);
-        new Actions(driver).moveToElement(productNameLocator.findElement(By.xpath("../a"))).click().perform();
+        WebElement productNameElement = getProductName(productName);
+        scrollToElement(productNameElement);
+        new Actions(driver).moveToElement(productNameElement).perform();
+        WebElement addToCartButton = productNameElement.findElement(By.xpath("../a"));
+        waitToBeClickable(addToCartButton).click();
         return this;
     }
 
@@ -96,6 +94,7 @@ public class ProductListPage extends BasePage {
 
     public ProductListPage continueShopping() {
         clickOn(continueShoppingButton);
+        waitToInvisible(continueShoppingButton);
         return this;
     }
 
