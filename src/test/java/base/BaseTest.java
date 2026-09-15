@@ -121,7 +121,6 @@ public class BaseTest {
 
         } else if (browserName.equalsIgnoreCase("firefox")) {
             FirefoxOptions options = new FirefoxOptions();
-            options.enableBiDi();
             WebDriverManager.firefoxdriver().setup();
             if (headless) {
                 options.addArguments("-headless");
