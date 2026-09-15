@@ -22,7 +22,6 @@ public class CheckoutTests extends BaseTest {
                 .clickViewCart()
                 .clickCheckout();
 
-
         Assert.assertEquals(checkout.getBreadcrumbText(), input.get("breadCrumbText").toString());
 
     }
