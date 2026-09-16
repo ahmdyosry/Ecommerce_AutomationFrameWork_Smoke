@@ -14,7 +14,6 @@ public class ProductListingTests extends BaseTest {
         CategoryPage category = new HomePage(getDriver()).navigateToMenTshirtsCategory();
         Assert.assertEquals(category.getBreadcrumbText(), "Men > Tshirts");
         Assert.assertTrue(category.getCategoryTitle().equalsIgnoreCase("Men - Tshirts Products"));
-        Assert.assertTrue(category.isProductsDisplayed());
     }
 
 

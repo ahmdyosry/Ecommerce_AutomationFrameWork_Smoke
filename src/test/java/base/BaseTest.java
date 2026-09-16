@@ -28,6 +28,7 @@ import java.util.Map;
 import java.io.IOException;
 
 import org.openqa.selenium.support.ThreadGuard;
+import pages.CartPage;
 import utils.ConfigReader;
 
 import java.util.logging.Level;
@@ -53,7 +54,7 @@ public class BaseTest {
 
         try {
             if (currentDriver != null && Arrays.asList(method.getAnnotation(Test.class).groups()).contains("cartState")) {
-                new HeaderComponent(currentDriver).clickCart().clearCartItems();
+                new CartPage(currentDriver).open().clearCartItems();
             }
         } finally {
 

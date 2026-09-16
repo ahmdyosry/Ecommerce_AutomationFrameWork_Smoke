@@ -34,11 +34,12 @@ public class ProductDetailsPage extends BasePage {
     }
 
     public boolean isProductPriceDisplayed() {
-        return checkIfDisplayed(productPrice);
+
+        return checkIfDisplayed(productPrice) && !getText(productPrice).isBlank();
     }
 
     public boolean isProductNameDisplayed() {
-        return checkIfDisplayed(productName);
+        return checkIfDisplayed(productName) && !getText(productName).isBlank();
     }
 
     public ProductDetailsPage clickAddToCart() {

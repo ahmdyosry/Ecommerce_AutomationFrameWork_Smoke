@@ -44,4 +44,6 @@ src/test/java/tests/products/ProductFilterTests.java
 /regression.xml
 /testng.xml
 # Build output
-/target/
+target/
+reports/
+logs/

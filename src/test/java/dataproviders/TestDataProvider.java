@@ -15,7 +15,7 @@ public class TestDataProvider {
 
         List<HashMap<String, Object>> data =
                 JsonDataReader.getJsonData(
-                        "src/test/resources/testdata/invalidLogins.json"
+                        "testdata/invalidLogins.json"
                 );
 
         return data.stream()
@@ -28,7 +28,7 @@ public class TestDataProvider {
 
         List<HashMap<String, Object>> data =
                 JsonDataReader.getJsonData(
-                        "src/test/resources/testdata/validRegistration.json"
+                        "testdata/validRegistration.json"
                 );
 
         return data.stream()
@@ -41,7 +41,7 @@ public class TestDataProvider {
 
         List<HashMap<String, Object>> data =
                 JsonDataReader.getJsonData(
-                        "src/test/resources/testdata/products.json"
+                        "testdata/products.json"
                 );
 
         return data.stream()
@@ -54,7 +54,7 @@ public class TestDataProvider {
 
         List<HashMap<String, Object>> data =
                 JsonDataReader.getJsonData(
-                        "src/test/resources/testdata/checkout.json"
+                        "testdata/checkout.json"
                 );
 
         return data.stream()
@@ -67,7 +67,7 @@ public class TestDataProvider {
 
         List<HashMap<String, Object>> data =
                 JsonDataReader.getJsonData(
-                        "src/test/resources/testdata/paymentDetails.json"
+                        "testdata/paymentDetails.json"
                 );
 
         return data.stream()
@@ -80,7 +80,7 @@ public class TestDataProvider {
 
         List<HashMap<String, Object>> data =
                 JsonDataReader.getJsonData(
-                        "src/test/resources/testdata/searchData.json"
+                        "testdata/searchData.json"
                 );
 
         return data.stream()

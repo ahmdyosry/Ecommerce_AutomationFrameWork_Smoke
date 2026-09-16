@@ -34,6 +34,8 @@ public class HomePage extends BasePage {
     private WebElement menTshirtsCategory;
     @FindBy(css = ".add-to-cart")
     private List<WebElement> addToCartButtons;
+    By productCards = By.xpath("//div[@class='product-overlay']");
+    By productImages = By.xpath("//img[contains(@src,'/get_product_picture/')]");
 
 
     public HomePage open() {
@@ -44,19 +46,29 @@ public class HomePage extends BasePage {
 
     public boolean isHomePageDisplayed() {
 
-        waitNumberOfElements(addToCartButtonsLocator, 20);
-        return header().isHomePageLogoDisplayed() && header().isCartButtonDisplayed() && isProductsDisplayed() && footer().isSubscriptionTextDisplayed();
-    }
-
-    public boolean isProductsDisplayed() {
-        waitNumberOfElements(addToCartButtonsLocator, 5);
-        return addToCartButtons.size() >= 5;
+        return header().isHomePageLogoDisplayed() && header().isCartButtonDisplayed() && areAllProductCardsDisplayed() && footer().isSubscriptionTextDisplayed();
     }
 
     public CategoryPage navigateToMenTshirtsCategory() {
         clickOn(menCategory);
         clickOn(menTshirtsCategory);
         return new CategoryPage(driver);
+    }
+
+    public boolean areAllProductCardsDisplayed() {
+
+        waitNumberOfElements(productImages,30);
+        return driver.findElements(productImages).stream().allMatch(productImage-> {
+
+            WebElement productName = productImage.findElement(By.xpath("../p"));
+            WebElement productPrice = productImage.findElement(By.xpath("../h2"));
+
+            return productImage.isDisplayed()
+                    && productName.isDisplayed()
+                    && !productName.getText().isBlank()
+                    && productPrice.isDisplayed()
+                    && !productPrice.getText().isBlank();
+        });
     }
 
 

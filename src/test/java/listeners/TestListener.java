@@ -9,12 +9,12 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.logging.LogEntries;
 import org.openqa.selenium.logging.LogType;
 import org.openqa.selenium.logging.LogEntry;
-import org.testng.IConfigurationListener;
-import org.testng.ITestContext;
-import org.testng.ITestListener;
-import org.testng.ITestResult;
+import org.testng.*;
 import reporting.ExtentReportManager;
 
+import java.util.Arrays;
+import java.util.concurrent.ConcurrentHashMap;
+import java.util.concurrent.atomic.AtomicInteger;
 import java.util.logging.Level;
 
 import org.apache.logging.log4j.LogManager;
@@ -22,21 +22,31 @@ import org.apache.logging.log4j.Logger;
 import utils.ScreenshotUtils;
 
 
-public class TestListener extends BaseTest implements ITestListener, IConfigurationListener {      // we implement ITestListener Interface
+public class TestListener extends BaseTest implements ITestListener, IConfigurationListener, ISuiteListener {      // we implement ITestListener Interface
     private final ExtentReports extent = ExtentReportManager.getReportObject();
     private final ThreadLocal<ExtentTest> extentTest = new ThreadLocal<ExtentTest>();
     private static final Logger logger = LogManager.getLogger(TestListener.class);
+    private static final ConcurrentHashMap<String, AtomicInteger> attempts = new ConcurrentHashMap<>();
+    private static final String ATTEMPT_KEY = "attemptKey";
 
     @Override
     public void onTestStart(ITestResult result) {
-        ITestListener.super.onTestStart(result);
-        String browserName = "[" + ((HasCapabilities) getDriver()).getCapabilities().getBrowserName() + "]";
-        try {
-            ExtentTest test = extent.createTest(result.getName() + " " + browserName);
-            extentTest.set(test);
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+        String className = result.getTestClass().getRealClass().getSimpleName();
+        String methodName = result.getMethod().getMethodName();
+        String browserName = getBrowserNameSafely(result);
+        String parameters = Arrays.deepToString(result.getParameters());
+
+        String key = className + "." + methodName + "." + browserName + "." + parameters;
+
+        result.setAttribute(ATTEMPT_KEY, key);
+
+        int attempt = attempts.computeIfAbsent(key, k -> new AtomicInteger(0)).incrementAndGet();
+
+        String testName = String.format("%s | %s | [%s] | Attempt %d", className, methodName, browserName, attempt);
+
+
+        ExtentTest test = extent.createTest(testName);
+        extentTest.set(test);
 
     }
 
@@ -46,17 +56,44 @@ public class TestListener extends BaseTest implements ITestListener, IConfigurat
 
         ExtentTest currentExtentTest = extentTest.get();
 
-        if (currentExtentTest == null) {
-            currentExtentTest = extent.createTest(result.getMethod().getMethodName());
+        if (currentExtentTest != null) {
 
-            extentTest.set(currentExtentTest);
+            currentExtentTest.log(
+                    Status.FAIL,
+                    "Configuration method failed: "
+                            + result.getMethod().getMethodName()
+            );
+
+            if (result.getThrowable() != null) {
+                currentExtentTest.log(
+                        Status.FAIL,
+                        result.getThrowable()
+                );
+            }
+
+            return;
         }
 
-        currentExtentTest.log(Status.FAIL,
-                "Configuration method failed: " + result.getMethod().getMethodName());
+
+        ExtentTest configurationTest = extent.createTest(
+                result.getTestClass()
+                        .getRealClass()
+                        .getSimpleName()
+                        + " | Configuration Failure | "
+                        + result.getMethod().getMethodName()
+        );
+
+        configurationTest.log(
+                Status.FAIL,
+                "Configuration method failed: "
+                        + result.getMethod().getMethodName()
+        );
 
         if (result.getThrowable() != null) {
-            currentExtentTest.log(Status.FAIL, result.getThrowable());
+            configurationTest.log(
+                    Status.FAIL,
+                    result.getThrowable()
+            );
         }
     }
 
@@ -73,146 +110,226 @@ public class TestListener extends BaseTest implements ITestListener, IConfigurat
 
     @Override
     public void onTestSuccess(ITestResult result) {
-        ExtentTest currentExtentTest = extentTest.get();
-        if (currentExtentTest != null) {
-            currentExtentTest.log(Status.PASS, "Test Passed");
+
+        try {
+            ExtentTest currentExtentTest = getOrCreateExtentTest(result);
+            currentExtentTest.log(
+                    Status.PASS,
+                    "Test Passed"
+            );
+        } finally {
             extentTest.remove();
+            cleanupAttemptCounter(result);
         }
+
+
     }
 
     @Override
     public void onTestFailure(ITestResult result) {
-        ExtentTest currentExtentTest = extentTest.get();
-
-        if (currentExtentTest != null) {
-            currentExtentTest.fail(result.getThrowable());
-        }
 
         try {
+            ExtentTest currentExtentTest = getOrCreateExtentTest(result);
 
-            LogEntries browserLogs =
-                    getDriver().manage()
-                            .logs()
-                            .get(LogType.BROWSER);
+            if (result.getThrowable() != null) {
+                currentExtentTest.fail(result.getThrowable());
+            } else {
+                currentExtentTest.fail("Test failed without an exception.");
+            }
 
-            for (LogEntry log : browserLogs) {
 
-                if (log.getLevel() == Level.SEVERE) {
+            try {
 
-                    logger.error(
-                            "Browser JS Error: {}",
-                            log.getMessage()
-                    );
+                LogEntries browserLogs =
+                        getDriver().manage()
+                                .logs()
+                                .get(LogType.BROWSER);
 
-                    if (currentExtentTest != null) {
+                for (LogEntry log : browserLogs) {
+
+                    if (log.getLevel() == Level.SEVERE) {
+
+                        logger.error(
+                                "Browser JS Error: {}",
+                                log.getMessage()
+                        );
+
+
                         currentExtentTest.fail(
                                 "Browser JS Error: "
                                         + log.getMessage()
                         );
                     }
                 }
+
+            } catch (Exception e) {
+
+                logger.warn(
+                        "Browser console logs could not be captured: {}",
+                        e.getMessage()
+                );
             }
 
-        } catch (Exception e) {
 
-            logger.warn(
-                    "Browser console logs could not be captured: "
-                            + e.getMessage()
-            );
-        }
+            try {
+                String screenshotName =
+                        result.getMethod().getMethodName()
+                                + "_thread_"
+                                + Thread.currentThread().getId()
+                                + "_"
+                                + System.currentTimeMillis();
+
+                WebDriver driver = getDriver();
+                String screenshotPath = ScreenshotUtils.getScreenshot(driver, screenshotName);
+
+                logger.info(
+                        "FAILURE SCREENSHOT | Thread: {} | Driver: {}",
+                        Thread.currentThread().getId(),
+                        System.identityHashCode(driver)
+                );
 
 
-        try {
-            String screenshotName =
-                    result.getMethod().getMethodName()
-                            + "_thread_"
-                            + Thread.currentThread().getId()
-                            + "_"
-                            + System.currentTimeMillis();
-
-            String screenshotPath = ScreenshotUtils.getScreenshot(getDriver(), screenshotName);
-
-            System.out.println(
-                    "FAILURE SCREENSHOT | Thread: "
-                            + Thread.currentThread().getId()
-                            + " | Driver: "
-                            + System.identityHashCode(getDriver())
-            );
-
-            if (currentExtentTest != null) {
                 currentExtentTest.addScreenCaptureFromPath(
                         screenshotPath,
                         "Failure Screenshot"
                 );
-            }
 
-        } catch (IllegalStateException exception) {
+            } catch (IllegalStateException exception) {
 
-            if (currentExtentTest != null) {
+
                 currentExtentTest.warning(
                         "Screenshot was not captured because the driver "
                                 + "was unavailable: "
                                 + exception.getMessage()
                 );
-            }
 
-        } catch (Exception exception) {
+            } catch (Exception exception) {
 
-            if (currentExtentTest != null) {
                 currentExtentTest.warning(
                         "Screenshot capture failed: "
                                 + exception.getMessage()
                 );
+
+            }
+        } finally {
+            extentTest.remove();
+            if (!Boolean.TRUE.equals(result.getAttribute("retrying"))) {
+                cleanupAttemptCounter(result);
             }
         }
-        extentTest.remove();
+
+
     }
 
     @Override
     public void onTestSkipped(ITestResult result) {
+
+        try {
+            ExtentTest currentExtentTest = getOrCreateExtentTest(result);
+            currentExtentTest.log(Status.SKIP, "Test Skipped");
+
+            if (result.getThrowable() != null) {
+                currentExtentTest.log(
+                        Status.SKIP,
+                        result.getThrowable()
+                );
+            }
+
+            boolean retrying =
+                    Boolean.TRUE.equals(
+                            result.getAttribute("retrying")
+                    );
+
+            if (retrying) {
+                currentExtentTest.log(
+                        Status.INFO,
+                        "Test is being retried."
+                );
+            } else {
+                currentExtentTest.log(
+                        Status.INFO,
+                        "Test skipped without retry."
+                );
+            }
+
+        } finally {
+            extentTest.remove();
+            if (!Boolean.TRUE.equals(result.getAttribute("retrying"))) {
+                cleanupAttemptCounter(result);
+            }
+        }
+    }
+
+    @Override
+    public void onFinish(ISuite suite) {
+        extent.flush();
+    }
+
+    private void cleanupAttemptCounter(ITestResult result) {
+
+        Object key = result.getAttribute(ATTEMPT_KEY);
+
+        if (key != null) {
+            attempts.remove(key.toString());
+        }
+    }
+
+    private ExtentTest getOrCreateExtentTest(ITestResult result) {
+
         ExtentTest currentExtentTest = extentTest.get();
 
-        if (currentExtentTest == null) {
-            return;
+        if (currentExtentTest != null) {
+            return currentExtentTest;
         }
 
-        currentExtentTest.log(Status.SKIP, "Test Skipped");
+        String className =
+                result.getTestClass()
+                        .getRealClass()
+                        .getSimpleName();
 
-        if (result.getThrowable() != null) {
-            currentExtentTest.log(Status.SKIP, result.getThrowable());
+        String methodName =
+                result.getMethod()
+                        .getMethodName();
+
+        String browserName =
+                getBrowserNameSafely(result);
+
+        ExtentTest fallbackTest = extent.createTest(
+                String.format(
+                        "%s | %s | [%s]",
+                        className,
+                        methodName,
+                        browserName
+                )
+        );
+
+        extentTest.set(fallbackTest);
+
+        return fallbackTest;
+    }
+
+    private String getBrowserNameSafely(ITestResult result) {
+
+        try {
+            WebDriver driver = getDriver();
+
+            if (driver instanceof HasCapabilities capabilities) {
+                return capabilities
+                        .getCapabilities()
+                        .getBrowserName();
+            }
+
+        } catch (IllegalStateException e) {
+            logger.debug("WebDriver unavailable while resolving browser name: {}", e.getMessage());
         }
 
-        Boolean retrying = (Boolean) result.getAttribute("retrying");
+        String browserParameter =
+                result.getTestContext()
+                        .getCurrentXmlTest()
+                        .getParameter("browser");
 
-        Integer retryCount = (Integer) result.getAttribute("retryCount");
-
-        if (Boolean.TRUE.equals(retrying)) {
-            currentExtentTest.log(Status.INFO, "Test is being retried. Attempt: " + retryCount);
-        } else {
-            currentExtentTest.log(Status.INFO, "Test skipped without retry");
-        }
-
-        extentTest.remove();
-    }
-
-    @Override
-    public void onTestFailedButWithinSuccessPercentage(ITestResult result) {
-        ITestListener.super.onTestFailedButWithinSuccessPercentage(result);
-    }
-
-    @Override
-    public void onTestFailedWithTimeout(ITestResult result) {
-        ITestListener.super.onTestFailedWithTimeout(result);
-    }
-
-    @Override
-    public void onStart(ITestContext context) {
-        ITestListener.super.onStart(context);
-    }
-
-    @Override
-    public void onFinish(ITestContext context) {
-        ITestListener.super.onFinish(context);
-        extent.flush();
+        return browserParameter != null
+                ? browserParameter
+                : "unknown-browser";
     }
 }

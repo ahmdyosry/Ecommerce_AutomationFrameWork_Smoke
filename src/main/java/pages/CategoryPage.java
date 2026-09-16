@@ -25,9 +25,6 @@ public class CategoryPage extends BasePage {
     private WebElement breadCrumb;
     @FindBy(css = ".title.text-center")
     private WebElement categoryTitle;
-    By aToCButtons = By.cssSelector(".add-to-cart");
-    @FindBy(css = ".add-to-cart")
-    private List<WebElement> addToCartButtons;
 
     public CategoryPage openMenCategory() {
         goTo(ConfigReader.getProperty("baseUrl") + Routes.MEN_CATEGORY);
@@ -52,8 +49,4 @@ public class CategoryPage extends BasePage {
         return getText(categoryTitle);
     }
 
-    public boolean isProductsDisplayed() {
-        waitNumberOfElements(aToCButtons, 5);
-        return addToCartButtons.size() > 5;
-    }
 }

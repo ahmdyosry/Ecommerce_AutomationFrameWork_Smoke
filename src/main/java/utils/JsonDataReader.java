@@ -5,28 +5,29 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import org.apache.commons.io.FileUtils;
 
 import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.io.InputStream;
 import java.nio.charset.StandardCharsets;
 import java.util.HashMap;
 import java.util.List;
 
 public class JsonDataReader {
 
-    public static List<HashMap<String, Object>> getJsonData(String filePath)
+    public static List<HashMap<String, Object>> getJsonData(String resourcePath)
             throws IOException {
 
-        String jsonContent =
-                FileUtils.readFileToString(
-                        new File(filePath),
-                        StandardCharsets.UTF_8
-                );
+        ClassLoader classLoader = Thread.currentThread().getContextClassLoader();
 
-        ObjectMapper mapper = new ObjectMapper();
+        try (InputStream inputStream = classLoader.getResourceAsStream(resourcePath)) {
 
-        return mapper.readValue(
-                jsonContent,
-                new TypeReference<List<HashMap<String, Object>>>() {
-                }
-        );
+            if (inputStream == null) {
+                throw new FileNotFoundException("JSON resource not found: " + resourcePath);
+            }
+
+            ObjectMapper mapper = new ObjectMapper();
+
+            return mapper.readValue(inputStream, new TypeReference<List<HashMap<String, Object>>>() {});
+        }
     }
 }
